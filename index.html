@@ -771,7 +771,7 @@ function renderDashboard() {
   document.getElementById('s-activos').textContent  = active.length;
   document.getElementById('s-alertas').textContent  = activeAlerts.length;
   var sinC = todayS.filter(function(s) {
-    return nowMins >= timeToMins(s.ingreso) && !attendance[s.nombre + '|' + s.apellido];
+    return nowMins >= timeToMins(s.ingreso) && !attendance[s.nombre];
   });
   document.getElementById('s-sinconf').textContent  = sinC.length;
 
@@ -793,7 +793,7 @@ function renderCoverage(shifts, nowMins) {
     if (iM < 0 || sM < 0) return;
     for (var h = 0; h < 24; h++) {
       if (iM < (h + 1) * 60 && sM > h * 60) {
-        hourMap[h].push(s.nombre + (s.apellido ? ' ' + s.apellido : ''));
+        hourMap[h].push(s.nombre);
       }
     }
   });
@@ -842,10 +842,10 @@ function renderCoverage(shifts, nowMins) {
 function renderEvents(shifts, nowMins) {
   var allEv = [];
   shifts.forEach(function(s) {
-    allEv.push({ time: s.ingreso,   mins: timeToMins(s.ingreso),   name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'i', turno: s.turno });
-    allEv.push({ time: s.salida,    mins: timeToMins(s.salida),    name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 's', turno: s.turno });
-    if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'd', turno: s.turno, label: 'Desc. corto' });
-    if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'd', turno: s.turno, label: 'Desc. largo' });
+    allEv.push({ time: s.ingreso,   mins: timeToMins(s.ingreso),   name: s.nombre, type: 'i', turno: s.turno });
+    allEv.push({ time: s.salida,    mins: timeToMins(s.salida),    name: s.nombre, type: 's', turno: s.turno });
+    if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. corto' });
+    if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. largo' });
   });
   allEv.sort(function(a, b) { return a.mins - b.mins; });
   var upcoming = allEv.filter(function(e) { return e.mins >= nowMins; }).slice(0, 10);
@@ -905,7 +905,7 @@ function checkAlerts() {
   var fkey    = 'fired_' + todayKey();
 
   shiftsForDate(today).forEach(function(s) {
-    var fn = s.nombre + (s.apellido ? ' ' + s.apellido : '');
+    var fn = s.nombre;
     var tn = s.turno ? ' (' + s.turno + ')' : '';
 
     function chk(mins, diff, key, type, title, msg) {
@@ -1017,13 +1017,13 @@ function renderMalla() {
     else if (upcoming) statusHtml = '<span class="status-pill sp-upcoming">En ' + (iM - nowMins) + 'min</span>';
 
     var rowCls = active && !onBreak ? 'row-active' : upcoming ? 'row-upcoming' : '';
-    var col    = avColor(s.nombre + s.apellido);
-    var key    = s.fecha + '|' + s.nombre + '|' + s.apellido;
+    var col    = avColor(s.nombre);
+    var key    = s.fecha + '|' + s.nombre;
 
     return '<tr class="' + rowCls + '" data-key="' + key + '">' +
       '<td><div style="display:flex;align-items:center;gap:8px">' +
-        '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, s.apellido) + '</div>' +
-        '<strong>' + s.nombre + (s.apellido ? ' ' + s.apellido : '') + '</strong></div></td>' +
+        '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, '') + '</div>' +
+        '<strong>' + s.nombre + '</strong></div></td>' +
       '<td>' + (s.turno ? '<span class="badge bt">' + s.turno + '</span>' : '') + '</td>' +
       '<td><span class="badge bi">▶ ' + s.ingreso + '</span></td>' +
       '<td>' + (s.descanso1 ? '<span class="badge bd">☕ ' + s.descanso1 + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
@@ -1060,20 +1060,20 @@ function renderInforme() {
 
   var totalC  = Object.values(attendance).filter(function(v) { return v === 'present'; }).length;
   var totalA  = Object.values(attendance).filter(function(v) { return v === 'absent'; }).length;
-  var sinM    = enTurno.filter(function(s) { return !attendance[s.nombre + '|' + s.apellido]; }).length;
+  var sinM    = enTurno.filter(function(s) { return !attendance[s.nombre]; }).length;
 
   function makeRows(shifts, showAtt) {
     return shifts.map(function(s) {
-      var aKey = s.nombre + '|' + s.apellido;
+      var aKey = s.nombre;
       var att  = attendance[aKey];
       var iM   = timeToMins(s.ingreso), sM = timeToMins(s.salida);
       var sD   = sM - nowMins;
-      var col  = avColor(s.nombre + s.apellido);
+      var col  = avColor(s.nombre);
       var dotCls = att === 'present' ? 'sdot-g' : att === 'absent' ? 'sdot-r' : nowMins >= iM ? 'sdot-a' : 'sdot-x';
       return '<div class="inf-row" data-akey="' + aKey + '">' +
         '<span class="sdot ' + dotCls + '"></span>' +
-        '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, s.apellido) + '</div>' +
-        '<span class="inf-name">' + s.nombre + (s.apellido ? ' ' + s.apellido : '') + '</span>' +
+        '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, '') + '</div>' +
+        '<span class="inf-name">' + s.nombre + '</span>' +
         (s.turno ? '<span style="font-size:10px;color:var(--text3)">' + s.turno + '</span>' : '') +
         '<span class="inf-time">' + s.ingreso + '→' + s.salida + '</span>' +
         (sD >= 0 && sD <= 60 ? '<span style="font-size:11px;color:var(--red)">' + (sD === 0 ? '¡ahora!' : 'sale en ' + sD + 'min') + '</span>' : '') +
@@ -1126,8 +1126,8 @@ function exportInforme() {
     '',
     'AGENTE,TURNO,INGRESO,DESC1,DESC2,SALIDA,ESTADO',
   ].concat(shifts.map(function(s) {
-    var att = attendance[s.nombre + '|' + s.apellido];
-    return [s.nombre + (s.apellido ? ' ' + s.apellido : ''), s.turno || '—', s.ingreso, s.descanso1 || '—', s.descanso2 || '—', s.salida,
+    var att = attendance[s.nombre];
+    return [s.nombre, s.turno || '—', s.ingreso, s.descanso1 || '—', s.descanso2 || '—', s.salida,
             att === 'present' ? 'PRESENTE' : att === 'absent' ? 'AUSENTE' : 'SIN CONFIRMAR'].join(',');
   })).join('\n');
   dlBlob(new Blob([lines], { type: 'text/csv' }), 'informe-' + today + '.csv');
@@ -1140,7 +1140,7 @@ function refreshDataLists() {
   var nombres = [];
   malla.forEach(function(r) {
     if (r.turno  && turnos.indexOf(r.turno)   < 0) turnos.push(r.turno);
-    var nfull = r.nombre + (r.apellido ? ' ' + r.apellido : '');
+    var nfull = r.nombre;
     if (nfull && nombres.indexOf(nfull) < 0) nombres.push(nfull);
   });
   var dlT = document.getElementById('dl-turnos');
@@ -1170,19 +1170,19 @@ function saveShift() {
 
   if (editKey) {
     var p = editKey.split('|');
-    var idx = malla.findIndex(function(r) { return r.fecha === p[0] && r.nombre === p[1] && r.apellido === p[2]; });
+    var idx = malla.findIndex(function(r) { return r.fecha === p[0] && r.nombre === p[1]; });
     if (idx >= 0) malla[idx] = rec;
   } else {
-    var dup = malla.findIndex(function(r) { return r.fecha === fecha && r.nombre === nombre && r.apellido === apellido; });
+    var dup = malla.findIndex(function(r) { return r.fecha === fecha && r.nombre === nombre; });
     if (dup >= 0) {
-      if (!confirm('Ya existe un turno para ' + nombre + ' ' + apellido + ' el ' + fecha + '. ¿Reemplazar?')) return;
+      if (!confirm('Ya existe un turno para ' + nombre + ' el ' + fecha + '. ¿Reemplazar?')) return;
       malla[dup] = rec;
     } else {
       malla.push(rec);
     }
   }
   saveData('malla_v5', malla);
-  showToast('Turno guardado — ' + nombre + ' ' + apellido + ' · ' + fecha);
+  showToast('Turno guardado — ' + nombre + ' · ' + fecha);
   clearForm();
   mallaDate = fecha;
   showTab('malla');
@@ -1202,25 +1202,25 @@ function clearForm() {
 
 function editShift(key) {
   var p = key.split('|');
-  var s = malla.find(function(r) { return r.fecha === p[0] && r.nombre === p[1] && r.apellido === p[2]; });
+  var s = malla.find(function(r) { return r.fecha === p[0] && r.nombre === p[1]; });
   if (!s) return;
   document.getElementById('f-fecha').value    = s.fecha;
   document.getElementById('f-nombre').value   = s.nombre;
-  document.getElementById('f-apellido').value = s.apellido;
+
   document.getElementById('f-turno').value    = s.turno || '';
   document.getElementById('f-ingreso').value  = s.ingreso;
   document.getElementById('f-desc1').value    = s.descanso1 || '';
   document.getElementById('f-desc2').value    = s.descanso2 || '';
   document.getElementById('f-salida').value   = s.salida;
   document.getElementById('edit-key').value   = key;
-  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + (s.apellido ? ' ' + s.apellido : '');
+  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre;
   showTab('agregar');
 }
 
 function deleteShift(key) {
   var p = key.split('|');
-  if (!confirm('¿Eliminar turno de ' + p[1] + ' ' + p[2] + ' el ' + p[0] + '?')) return;
-  malla = malla.filter(function(r) { return !(r.fecha === p[0] && r.nombre === p[1] && r.apellido === p[2]); });
+  if (!confirm('¿Eliminar turno de ' + p[1] + ' el ' + p[0] + '?')) return;
+  malla = malla.filter(function(r) { return !(r.fecha === p[0] && r.nombre === p[1]); });
   saveData('malla_v5', malla);
   renderMalla();
   showToast('Turno eliminado.');
@@ -1229,8 +1229,7 @@ function deleteShift(key) {
 // ── CARGA MASIVA ──────────────────────────────────────────
 var COL_MAP = {
   fecha:     ['fecha','date','día','dia','day'],
-  nombre:    ['nombre','name','first name','firstname','nombres'],
-  apellido:  ['apellido','apellidos','last name','lastname','surname'],
+  nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name'],
   turno:     ['turno','shift','grupo','group'],
   ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio'],
   descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1'],
@@ -1283,7 +1282,7 @@ function parseRows(rows, hMap) {
     function get(f) { return hMap[f] !== undefined ? String(row[hMap[f]] || '').trim() : ''; }
     var fecha    = normDate(get('fecha'));
     var nombre   = get('nombre');
-    var apellido = get('apellido');
+    var apellido = '';
     var turno    = get('turno');
     var ingreso  = normTime(get('ingreso'));
     var desc1    = normTime(get('descanso1'));
@@ -1292,11 +1291,10 @@ function parseRows(rows, hMap) {
     var errors   = [];
     if (!fecha)    errors.push('falta fecha');
     if (!nombre)   errors.push('falta nombre');
-    if (!apellido) errors.push('falta apellido');
     if (!ingreso)  errors.push('falta ingreso');
     if (!salida)   errors.push('falta salida');
     return { fecha: fecha, nombre: nombre, apellido: apellido, turno: turno, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida, errors: errors, rowNum: idx + 2 };
-  }).filter(function(r) { return r.nombre || r.apellido || r.ingreso || r.fecha; });
+  }).filter(function(r) { return r.nombre || r.ingreso || r.fecha; });
 }
 
 function readFile(file) {
@@ -1344,7 +1342,7 @@ function showPreview(rows) {
   var ags   = [];
   valid.forEach(function(r) {
     if (days.indexOf(r.fecha) < 0) days.push(r.fecha);
-    var ag = r.nombre + '|' + r.apellido;
+    var ag = r.nombre;
     if (ags.indexOf(ag) < 0) ags.push(ag);
   });
   document.getElementById('prev-count').textContent  = rows.length;
@@ -1360,7 +1358,7 @@ function showPreview(rows) {
     return '<tr class="' + (r.errors.length ? 'row-err' : '') + '">' +
       '<td style="color:var(--text3)">' + r.rowNum + '</td>' +
       '<td>' + (r.fecha || '—') + '</td>' +
-      '<td>' + r.nombre + (r.apellido ? ' ' + r.apellido : '') + '</td><td>' + (r.turno || '—') + '</td>' +
+      '<td>' + r.nombre + '</td><td>' + (r.turno || '—') + '</td>' +
       '<td>' + (r.ingreso || '—') + '</td><td>' + (r.descanso1 || '—') + '</td>' +
       '<td>' + (r.descanso2 || '—') + '</td><td>' + (r.salida || '—') + '</td>' +
       '<td>' + (r.errors.length ? '<span style="color:var(--red);font-size:10px">' + r.errors.join(', ') + '</span>' : '<span style="color:var(--green)">✓</span>') + '</td>' +
@@ -1377,14 +1375,14 @@ function showPreview(rows) {
 function confirmImport() {
   var replace  = document.getElementById('chk-replace').checked;
   var toImport = previewData.filter(function(r) { return !r.errors.length; }).map(function(r) {
-    return { fecha: r.fecha, nombre: r.nombre, apellido: r.apellido, turno: r.turno, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
     malla = toImport;
   } else {
     toImport.forEach(function(rec) {
-      var dup = malla.findIndex(function(r) { return r.fecha === rec.fecha && r.nombre === rec.nombre && r.apellido === rec.apellido; });
+      var dup = malla.findIndex(function(r) { return r.fecha === rec.fecha && r.nombre === rec.nombre; });
       if (dup >= 0) malla[dup] = rec; else malla.push(rec);
     });
   }
@@ -1405,7 +1403,7 @@ function resetUpload() {
 }
 
 function downloadTemplate(format) {
-  var headers  = ['fecha','nombre','apellido','turno','ingreso','descanso1','descanso2','salida'];
+  var headers  = ['fecha','nombre','turno','ingreso','descanso1','descanso2','salida'];
   var names    = [['Carlos','López'],['María','García'],['Andrés','Martínez'],['Laura','Rodríguez'],['Juan','Pérez']];
   var shifts   = [['Mañana','06:00','09:00','10:30','14:00'],['Tarde','14:00','17:00','18:30','22:00'],['Noche','22:00','01:00','02:30','06:00']];
   var today    = new Date();
@@ -1415,7 +1413,7 @@ function downloadTemplate(format) {
     var dfmt = pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1) + '/' + dt.getFullYear();
     names.forEach(function(nm, i) {
       var sh = shifts[i % shifts.length];
-      examples.push([dfmt, nm[0], nm[1]].concat(sh));
+      examples.push([dfmt, nm[0] + ' ' + nm[1]].concat(sh));
     });
   }
   if (format === 'csv') {
