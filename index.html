@@ -86,6 +86,29 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .hora-check-count{font-size:11px;color:var(--text3);margin-left:auto}
 .hora-check-bar{height:4px;border-radius:2px;background:var(--accent);margin-top:3px;opacity:.5}
 
+
+/* ── DASH PANELS ── */
+.dash-panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.dash-panel-section{padding:14px 16px}
+.dash-panel-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 16px}
+.dash-section-header{
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid var(--border);
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);
+}
+.dash-section-icon{font-size:14px}
+.dash-section-count{
+  margin-left:auto;min-width:20px;height:20px;
+  border-radius:10px;padding:0 6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:800;font-family:'Courier New',monospace;
+}
+.dash-header-green .dash-section-count{background:var(--gdim);color:var(--green);border:1px solid var(--gb)}
+.dash-header-amber .dash-section-count{background:var(--adim);color:var(--amber);border:1px solid var(--ab)}
+.dash-header-green{color:var(--green)!important}
+.dash-header-amber{color:var(--amber)!important}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -511,14 +534,49 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="coverage-labels" id="hourLabels"></div>
       </div>
       <div class="two-col">
-        <div>
-          <div class="section-label">Alertas activas</div>
-          <div id="alerts-box"><div class="empty">Sin alertas por ahora</div></div>
+
+        <!-- ALERTAS -->
+        <div class="dash-panel">
+          <div class="dash-panel-section">
+            <div class="dash-section-header dash-header-green">
+              <span class="dash-section-icon">🟢</span>
+              <span>Ingresos y salidas</span>
+              <span class="dash-section-count" id="count-alert-is">0</span>
+            </div>
+            <div id="alerts-is"><div class="empty">Sin alertas</div></div>
+          </div>
+          <div class="dash-panel-divider"></div>
+          <div class="dash-panel-section">
+            <div class="dash-section-header dash-header-amber">
+              <span class="dash-section-icon">🟡</span>
+              <span>Descansos</span>
+              <span class="dash-section-count" id="count-alert-d">0</span>
+            </div>
+            <div id="alerts-d"><div class="empty">Sin alertas</div></div>
+          </div>
         </div>
-        <div>
-          <div class="section-label">Próximos eventos</div>
-          <div id="events-box"><div class="empty">Sin eventos próximos</div></div>
+
+        <!-- PRÓXIMOS EVENTOS -->
+        <div class="dash-panel">
+          <div class="dash-panel-section">
+            <div class="dash-section-header dash-header-green">
+              <span class="dash-section-icon">🟢</span>
+              <span>Ingresos y salidas próximos</span>
+              <span class="dash-section-count" id="count-ev-is">0</span>
+            </div>
+            <div id="events-is"><div class="empty">Sin eventos próximos</div></div>
+          </div>
+          <div class="dash-panel-divider"></div>
+          <div class="dash-panel-section">
+            <div class="dash-section-header dash-header-amber">
+              <span class="dash-section-icon">🟡</span>
+              <span>Descansos próximos</span>
+              <span class="dash-section-count" id="count-ev-d">0</span>
+            </div>
+            <div id="events-d"><div class="empty">Sin descansos próximos</div></div>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -924,55 +982,93 @@ function renderCoverage(shifts, nowMins) {
 }
 
 // ── Próximos eventos ──────────────────────────────────────
+function evRow(e, nowMins) {
+  var diff    = e.mins - nowMins;
+  var diffTxt = diff === 0 ? '¡ahora!' : 'en ' + diff + 'min';
+  var tl      = { i: 'Ingreso', s: 'Salida', d: '' };
+  var lbl     = e.label || tl[e.type];
+  return '<div class="ev-row">' +
+    '<span class="ev-time">' + e.time + '</span>' +
+    '<span class="ev-dot dot-' + e.type + '"></span>' +
+    '<span class="ev-name">' + e.name + (lbl ? ' — ' + lbl : '') + '</span>' +
+    (e.turno ? '<span class="ev-pill">' + e.turno + '</span>' : '') +
+    '<span class="ev-diff">' + diffTxt + '</span>' +
+    '</div>';
+}
+
 function renderEvents(shifts, nowMins) {
   var allEv = [];
   shifts.forEach(function(s) {
-    allEv.push({ time: s.ingreso,   mins: timeToMins(s.ingreso),   name: s.nombre, type: 'i', turno: s.turno });
-    allEv.push({ time: s.salida,    mins: timeToMins(s.salida),    name: s.nombre, type: 's', turno: s.turno });
+    allEv.push({ time: s.ingreso, mins: timeToMins(s.ingreso), name: s.nombre, type: 'i', turno: s.turno });
+    allEv.push({ time: s.salida,  mins: timeToMins(s.salida),  name: s.nombre, type: 's', turno: s.turno });
     if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. corto' });
     if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. largo' });
   });
   allEv.sort(function(a, b) { return a.mins - b.mins; });
-  var upcoming = allEv.filter(function(e) { return e.mins >= nowMins; }).slice(0, 10);
+  var upcoming = allEv.filter(function(e) { return e.mins >= nowMins; });
 
-  var box = document.getElementById('events-box');
-  if (!upcoming.length) { box.innerHTML = '<div class="empty">Sin eventos próximos</div>'; return; }
-  var tl = { i: 'Ingreso', s: 'Salida', d: '' };
-  box.innerHTML = upcoming.map(function(e) {
-    var diff    = e.mins - nowMins;
-    var diffTxt = diff === 0 ? '¡ahora!' : 'en ' + diff + 'min';
-    var lbl     = e.label || tl[e.type];
-    return '<div class="ev-row">' +
-      '<span class="ev-time">' + e.time + '</span>' +
-      '<span class="ev-dot dot-' + e.type + '"></span>' +
-      '<span class="ev-name">' + e.name + (lbl ? ' — ' + lbl : '') + '</span>' +
-      (e.turno ? '<span class="ev-pill">' + e.turno + '</span>' : '') +
-      '<span class="ev-diff">' + diffTxt + '</span>' +
-      '</div>';
-  }).join('');
+  // Separar ingresos/salidas vs descansos — máx 8 por sección
+  var evIS = upcoming.filter(function(e) { return e.type !== 'd'; }).slice(0, 8);
+  var evD  = upcoming.filter(function(e) { return e.type === 'd'; }).slice(0, 8);
+
+  var boxIS = document.getElementById('events-is');
+  var boxD  = document.getElementById('events-d');
+  var cntIS = document.getElementById('count-ev-is');
+  var cntD  = document.getElementById('count-ev-d');
+
+  if (cntIS) cntIS.textContent = evIS.length;
+  if (cntD)  cntD.textContent  = evD.length;
+
+  boxIS.innerHTML = evIS.length
+    ? evIS.map(function(e) { return evRow(e, nowMins); }).join('')
+    : '<div class="empty">Sin ingresos o salidas próximas</div>';
+
+  boxD.innerHTML = evD.length
+    ? evD.map(function(e) { return evRow(e, nowMins); }).join('')
+    : '<div class="empty">Sin descansos próximos</div>';
 }
 
 // ── Alertas ───────────────────────────────────────────────
-function renderAlerts() {
-  var box = document.getElementById('alerts-box');
-  document.getElementById('s-alertas').textContent = activeAlerts.length;
-  if (!activeAlerts.length) { box.innerHTML = '<div class="empty">Sin alertas por ahora</div>'; return; }
-  box.innerHTML = activeAlerts.map(function(a, idx) {
-    var cls  = { ingreso: 'alert-i', descanso: 'alert-d', salida: 'alert-s' }[a.type];
-    var icon = { ingreso: '🟢', descanso: '🟡', salida: '🔴' }[a.type];
-    return '<div class="alert-box ' + cls + '">' +
-      '<span class="a-icon">' + icon + '</span>' +
-      '<div class="a-content"><div class="a-title">' + a.title + '</div><div class="a-body">' + a.body + '</div></div>' +
-      '<button class="a-dismiss" data-idx="' + idx + '">✕</button>' +
-      '</div>';
-  }).join('');
+function alertHTML(a, idx) {
+  var cls  = { ingreso: 'alert-i', descanso: 'alert-d', salida: 'alert-s' }[a.type];
+  var icon = { ingreso: '🟢', descanso: '🟡', salida: '🔴' }[a.type];
+  return '<div class="alert-box ' + cls + '">' +
+    '<span class="a-icon">' + icon + '</span>' +
+    '<div class="a-content"><div class="a-title">' + a.title + '</div><div class="a-body">' + a.body + '</div></div>' +
+    '<button class="a-dismiss" data-idx="' + idx + '">✕</button>' +
+    '</div>';
+}
 
-  box.querySelectorAll('.a-dismiss').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var idx = parseInt(btn.getAttribute('data-idx'));
-      activeAlerts.splice(idx, 1);
-      renderAlerts();
-      renderDashboard();
+function renderAlerts() {
+  document.getElementById('s-alertas').textContent = activeAlerts.length;
+
+  var alertsIS = activeAlerts.filter(function(a) { return a.type !== 'descanso'; });
+  var alertsD  = activeAlerts.filter(function(a) { return a.type === 'descanso'; });
+
+  var boxIS = document.getElementById('alerts-is');
+  var boxD  = document.getElementById('alerts-d');
+  var cntIS = document.getElementById('count-alert-is');
+  var cntD  = document.getElementById('count-alert-d');
+
+  if (cntIS) cntIS.textContent = alertsIS.length;
+  if (cntD)  cntD.textContent  = alertsD.length;
+
+  boxIS.innerHTML = alertsIS.length
+    ? alertsIS.map(function(a) { return alertHTML(a, activeAlerts.indexOf(a)); }).join('')
+    : '<div class="empty">Sin alertas</div>';
+
+  boxD.innerHTML = alertsD.length
+    ? alertsD.map(function(a) { return alertHTML(a, activeAlerts.indexOf(a)); }).join('')
+    : '<div class="empty">Sin alertas</div>';
+
+  // Bind dismiss buttons in both boxes
+  [boxIS, boxD].forEach(function(box) {
+    box.querySelectorAll('.a-dismiss').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var idx = parseInt(btn.getAttribute('data-idx'));
+        activeAlerts.splice(idx, 1);
+        renderAlerts();
+        renderDashboard();
     });
   });
 }
