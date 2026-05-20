@@ -20,6 +20,48 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
   --r:12px;--rs:8px;--rx:6px;
 }
 
+
+/* ── FILTROS MALLA ── */
+.filtros-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;padding:12px 16px;background:var(--bg1);border:1px solid var(--border);border-radius:var(--r)}
+.filtro-group{display:flex;align-items:center;gap:10px}
+.filtro-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);white-space:nowrap}
+.chips-row{display:flex;gap:6px;flex-wrap:wrap}
+.chip{
+  padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;
+  border:1px solid var(--border2);background:transparent;color:var(--text2);
+  cursor:pointer;transition:all .15s;font-family:inherit;white-space:nowrap;
+}
+.chip:hover{border-color:var(--accent);color:#c4b5fd;background:var(--glow)}
+.chip.active{
+  background:linear-gradient(135deg,rgba(124,108,245,0.3),rgba(124,108,245,0.15));
+  border-color:rgba(124,108,245,0.5);color:#c4b5fd;
+  box-shadow:0 0 10px rgba(124,108,245,0.2);
+}
+.chip.turno-manana.active{background:rgba(34,212,126,0.15);border-color:var(--gb);color:var(--green)}
+.chip.turno-tarde.active{background:rgba(245,166,35,0.15);border-color:var(--ab);color:var(--amber)}
+.chip.turno-noche.active{background:rgba(124,108,245,0.2);border-color:rgba(124,108,245,0.4);color:#a78bfa}
+.hora-range-wrap{display:flex;align-items:center;gap:8px}
+.hora-val{font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:var(--text);min-width:38px;text-align:center}
+.hora-slider-wrap{position:relative;width:160px;height:20px}
+.hora-slider{
+  position:absolute;width:100%;height:4px;top:50%;transform:translateY(-50%);
+  -webkit-appearance:none;appearance:none;
+  background:transparent;outline:none;cursor:pointer;
+}
+.hora-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:16px;height:16px;border-radius:50%;
+  background:var(--accent);border:2px solid #fff;cursor:pointer;
+  box-shadow:0 0 6px rgba(124,108,245,0.5);
+}
+.hora-slider-track{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:100%;height:4px;background:var(--bg3);border-radius:2px;pointer-events:none;
+}
+.hora-slider-fill{
+  position:absolute;top:50%;transform:translateY(-50%);
+  height:4px;background:linear-gradient(90deg,var(--accent),#a78bfa);border-radius:2px;pointer-events:none;
+}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -468,9 +510,24 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <button class="day-arrow" id="btn-next-day">&#8250;</button>
         <button class="btn-ghost btn-sm" id="btn-today">Hoy</button>
         <input type="date" id="datePicker" class="date-input">
-        <select id="filtroTurno" class="select-sm">
-          <option value="">Todos los turnos</option>
-        </select>
+      </div>
+      <div class="filtros-wrap">
+        <div class="filtro-group">
+          <span class="filtro-label">Turno</span>
+          <div id="filtroTurnoChips" class="chips-row"></div>
+        </div>
+        <div class="filtro-group">
+          <span class="filtro-label">Hora activa</span>
+          <div class="hora-range-wrap">
+            <span class="hora-val" id="horaDesdeVal">00:00</span>
+            <div class="hora-slider-wrap">
+              <input type="range" id="horaDesde" min="0" max="23" value="0" class="hora-slider">
+              <input type="range" id="horaHasta" min="0" max="23" value="23" class="hora-slider hora-slider-top">
+            </div>
+            <span class="hora-val" id="horaHastaVal">23:00</span>
+            <button class="btn-ghost btn-sm" id="btn-reset-hora" style="margin-left:8px">Todos</button>
+          </div>
+        </div>
         <span class="count-lbl" id="mallaCount"></span>
       </div>
       <div class="table-wrap">
@@ -957,6 +1014,23 @@ function sendNotif(title, body) {
 }
 
 // ── Malla ─────────────────────────────────────────────────
+function updateHoraFill() {
+  var desde  = parseInt(document.getElementById('horaDesde')?.value || 0);
+  var hasta  = parseInt(document.getElementById('horaHasta')?.value || 23);
+  var fill   = document.getElementById('horaSliderFill');
+  var dVal   = document.getElementById('horaDesdeVal');
+  var hVal   = document.getElementById('horaHastaVal');
+  if (dVal) dVal.textContent = pad(desde) + ':00';
+  if (hVal) hVal.textContent = pad(hasta) + ':00';
+  if (fill) {
+    var pct1 = (desde / 23) * 100;
+    var pct2 = (hasta / 23) * 100;
+    fill.style.left  = pct1 + '%';
+    fill.style.width = (pct2 - pct1) + '%';
+  }
+}
+
+
 function renderMalla() {
   var iso = mallaDate;
   var dd  = document.getElementById('dayDisplay');
@@ -968,15 +1042,40 @@ function renderMalla() {
   var turnos = [];
   malla.forEach(function(r) { if (r.turno && turnos.indexOf(r.turno) < 0) turnos.push(r.turno); });
   turnos.sort();
-  var sel = document.getElementById('filtroTurno');
-  if (sel) {
-    var cur = sel.value;
-    sel.innerHTML = '<option value="">Todos los turnos</option>' +
-      turnos.map(function(t) { return '<option value="' + t + '"' + (t === cur ? ' selected' : '') + '>' + t + '</option>'; }).join('');
+  var chipsEl = document.getElementById('filtroTurnoChips');
+  if (chipsEl) {
+    var cur = window._filtroTurno || '';
+    var turnoColors = { 'Mañana':'turno-manana','Tarde':'turno-tarde','Noche':'turno-noche' };
+    chipsEl.innerHTML = '<button class="chip' + (!cur ? ' active' : '') + '" data-turno="">Todos</button>' +
+      turnos.map(function(t) {
+        var cls = turnoColors[t] || '';
+        return '<button class="chip ' + cls + (cur === t ? ' active' : '') + '" data-turno="' + t + '">' + t + '</button>';
+      }).join('');
+    chipsEl.querySelectorAll('.chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        window._filtroTurno = chip.getAttribute('data-turno');
+        renderMalla();
+      });
+    });
   }
+  // Update hora slider fill
+  updateHoraFill();
 
-  var filtro = sel ? sel.value : '';
-  var dayS   = shiftsForDate(iso).filter(function(s) { return !filtro || s.turno === filtro; });
+  var filtroTurno = window._filtroTurno || '';
+  var horaDesde   = parseInt(document.getElementById('horaDesde')?.value || 0);
+  var horaHasta   = parseInt(document.getElementById('horaHasta')?.value || 23);
+
+  var dayS = shiftsForDate(iso).filter(function(s) {
+    // Filtro turno
+    if (filtroTurno && s.turno !== filtroTurno) return false;
+    // Filtro hora: el agente debe tener turno activo en algún momento del rango
+    var iM = timeToMins(s.ingreso);
+    var sM = timeToMins(s.salida);
+    var rangeStart = horaDesde * 60;
+    var rangeEnd   = (horaHasta + 1) * 60;
+    if (iM < 0 || sM < 0) return true;
+    return iM < rangeEnd && sM > rangeStart;
+  });
   dayS.sort(function(a, b) { return timeToMins(a.ingreso) - timeToMins(b.ingreso); });
 
   var cnt = document.getElementById('mallaCount');
@@ -1539,7 +1638,26 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-today').addEventListener('click',    function() { mallaDate = todayISO(); renderMalla(); });
   document.getElementById('btn-add-shift').addEventListener('click',function() { showTab('agregar'); });
   document.getElementById('datePicker').addEventListener('change',  function() { if (this.value) { mallaDate = this.value; renderMalla(); } });
-  document.getElementById('filtroTurno').addEventListener('change', function() { renderMalla(); });
+  // Hora sliders
+  window._filtroTurno = '';
+  var sliderWrap = document.querySelector('.hora-slider-wrap');
+  if (sliderWrap) {
+    var track = document.createElement('div'); track.className = 'hora-slider-track'; sliderWrap.insertBefore(track, sliderWrap.firstChild);
+    var fill  = document.createElement('div'); fill.className = 'hora-slider-fill'; fill.id = 'horaSliderFill'; sliderWrap.insertBefore(fill, sliderWrap.firstChild);
+  }
+  var slDesde = document.getElementById('horaDesde');
+  var slHasta = document.getElementById('horaHasta');
+  if (slDesde) slDesde.addEventListener('input', function() {
+    if (parseInt(slDesde.value) > parseInt(slHasta.value)) slHasta.value = slDesde.value;
+    updateHoraFill(); renderMalla();
+  });
+  if (slHasta) slHasta.addEventListener('input', function() {
+    if (parseInt(slHasta.value) < parseInt(slDesde.value)) slDesde.value = slHasta.value;
+    updateHoraFill(); renderMalla();
+  });
+  document.getElementById('btn-reset-hora').addEventListener('click', function() {
+    slDesde.value = 0; slHasta.value = 23; updateHoraFill(); renderMalla();
+  });
 
   // Informe
   document.getElementById('btn-export-informe').addEventListener('click', exportInforme);
