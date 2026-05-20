@@ -40,27 +40,51 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .chip.turno-manana.active{background:rgba(34,212,126,0.15);border-color:var(--gb);color:var(--green)}
 .chip.turno-tarde.active{background:rgba(245,166,35,0.15);border-color:var(--ab);color:var(--amber)}
 .chip.turno-noche.active{background:rgba(124,108,245,0.2);border-color:rgba(124,108,245,0.4);color:#a78bfa}
-.hora-range-wrap{display:flex;align-items:center;gap:8px}
-.hora-val{font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:var(--text);min-width:38px;text-align:center}
-.hora-slider-wrap{position:relative;width:160px;height:20px}
-.hora-slider{
-  position:absolute;width:100%;height:4px;top:50%;transform:translateY(-50%);
-  -webkit-appearance:none;appearance:none;
-  background:transparent;outline:none;cursor:pointer;
+.hora-dropdown-wrap{position:relative}
+.hora-dropdown-btn{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 14px;background:var(--bg2);border:1px solid var(--border2);
+  border-radius:var(--rs);color:var(--text2);font-size:12px;font-weight:600;
+  cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;min-width:170px;
+  justify-content:space-between;
 }
-.hora-slider::-webkit-slider-thumb{
-  -webkit-appearance:none;width:16px;height:16px;border-radius:50%;
-  background:var(--accent);border:2px solid #fff;cursor:pointer;
-  box-shadow:0 0 6px rgba(124,108,245,0.5);
+.hora-dropdown-btn:hover{border-color:var(--accent);color:var(--text)}
+.hora-dropdown-btn.open{border-color:var(--accent);color:var(--text);background:var(--bg3)}
+.dropdown-arrow{font-size:11px;color:var(--text3);transition:transform .15s}
+.hora-dropdown-btn.open .dropdown-arrow{transform:rotate(180deg)}
+.hora-dropdown-panel{
+  position:absolute;top:calc(100% + 6px);left:0;z-index:50;
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:var(--r);padding:10px;min-width:220px;
+  box-shadow:0 8px 32px rgba(0,0,0,.5);
+  animation:fi .15s ease;
 }
-.hora-slider-track{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:100%;height:4px;background:var(--bg3);border-radius:2px;pointer-events:none;
+.hora-dropdown-header{display:flex;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.hora-sel-all,.hora-sel-none{
+  flex:1;padding:5px;font-size:11px;font-weight:700;border-radius:var(--rx);
+  cursor:pointer;font-family:inherit;transition:all .15s;border:1px solid var(--border2);
 }
-.hora-slider-fill{
-  position:absolute;top:50%;transform:translateY(-50%);
-  height:4px;background:linear-gradient(90deg,var(--accent),#a78bfa);border-radius:2px;pointer-events:none;
+.hora-sel-all{background:var(--gdim);color:var(--green);border-color:var(--gb)}
+.hora-sel-all:hover{background:rgba(34,212,126,0.2)}
+.hora-sel-none{background:var(--rdim);color:var(--red);border-color:var(--rb)}
+.hora-sel-none:hover{background:rgba(240,79,79,0.2)}
+.hora-checkbox-list{display:flex;flex-direction:column;gap:4px;max-height:240px;overflow-y:auto}
+.hora-check-item{
+  display:flex;align-items:center;gap:10px;padding:7px 10px;
+  border-radius:var(--rs);cursor:pointer;transition:background .12s;
+  border:1px solid transparent;
 }
+.hora-check-item:hover{background:var(--bg3);border-color:var(--border)}
+.hora-check-item.checked{background:var(--glow);border-color:rgba(124,108,245,0.25)}
+.hora-check-box{
+  width:16px;height:16px;border-radius:4px;border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-size:10px;transition:all .12s;
+}
+.hora-check-item.checked .hora-check-box{background:var(--accent);border-color:var(--accent);color:#fff}
+.hora-check-time{font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--text)}
+.hora-check-count{font-size:11px;color:var(--text3);margin-left:auto}
+.hora-check-bar{height:4px;border-radius:2px;background:var(--accent);margin-top:3px;opacity:.5}
 
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
@@ -517,15 +541,19 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           <div id="filtroTurnoChips" class="chips-row"></div>
         </div>
         <div class="filtro-group">
-          <span class="filtro-label">Hora activa</span>
-          <div class="hora-range-wrap">
-            <span class="hora-val" id="horaDesdeVal">00:00</span>
-            <div class="hora-slider-wrap">
-              <input type="range" id="horaDesde" min="0" max="23" value="0" class="hora-slider">
-              <input type="range" id="horaHasta" min="0" max="23" value="23" class="hora-slider hora-slider-top">
+          <span class="filtro-label">Hora de ingreso</span>
+          <div class="hora-dropdown-wrap">
+            <button class="hora-dropdown-btn" id="horaDropdownBtn">
+              <span id="horaDropdownLabel">Todas las horas</span>
+              <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="hora-dropdown-panel" id="horaDropdownPanel" style="display:none">
+              <div class="hora-dropdown-header">
+                <button class="hora-sel-all" id="btnSelAll">✓ Todos</button>
+                <button class="hora-sel-none" id="btnSelNone">✕ Ninguno</button>
+              </div>
+              <div id="horaCheckboxList" class="hora-checkbox-list"></div>
             </div>
-            <span class="hora-val" id="horaHastaVal">23:00</span>
-            <button class="btn-ghost btn-sm" id="btn-reset-hora" style="margin-left:8px">Todos</button>
           </div>
         </div>
         <span class="count-lbl" id="mallaCount"></span>
@@ -1014,20 +1042,14 @@ function sendNotif(title, body) {
 }
 
 // ── Malla ─────────────────────────────────────────────────
-function updateHoraFill() {
-  var desde  = parseInt(document.getElementById('horaDesde')?.value || 0);
-  var hasta  = parseInt(document.getElementById('horaHasta')?.value || 23);
-  var fill   = document.getElementById('horaSliderFill');
-  var dVal   = document.getElementById('horaDesdeVal');
-  var hVal   = document.getElementById('horaHastaVal');
-  if (dVal) dVal.textContent = pad(desde) + ':00';
-  if (hVal) hVal.textContent = pad(hasta) + ':00';
-  if (fill) {
-    var pct1 = (desde / 23) * 100;
-    var pct2 = (hasta / 23) * 100;
-    fill.style.left  = pct1 + '%';
-    fill.style.width = (pct2 - pct1) + '%';
-  }
+function updateHoraLabel() {
+  var lbl = document.getElementById('horaDropdownLabel');
+  if (!lbl) return;
+  var fh = window._filtroHoras;
+  if (!fh || fh.size === 0) { lbl.textContent = 'Todas las horas'; return; }
+  var arr = Array.from(fh).sort();
+  if (arr.length === 1) lbl.textContent = arr[0];
+  else lbl.textContent = arr.length + ' horas seleccionadas';
 }
 
 
@@ -1058,23 +1080,53 @@ function renderMalla() {
       });
     });
   }
-  // Update hora slider fill
-  updateHoraFill();
 
-  var filtroTurno = window._filtroTurno || '';
-  var horaDesde   = parseInt(document.getElementById('horaDesde')?.value || 0);
-  var horaHasta   = parseInt(document.getElementById('horaHasta')?.value || 23);
+  // Rebuild hora dropdown — horas únicas de ingreso del día
+  var allDayShifts = shiftsForDate(iso);
+  var horasUnicas = [];
+  allDayShifts.forEach(function(s) {
+    if (s.ingreso && horasUnicas.indexOf(s.ingreso) < 0) horasUnicas.push(s.ingreso);
+  });
+  horasUnicas.sort();
+  var filtroH = window._filtroHoras;
+  var listEl  = document.getElementById('horaCheckboxList');
+  if (listEl && horasUnicas.length) {
+    listEl.innerHTML = horasUnicas.map(function(h) {
+      var cnt     = allDayShifts.filter(function(s) { return s.ingreso === h; }).length;
+      var maxCnt  = Math.max.apply(null, horasUnicas.map(function(hh) { return allDayShifts.filter(function(s) { return s.ingreso === hh; }).length; }));
+      var barPct  = Math.round((cnt / maxCnt) * 100);
+      var checked = !filtroH || filtroH.has(h);
+      return '<div class="hora-check-item' + (checked ? ' checked' : '') + '" data-hora="' + h + '">' +
+        '<div class="hora-check-box">' + (checked ? '✓' : '') + '</div>' +
+        '<div style="flex:1">' +
+          '<div class="hora-check-time">' + h + '</div>' +
+          '<div class="hora-check-bar" style="width:' + barPct + '%"></div>' +
+        '</div>' +
+        '<span class="hora-check-count">' + cnt + ' agente' + (cnt !== 1 ? 's' : '') + '</span>' +
+        '</div>';
+    }).join('');
+
+    listEl.querySelectorAll('.hora-check-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        var h = item.getAttribute('data-hora');
+        if (!window._filtroHoras) window._filtroHoras = new Set(horasUnicas);
+        if (window._filtroHoras.has(h)) window._filtroHoras.delete(h);
+        else window._filtroHoras.add(h);
+        if (window._filtroHoras.size === horasUnicas.length) window._filtroHoras = null;
+        updateHoraLabel();
+        renderMalla();
+      });
+    });
+  }
+  updateHoraLabel();
+
+  var filtroTurno  = window._filtroTurno  || '';
+  var filtroHoras  = window._filtroHoras;  // Set o null
 
   var dayS = shiftsForDate(iso).filter(function(s) {
-    // Filtro turno
     if (filtroTurno && s.turno !== filtroTurno) return false;
-    // Filtro hora: el agente debe tener turno activo en algún momento del rango
-    var iM = timeToMins(s.ingreso);
-    var sM = timeToMins(s.salida);
-    var rangeStart = horaDesde * 60;
-    var rangeEnd   = (horaHasta + 1) * 60;
-    if (iM < 0 || sM < 0) return true;
-    return iM < rangeEnd && sM > rangeStart;
+    if (filtroHoras && filtroHoras.size > 0 && !filtroHoras.has(s.ingreso)) return false;
+    return true;
   });
   dayS.sort(function(a, b) { return timeToMins(a.ingreso) - timeToMins(b.ingreso); });
 
@@ -1638,25 +1690,30 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-today').addEventListener('click',    function() { mallaDate = todayISO(); renderMalla(); });
   document.getElementById('btn-add-shift').addEventListener('click',function() { showTab('agregar'); });
   document.getElementById('datePicker').addEventListener('change',  function() { if (this.value) { mallaDate = this.value; renderMalla(); } });
-  // Hora sliders
+  // Hora dropdown
   window._filtroTurno = '';
-  var sliderWrap = document.querySelector('.hora-slider-wrap');
-  if (sliderWrap) {
-    var track = document.createElement('div'); track.className = 'hora-slider-track'; sliderWrap.insertBefore(track, sliderWrap.firstChild);
-    var fill  = document.createElement('div'); fill.className = 'hora-slider-fill'; fill.id = 'horaSliderFill'; sliderWrap.insertBefore(fill, sliderWrap.firstChild);
+  window._filtroHoras = null;
+  var dropBtn   = document.getElementById('horaDropdownBtn');
+  var dropPanel = document.getElementById('horaDropdownPanel');
+  if (dropBtn) {
+    dropBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = dropPanel.style.display !== 'none';
+      dropPanel.style.display = open ? 'none' : 'block';
+      dropBtn.classList.toggle('open', !open);
+    });
   }
-  var slDesde = document.getElementById('horaDesde');
-  var slHasta = document.getElementById('horaHasta');
-  if (slDesde) slDesde.addEventListener('input', function() {
-    if (parseInt(slDesde.value) > parseInt(slHasta.value)) slHasta.value = slDesde.value;
-    updateHoraFill(); renderMalla();
+  document.addEventListener('click', function(e) {
+    if (dropPanel && !dropPanel.contains(e.target) && e.target !== dropBtn) {
+      dropPanel.style.display = 'none';
+      if (dropBtn) dropBtn.classList.remove('open');
+    }
   });
-  if (slHasta) slHasta.addEventListener('input', function() {
-    if (parseInt(slHasta.value) < parseInt(slDesde.value)) slDesde.value = slHasta.value;
-    updateHoraFill(); renderMalla();
+  document.getElementById('btnSelAll').addEventListener('click', function() {
+    window._filtroHoras = null; updateHoraLabel(); renderMalla();
   });
-  document.getElementById('btn-reset-hora').addEventListener('click', function() {
-    slDesde.value = 0; slHasta.value = 23; updateHoraFill(); renderMalla();
+  document.getElementById('btnSelNone').addEventListener('click', function() {
+    window._filtroHoras = new Set(); updateHoraLabel(); renderMalla();
   });
 
   // Informe
