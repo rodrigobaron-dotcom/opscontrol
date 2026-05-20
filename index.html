@@ -511,7 +511,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
             </div>
             <div class="format-hint">
               <strong>Columnas:</strong><br>
-              <code>fecha · nombre · apellido · turno · ingreso · descanso1 · descanso2 · salida</code><br><br>
+              <code>fecha · nombre · turno · ingreso · descanso1 · descanso2 · salida</code><br><br>
               <strong>Ejemplo:</strong><br>
               <code>09/05/2025 · Carlos · López · Mañana · 06:00 · 09:00 · 10:30 · 14:00</code><br>
               <code>10/05/2025 · Carlos · López · Tarde · 14:00 · 17:00 · 18:30 · 22:00</code>
@@ -543,7 +543,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="table-wrap" style="max-height:320px;overflow-y:auto;margin-bottom:12px">
           <table class="data-table">
             <thead>
-              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Apellido</th><th>Turno</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
+              <tr><th>#</th><th>Fecha</th><th>Nombre completo</th><th>Turno</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
             </thead>
             <tbody id="prev-body"></tbody>
           </table>
@@ -577,14 +577,11 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">Nombre</label>
-            <input type="text" id="f-nombre" placeholder="Ej: Carlos" list="dl-nombres">
+          <div class="form-group" style="grid-column:1/-1">
+            <label class="form-label">Nombre completo</label>
+            <input type="text" id="f-nombre" placeholder="Ej: Carlos López" list="dl-nombres">
             <datalist id="dl-nombres"></datalist>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Apellido</label>
-            <input type="text" id="f-apellido" placeholder="Ej: López">
+            <input type="hidden" id="f-apellido" value="">
           </div>
         </div>
         <div class="form-row">
@@ -727,7 +724,9 @@ function avColor(name) {
   return AV[h];
 }
 function initials(n, a) {
-  return (n[0] || '').toUpperCase() + (a[0] || '').toUpperCase();
+  if (a) return (n[0] || '').toUpperCase() + (a[0] || '').toUpperCase();
+  var parts = n.trim().split(' ');
+  return (parts[0]?.[0] || '').toUpperCase() + (parts[1]?.[0] || '').toUpperCase();
 }
 
 // ── Reloj ─────────────────────────────────────────────────
@@ -794,7 +793,7 @@ function renderCoverage(shifts, nowMins) {
     if (iM < 0 || sM < 0) return;
     for (var h = 0; h < 24; h++) {
       if (iM < (h + 1) * 60 && sM > h * 60) {
-        hourMap[h].push(s.nombre + ' ' + s.apellido);
+        hourMap[h].push(s.nombre + (s.apellido ? ' ' + s.apellido : ''));
       }
     }
   });
@@ -843,10 +842,10 @@ function renderCoverage(shifts, nowMins) {
 function renderEvents(shifts, nowMins) {
   var allEv = [];
   shifts.forEach(function(s) {
-    allEv.push({ time: s.ingreso,   mins: timeToMins(s.ingreso),   name: s.nombre + ' ' + s.apellido, type: 'i', turno: s.turno });
-    allEv.push({ time: s.salida,    mins: timeToMins(s.salida),    name: s.nombre + ' ' + s.apellido, type: 's', turno: s.turno });
-    if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre + ' ' + s.apellido, type: 'd', turno: s.turno, label: 'Desc. corto' });
-    if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre + ' ' + s.apellido, type: 'd', turno: s.turno, label: 'Desc. largo' });
+    allEv.push({ time: s.ingreso,   mins: timeToMins(s.ingreso),   name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'i', turno: s.turno });
+    allEv.push({ time: s.salida,    mins: timeToMins(s.salida),    name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 's', turno: s.turno });
+    if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'd', turno: s.turno, label: 'Desc. corto' });
+    if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre + (s.apellido ? ' ' + s.apellido : ''), type: 'd', turno: s.turno, label: 'Desc. largo' });
   });
   allEv.sort(function(a, b) { return a.mins - b.mins; });
   var upcoming = allEv.filter(function(e) { return e.mins >= nowMins; }).slice(0, 10);
@@ -906,7 +905,7 @@ function checkAlerts() {
   var fkey    = 'fired_' + todayKey();
 
   shiftsForDate(today).forEach(function(s) {
-    var fn = s.nombre + ' ' + s.apellido;
+    var fn = s.nombre + (s.apellido ? ' ' + s.apellido : '');
     var tn = s.turno ? ' (' + s.turno + ')' : '';
 
     function chk(mins, diff, key, type, title, msg) {
@@ -1024,7 +1023,7 @@ function renderMalla() {
     return '<tr class="' + rowCls + '" data-key="' + key + '">' +
       '<td><div style="display:flex;align-items:center;gap:8px">' +
         '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, s.apellido) + '</div>' +
-        '<strong>' + s.nombre + ' ' + s.apellido + '</strong></div></td>' +
+        '<strong>' + s.nombre + (s.apellido ? ' ' + s.apellido : '') + '</strong></div></td>' +
       '<td>' + (s.turno ? '<span class="badge bt">' + s.turno + '</span>' : '') + '</td>' +
       '<td><span class="badge bi">▶ ' + s.ingreso + '</span></td>' +
       '<td>' + (s.descanso1 ? '<span class="badge bd">☕ ' + s.descanso1 + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
@@ -1074,7 +1073,7 @@ function renderInforme() {
       return '<div class="inf-row" data-akey="' + aKey + '">' +
         '<span class="sdot ' + dotCls + '"></span>' +
         '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, s.apellido) + '</div>' +
-        '<span class="inf-name">' + s.nombre + ' ' + s.apellido + '</span>' +
+        '<span class="inf-name">' + s.nombre + (s.apellido ? ' ' + s.apellido : '') + '</span>' +
         (s.turno ? '<span style="font-size:10px;color:var(--text3)">' + s.turno + '</span>' : '') +
         '<span class="inf-time">' + s.ingreso + '→' + s.salida + '</span>' +
         (sD >= 0 && sD <= 60 ? '<span style="font-size:11px;color:var(--red)">' + (sD === 0 ? '¡ahora!' : 'sale en ' + sD + 'min') + '</span>' : '') +
@@ -1128,7 +1127,7 @@ function exportInforme() {
     'AGENTE,TURNO,INGRESO,DESC1,DESC2,SALIDA,ESTADO',
   ].concat(shifts.map(function(s) {
     var att = attendance[s.nombre + '|' + s.apellido];
-    return [s.nombre + ' ' + s.apellido, s.turno || '—', s.ingreso, s.descanso1 || '—', s.descanso2 || '—', s.salida,
+    return [s.nombre + (s.apellido ? ' ' + s.apellido : ''), s.turno || '—', s.ingreso, s.descanso1 || '—', s.descanso2 || '—', s.salida,
             att === 'present' ? 'PRESENTE' : att === 'absent' ? 'AUSENTE' : 'SIN CONFIRMAR'].join(',');
   })).join('\n');
   dlBlob(new Blob([lines], { type: 'text/csv' }), 'informe-' + today + '.csv');
@@ -1141,7 +1140,8 @@ function refreshDataLists() {
   var nombres = [];
   malla.forEach(function(r) {
     if (r.turno  && turnos.indexOf(r.turno)   < 0) turnos.push(r.turno);
-    if (r.nombre && nombres.indexOf(r.nombre) < 0) nombres.push(r.nombre);
+    var nfull = r.nombre + (r.apellido ? ' ' + r.apellido : '');
+    if (nfull && nombres.indexOf(nfull) < 0) nombres.push(nfull);
   });
   var dlT = document.getElementById('dl-turnos');
   var dlN = document.getElementById('dl-nombres');
@@ -1154,7 +1154,7 @@ function refreshDataLists() {
 function saveShift() {
   var fecha    = document.getElementById('f-fecha').value;
   var nombre   = document.getElementById('f-nombre').value.trim();
-  var apellido = document.getElementById('f-apellido').value.trim();
+  var apellido = '';
   var turno    = document.getElementById('f-turno').value.trim();
   var ingreso  = document.getElementById('f-ingreso').value;
   var desc1    = document.getElementById('f-desc1').value;
@@ -1162,8 +1162,8 @@ function saveShift() {
   var salida   = document.getElementById('f-salida').value;
   var editKey  = document.getElementById('edit-key').value;
 
-  if (!fecha || !nombre || !apellido || !ingreso || !salida) {
-    showToast('Completa fecha, nombre, ingreso y salida.');
+  if (!fecha || !nombre || !ingreso || !salida) {
+    showToast('Completa fecha, nombre completo, ingreso y salida.');
     return;
   }
   var rec = { fecha: fecha, nombre: nombre, apellido: apellido, turno: turno, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
@@ -1191,7 +1191,6 @@ function saveShift() {
 function clearForm() {
   document.getElementById('f-fecha').value    = todayISO();
   document.getElementById('f-nombre').value   = '';
-  document.getElementById('f-apellido').value = '';
   document.getElementById('f-turno').value    = '';
   document.getElementById('f-ingreso').value  = '08:00';
   document.getElementById('f-desc1').value    = '10:00';
@@ -1214,7 +1213,7 @@ function editShift(key) {
   document.getElementById('f-desc2').value    = s.descanso2 || '';
   document.getElementById('f-salida').value   = s.salida;
   document.getElementById('edit-key').value   = key;
-  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + ' ' + s.apellido;
+  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + (s.apellido ? ' ' + s.apellido : '');
   showTab('agregar');
 }
 
@@ -1361,7 +1360,7 @@ function showPreview(rows) {
     return '<tr class="' + (r.errors.length ? 'row-err' : '') + '">' +
       '<td style="color:var(--text3)">' + r.rowNum + '</td>' +
       '<td>' + (r.fecha || '—') + '</td>' +
-      '<td>' + r.nombre + '</td><td>' + r.apellido + '</td><td>' + (r.turno || '—') + '</td>' +
+      '<td>' + r.nombre + (r.apellido ? ' ' + r.apellido : '') + '</td><td>' + (r.turno || '—') + '</td>' +
       '<td>' + (r.ingreso || '—') + '</td><td>' + (r.descanso1 || '—') + '</td>' +
       '<td>' + (r.descanso2 || '—') + '</td><td>' + (r.salida || '—') + '</td>' +
       '<td>' + (r.errors.length ? '<span style="color:var(--red);font-size:10px">' + r.errors.join(', ') + '</span>' : '<span style="color:var(--green)">✓</span>') + '</td>' +
