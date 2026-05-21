@@ -109,6 +109,86 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .dash-header-green{color:var(--green)!important}
 .dash-header-amber{color:var(--amber)!important}
 
+
+/* ── CONTROL DE MANDO ── */
+.control-resumen{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:22px;
+}
+.resumen-card{
+  background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);
+  padding:14px 16px;display:flex;align-items:center;gap:12px;
+  transition:border-color .2s;
+}
+.resumen-card:hover{border-color:var(--border2)}
+.resumen-icon{font-size:22px}
+.resumen-num{font-size:24px;font-weight:800;font-family:'Courier New',monospace;line-height:1}
+.resumen-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+
+.cola-section{margin-bottom:20px}
+.cola-header{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 16px;border-radius:var(--r) var(--r) 0 0;
+  background:linear-gradient(135deg,var(--bg2),var(--bg3));
+  border:1px solid var(--border2);border-bottom:none;
+}
+.cola-nombre{font-size:14px;font-weight:700;color:var(--text)}
+.cola-count{font-size:11px;color:var(--text3);margin-left:auto}
+.cola-mini-stats{display:flex;gap:8px}
+.cola-mini-stat{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.cms-c{background:var(--gdim);color:var(--green);border:1px solid var(--gb)}
+.cms-p{background:rgba(79,168,240,0.1);color:var(--blue);border:1px solid rgba(79,168,240,.3)}
+.cms-a{background:var(--rdim);color:var(--red);border:1px solid var(--rb)}
+
+.agentes-cola-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;
+  padding:12px;border:1px solid var(--border2);border-top:none;
+  border-radius:0 0 var(--r) var(--r);background:var(--bg1);
+}
+
+.agente-estado-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);
+  padding:11px 13px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;
+}
+.agente-estado-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px}
+.agente-estado-card:hover{border-color:var(--border2);transform:translateY(-1px)}
+
+.aec-conectado::before{background:var(--green);box-shadow:0 0 6px var(--green)}
+.aec-conectado{border-color:rgba(34,212,126,0.2)!important}
+.aec-pausa::before{background:var(--blue)}
+.aec-pausa{border-color:rgba(79,168,240,0.2)!important}
+.aec-descanso::before{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.aec-descanso{border-color:rgba(245,166,35,0.2)!important}
+.aec-ausente::before{background:var(--red)}
+.aec-ausente{border-color:rgba(240,79,79,0.2)!important;opacity:.7}
+.aec-pendiente::before{background:var(--text3)}
+
+.agente-card-name{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.agente-card-info{font-size:10px;color:var(--text3);display:flex;align-items:center;gap:6px}
+.agente-card-turno{font-size:10px;padding:1px 6px;background:var(--bg3);border-radius:10px;color:var(--text2)}
+
+.estado-selector{
+  display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;
+}
+.estado-btn{
+  flex:1;min-width:0;padding:4px 2px;font-size:9px;font-weight:700;
+  border-radius:var(--rx);border:1px solid var(--border2);
+  background:transparent;cursor:pointer;transition:all .12s;
+  font-family:inherit;text-align:center;color:var(--text3);
+}
+.estado-btn:hover{background:var(--bg3);color:var(--text)}
+.estado-btn.sel-conectado{background:var(--gdim);border-color:var(--gb);color:var(--green)}
+.estado-btn.sel-pausa{background:rgba(79,168,240,0.1);border-color:rgba(79,168,240,.3);color:var(--blue)}
+.estado-btn.sel-descanso{background:var(--adim);border-color:var(--ab);color:var(--amber)}
+.estado-btn.sel-ausente{background:var(--rdim);border-color:var(--rb);color:var(--red)}
+
+.estado-dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.estado-conectado{background:var(--green);box-shadow:0 0 5px var(--green)}
+.estado-pausa{background:var(--blue)}
+.estado-descanso{background:var(--amber);box-shadow:0 0 5px var(--amber)}
+.estado-ausente{background:var(--red)}
+.estado-pendiente{background:var(--text3)}
+.estado-leyenda{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);flex-wrap:wrap}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -495,6 +575,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
     <nav class="nav">
       <button class="nav-btn active" id="btn-dashboard">📊 Dashboard</button>
       <button class="nav-btn" id="btn-malla">📅 Malla de turnos</button>
+      <button class="nav-btn" id="btn-control">🎛 Control de mando</button>
       <button class="nav-btn" id="btn-informe">📋 Informe del día</button>
       <button class="nav-btn" id="btn-carga">⬆ Carga masiva</button>
       <button class="nav-btn" id="btn-agregar">➕ Agregar turno</button>
@@ -628,6 +709,24 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           <tbody id="mallaBody"></tbody>
         </table>
       </div>
+    </section>
+
+    <!-- CONTROL DE MANDO -->
+    <section class="tab" id="tab-control">
+      <div class="page-header">
+        <div class="page-title">Control de mando <span class="day-sub" id="control-fecha"></span></div>
+        <div class="hstack">
+          <div class="estado-leyenda">
+            <span class="estado-dot estado-conectado"></span>Conectado
+            <span class="estado-dot estado-pausa" style="margin-left:12px"></span>En pausa
+            <span class="estado-dot estado-descanso" style="margin-left:12px"></span>Descanso
+            <span class="estado-dot estado-ausente" style="margin-left:12px"></span>Ausente
+            <span class="estado-dot estado-pendiente" style="margin-left:12px"></span>Pendiente
+          </div>
+        </div>
+      </div>
+      <div class="control-resumen" id="controlResumen"></div>
+      <div id="controlGrid"></div>
     </section>
 
     <!-- INFORME -->
@@ -893,6 +992,7 @@ function showTab(name) {
   if (b) b.classList.add('active');
   if (name === 'dashboard') renderDashboard();
   if (name === 'malla')     renderMalla();
+  if (name === 'control')   renderControl();
   if (name === 'informe')   renderInforme();
   if (name === 'agregar')   refreshDataLists();
 }
@@ -1395,6 +1495,9 @@ function refreshDataLists() {
   var dlN = document.getElementById('dl-nombres');
   if (dlT) dlT.innerHTML = turnos.sort().map(function(t) { return '<option value="' + t + '">'; }).join('');
   if (dlN) dlN.innerHTML = nombres.sort().map(function(n) { return '<option value="' + n + '">'; }).join('');
+  var colas2 = [];
+  malla.forEach(function(r) { if (r.cola && colas2.indexOf(r.cola) < 0) colas2.push(r.cola); });
+  if (dlC) dlC.innerHTML = colas2.sort().map(function(c) { return '<option value="' + c + '">'; }).join('');
   var fd = document.getElementById('f-fecha');
   if (fd && !fd.value) fd.value = todayISO();
 }
@@ -1404,6 +1507,7 @@ function saveShift() {
   var nombre   = document.getElementById('f-nombre').value.trim();
   var apellido = '';
   var turno    = document.getElementById('f-turno').value.trim();
+  var cola     = document.getElementById('f-cola').value.trim();
   var ingreso  = document.getElementById('f-ingreso').value;
   var desc1    = document.getElementById('f-desc1').value;
   var desc2    = document.getElementById('f-desc2').value;
@@ -1440,6 +1544,7 @@ function clearForm() {
   document.getElementById('f-fecha').value    = todayISO();
   document.getElementById('f-nombre').value   = '';
   document.getElementById('f-turno').value    = '';
+  document.getElementById('f-cola').value     = '';
   document.getElementById('f-ingreso').value  = '08:00';
   document.getElementById('f-desc1').value    = '10:00';
   document.getElementById('f-desc2').value    = '12:00';
@@ -1456,6 +1561,7 @@ function editShift(key) {
   document.getElementById('f-nombre').value   = s.nombre;
 
   document.getElementById('f-turno').value    = s.turno || '';
+  document.getElementById('f-cola').value     = s.cola  || '';
   document.getElementById('f-ingreso').value  = s.ingreso;
   document.getElementById('f-desc1').value    = s.descanso1 || '';
   document.getElementById('f-desc2').value    = s.descanso2 || '';
@@ -1479,6 +1585,7 @@ var COL_MAP = {
   fecha:     ['fecha','date','día','dia','day'],
   nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name'],
   turno:     ['turno','shift','grupo','group'],
+  cola:      ['cola','queue','skill','habilidad','grupo de trabajo','workgroup'],
   ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio'],
   descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1'],
   descanso2: ['descanso2','descanso 2','descanso largo','almuerzo','lunch','break2','break 2','descanso_2'],
@@ -1532,6 +1639,7 @@ function parseRows(rows, hMap) {
     var nombre   = get('nombre');
     var apellido = '';
     var turno    = get('turno');
+    var cola     = get('cola');
     var ingreso  = normTime(get('ingreso'));
     var desc1    = normTime(get('descanso1'));
     var desc2    = normTime(get('descanso2'));
@@ -1623,7 +1731,7 @@ function showPreview(rows) {
 function confirmImport() {
   var replace  = document.getElementById('chk-replace').checked;
   var toImport = previewData.filter(function(r) { return !r.errors.length; }).map(function(r) {
-    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
@@ -1651,7 +1759,7 @@ function resetUpload() {
 }
 
 function downloadTemplate(format) {
-  var headers  = ['fecha','nombre','turno','ingreso','descanso1','descanso2','salida'];
+  var headers  = ['fecha','nombre','turno','cola','ingreso','descanso1','descanso2','salida'];
   var names    = [['Carlos','López'],['María','García'],['Andrés','Martínez'],['Laura','Rodríguez'],['Juan','Pérez']];
   var shifts   = [['Mañana','06:00','09:00','10:30','14:00'],['Tarde','14:00','17:00','18:30','22:00'],['Noche','22:00','01:00','02:30','06:00']];
   var today    = new Date();
@@ -1659,9 +1767,10 @@ function downloadTemplate(format) {
   for (var day = 0; day < 14; day++) {
     var dt = new Date(today); dt.setDate(today.getDate() + day);
     var dfmt = pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1) + '/' + dt.getFullYear();
+    var colaEj = ['Soporte','Ventas','Cobranza','Retención'];
     names.forEach(function(nm, i) {
       var sh = shifts[i % shifts.length];
-      examples.push([dfmt, nm[0] + ' ' + nm[1]].concat(sh));
+      examples.push([dfmt, nm[0] + ' ' + nm[1], sh[0], colaEj[i % colaEj.length]].concat(sh.slice(1)));
     });
   }
   if (format === 'csv') {
@@ -1772,6 +1881,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Nav sidebar
   document.getElementById('btn-dashboard').addEventListener('click', function() { showTab('dashboard'); });
   document.getElementById('btn-malla').addEventListener('click',     function() { showTab('malla'); });
+  document.getElementById('btn-control').addEventListener('click',   function() { showTab('control'); });
   document.getElementById('btn-informe').addEventListener('click',   function() { showTab('informe'); });
   document.getElementById('btn-carga').addEventListener('click',     function() { showTab('carga'); });
   document.getElementById('btn-agregar').addEventListener('click',   function() { showTab('agregar'); });
@@ -1879,6 +1989,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   setInterval(updateClock, 1000);
   setInterval(function() { checkAlerts(); }, 10000);
+  setInterval(function() { if (document.getElementById('tab-control').classList.contains('active')) renderControl(); }, 30000);
   checkAlerts();
 });
 
