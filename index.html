@@ -970,7 +970,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 
 // ── Estado global ─────────────────────────────────────────
 var malla        = loadData('malla_v5')       || [];
-var cfg          = loadData('ops_cfg')        || { ingreso: 5, descanso: 10, salida: 5 };
+var cfg          = loadData('ops_cfg')        || { ingreso: 5, descanso1: 15, descanso2: 15, salida: 5 };
 var firedToday   = loadData('fired_' + todayKey()) || {};
 var attendance   = loadData('att_'   + todayKey()) || {};
 var activeAlerts = [];
@@ -1244,7 +1244,8 @@ function checkAlerts() {
     var tn = s.turno ? ' (' + s.turno + ')' : '';
 
     function chk(mins, diff, key, type, title, msg) {
-      if (diff >= 0 && diff <= cfg[type] && !firedToday[key]) {
+      var limit = type === 'descanso' ? (key.indexOf('-d1-') >= 0 ? cfg.descanso1 : cfg.descanso2) : cfg[type];
+      if (diff >= 0 && diff <= limit && !firedToday[key]) {
         firedToday[key] = true;
         saveData(fkey, firedToday);
         pushAlert({ key: key, type: type, title: title, body: msg });
@@ -1866,9 +1867,10 @@ function applyConfig() {
   document.getElementById('cfg-salida').value   = cfg.salida;
 }
 function saveConfig() {
-  cfg.ingreso  = parseInt(document.getElementById('cfg-ingreso').value)  || 5;
-  cfg.descanso = parseInt(document.getElementById('cfg-descanso').value) || 10;
-  cfg.salida   = parseInt(document.getElementById('cfg-salida').value)   || 5;
+  cfg.ingreso   = parseInt(document.getElementById('cfg-ingreso').value)   || 5;
+  cfg.descanso1 = parseInt(document.getElementById('cfg-descanso1').value) || 15;
+  cfg.descanso2 = parseInt(document.getElementById('cfg-descanso2').value) || 15;
+  cfg.salida    = parseInt(document.getElementById('cfg-salida').value)    || 5;
   saveData('ops_cfg', cfg);
   var el = document.getElementById('cfg-ok');
   el.style.display = 'block';
