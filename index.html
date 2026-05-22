@@ -832,7 +832,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="table-wrap" style="max-height:320px;overflow-y:auto;margin-bottom:12px">
           <table class="data-table">
             <thead>
-              <tr><th>#</th><th>Fecha</th><th>Nombre completo</th><th>Turno</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
+              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Turno</th><th>Cola</th><th>Email</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
             </thead>
             <tbody id="prev-body"></tbody>
           </table>
@@ -866,11 +866,15 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group" style="grid-column:1/-1">
+          <div class="form-group">
             <label class="form-label">Nombre completo</label>
             <input type="text" id="f-nombre" placeholder="Ej: Carlos López" list="dl-nombres">
             <datalist id="dl-nombres"></datalist>
             <input type="hidden" id="f-apellido" value="">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Slack</label>
+            <input type="text" id="f-email" placeholder="Ej: carlos@empresa.com">
           </div>
         </div>
         <div class="form-row">
@@ -1245,7 +1249,8 @@ function checkAlerts() {
         pushAlert({ key: key, type: type, title: title, body: msg });
         sendNotif(title, msg);
         // Enviar DM por Slack
-        sendSlackDM(fn, msg, type);
+        var agEmail = s.email || '';
+        sendSlackDM(fn, agEmail, msg, type);
       }
     }
 
@@ -1558,6 +1563,7 @@ function saveShift() {
   var apellido = '';
   var turno    = document.getElementById('f-turno').value.trim();
   var cola     = document.getElementById('f-cola').value.trim();
+  var email    = document.getElementById('f-email').value.trim().toLowerCase();
   var ingreso  = document.getElementById('f-ingreso').value;
   var desc1    = document.getElementById('f-desc1').value;
   var desc2    = document.getElementById('f-desc2').value;
@@ -1595,6 +1601,7 @@ function clearForm() {
   document.getElementById('f-nombre').value   = '';
   document.getElementById('f-turno').value    = '';
   document.getElementById('f-cola').value     = '';
+  document.getElementById('f-email').value    = '';
   document.getElementById('f-ingreso').value  = '08:00';
   document.getElementById('f-desc1').value    = '10:00';
   document.getElementById('f-desc2').value    = '12:00';
@@ -1612,6 +1619,7 @@ function editShift(key) {
 
   document.getElementById('f-turno').value    = s.turno || '';
   document.getElementById('f-cola').value     = s.cola  || '';
+  document.getElementById('f-email').value    = s.email || '';
   document.getElementById('f-ingreso').value  = s.ingreso;
   document.getElementById('f-desc1').value    = s.descanso1 || '';
   document.getElementById('f-desc2').value    = s.descanso2 || '';
@@ -1636,6 +1644,7 @@ var COL_MAP = {
   nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name'],
   turno:     ['turno','shift','grupo','group'],
   cola:      ['cola','queue','skill','habilidad','grupo de trabajo','workgroup'],
+  email:     ['email','correo','correo electronico','mail','slack email','correo slack'],
   ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio'],
   descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1'],
   descanso2: ['descanso2','descanso 2','descanso largo','almuerzo','lunch','break2','break 2','descanso_2'],
@@ -1690,6 +1699,7 @@ function parseRows(rows, hMap) {
     var apellido = '';
     var turno    = get('turno');
     var cola     = get('cola');
+    var email    = (get('email') || '').toLowerCase();
     var ingreso  = normTime(get('ingreso'));
     var desc1    = normTime(get('descanso1'));
     var desc2    = normTime(get('descanso2'));
@@ -1781,7 +1791,7 @@ function showPreview(rows) {
 function confirmImport() {
   var replace  = document.getElementById('chk-replace').checked;
   var toImport = previewData.filter(function(r) { return !r.errors.length; }).map(function(r) {
-    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
@@ -1809,7 +1819,7 @@ function resetUpload() {
 }
 
 function downloadTemplate(format) {
-  var headers  = ['fecha','nombre','turno','cola','ingreso','descanso1','descanso2','salida'];
+  var headers  = ['fecha','nombre','turno','cola','email','ingreso','descanso1','descanso2','salida'];
   var names    = [['Carlos','López'],['María','García'],['Andrés','Martínez'],['Laura','Rodríguez'],['Juan','Pérez']];
   var shifts   = [['Mañana','06:00','09:00','10:30','14:00'],['Tarde','14:00','17:00','18:30','22:00'],['Noche','22:00','01:00','02:30','06:00']];
   var today    = new Date();
@@ -1820,7 +1830,8 @@ function downloadTemplate(format) {
     var colaEj = ['Soporte','Ventas','Cobranza','Retención'];
     names.forEach(function(nm, i) {
       var sh = shifts[i % shifts.length];
-      examples.push([dfmt, nm[0] + ' ' + nm[1], sh[0], colaEj[i % colaEj.length]].concat(sh.slice(1)));
+      var emailEj = nm[0].toLowerCase() + '.' + nm[1].toLowerCase() + '@tuempresa.com';
+      examples.push([dfmt, nm[0] + ' ' + nm[1], sh[0], colaEj[i % colaEj.length], emailEj].concat(sh.slice(1)));
     });
   }
   if (format === 'csv') {
