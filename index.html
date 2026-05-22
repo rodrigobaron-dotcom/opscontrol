@@ -631,8 +631,8 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           <span class="slack-dot active" id="slackDot"></span>
           <span id="slackLabel">Alertas Slack ON</span>
         </div>
-        <button class="slack-toggle-btn" id="slackToggleBtn" title="Pausar/Activar envío de mensajes Slack">
-          ⏸ Pausar Slack
+        <button class="slack-toggle-btn" id="slackToggleBtn" onclick="toggleSlack()" title="Pausar/Activar envío de mensajes Slack">
+          ▶ Activar Slack
         </button>
       </div>
     </div>
@@ -1931,7 +1931,7 @@ function clearAll() {
 }
 
 // ── Slack DM ─────────────────────────────────────────────
-var slackPaused = loadData('slack_paused') || false;
+var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
 
 function updateSlackToggleUI() {
   var wrap  = document.getElementById('slackToggleWrap');
@@ -1957,8 +1957,8 @@ function toggleSlack() {
   saveData('slack_paused', slackPaused);
   updateSlackToggleUI();
   showToast(slackPaused
-    ? '⏸ Envío de mensajes Slack pausado'
-    : '▶ Envío de mensajes Slack activado');
+    ? '⏸ Slack pausado — no se enviarán mensajes'
+    : '▶ Slack activado — los mensajes se enviarán');
 }
 
 function showSlackNotif(msg, isError) {
