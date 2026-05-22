@@ -1930,6 +1930,66 @@ function clearAll() {
   showToast('Malla eliminada.');
 }
 
+// ── Slack DM ─────────────────────────────────────────────
+var slackPaused = loadData('slack_paused') || false;
+
+function updateSlackToggleUI() {
+  var wrap  = document.getElementById('slackToggleWrap');
+  var dot   = document.getElementById('slackDot');
+  var label = document.getElementById('slackLabel');
+  var btn   = document.getElementById('slackToggleBtn');
+  if (!wrap || !dot || !label || !btn) return;
+  if (slackPaused) {
+    wrap.classList.add('paused');
+    dot.className     = 'slack-dot paused';
+    label.textContent = 'Alertas Slack PAUSADAS';
+    btn.textContent   = '▶ Activar Slack';
+  } else {
+    wrap.classList.remove('paused');
+    dot.className     = 'slack-dot active';
+    label.textContent = 'Alertas Slack ON';
+    btn.textContent   = '⏸ Pausar Slack';
+  }
+}
+
+function toggleSlack() {
+  slackPaused = !slackPaused;
+  saveData('slack_paused', slackPaused);
+  updateSlackToggleUI();
+  showToast(slackPaused
+    ? '⏸ Envío de mensajes Slack pausado'
+    : '▶ Envío de mensajes Slack activado');
+}
+
+function showSlackNotif(msg, isError) {
+  var el = document.getElementById('slackNotif');
+  if (!el) return;
+  el.textContent = msg;
+  el.className   = 'slack-notif' + (isError ? ' error' : '') + ' show';
+  setTimeout(function() { el.classList.remove('show'); }, 4000);
+}
+
+async function sendSlackDM(agente, email, mensaje, tipo) {
+  if (slackPaused) return;
+  try {
+    var res = await fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ agente: agente, email: email, mensaje: mensaje, tipo: tipo })
+    });
+    var data = await res.json();
+    if (data.ok) {
+      showSlackNotif('✓ Slack enviado a ' + agente);
+    } else {
+      showSlackNotif('✗ No encontrado en Slack: ' + agente, true);
+      console.warn('Slack error:', data.error);
+    }
+  } catch(e) {
+    showSlackNotif('✗ Error Slack: ' + e.message, true);
+    console.warn('Slack DM error:', e.message);
+  }
+}
+
 // ── Toast ─────────────────────────────────────────────────
 var toastTimer;
 function showToast(msg) {
