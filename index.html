@@ -2103,7 +2103,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-sim').addEventListener('click',        startSim);
   document.getElementById('btn-stop-sim').addEventListener('click',   stopSim);
   document.getElementById('btn-stop-sim2').addEventListener('click',  stopSim);
-  document.getElementById('slackToggleBtn').addEventListener('click', toggleSlack);
+  updateSlackToggleUI();
+  // slackToggleBtn usa onclick directo en HTML — no necesita addEventListener
   updateSlackToggleUI();
   document.getElementById('btn-export-json').addEventListener('click', exportJSON);
   document.getElementById('btn-import-json').addEventListener('click', function() {
