@@ -189,6 +189,44 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .estado-pendiente{background:var(--text3)}
 .estado-leyenda{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);flex-wrap:wrap}
 
+
+/* ── SLACK TOGGLE ── */
+.slack-toggle-wrap{
+  margin-top:10px;padding:10px;
+  background:rgba(34,212,126,0.08);border:1px solid rgba(34,212,126,0.2);
+  border-radius:var(--rs);transition:all .3s;
+}
+.slack-toggle-wrap.paused{
+  background:rgba(240,79,79,0.08);border-color:rgba(240,79,79,0.2);
+}
+.slack-status{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:11px;font-weight:600}
+.slack-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;transition:all .3s}
+.slack-dot.active{background:var(--green);box-shadow:0 0 6px var(--green)}
+.slack-dot.paused{background:var(--red)}
+#slackLabel{color:var(--text2)}
+.slack-toggle-btn{
+  width:100%;padding:5px;font-size:11px;font-weight:700;
+  border-radius:var(--rx);border:1px solid rgba(34,212,126,0.3);
+  background:rgba(34,212,126,0.1);color:var(--green);
+  cursor:pointer;font-family:inherit;transition:all .2s;
+}
+.slack-toggle-btn:hover{background:rgba(34,212,126,0.2)}
+.slack-toggle-wrap.paused .slack-toggle-btn{
+  border-color:rgba(240,79,79,0.3);background:rgba(240,79,79,0.1);color:var(--red);
+}
+.slack-notif{
+  position:fixed;bottom:70px;right:22px;
+  background:var(--bg2);border:1px solid var(--gb);
+  border-radius:var(--r);padding:10px 14px;
+  font-size:12px;color:var(--green);max-width:280px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .2s,transform .2s;
+  pointer-events:none;z-index:200;
+  box-shadow:0 8px 28px rgba(0,0,0,.4);
+}
+.slack-notif.show{opacity:1;transform:translateY(0)}
+.slack-notif.error{border-color:var(--rb);color:var(--red)}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -588,6 +626,15 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         ⏱ Simulación activa
         <button class="btn-link" id="btn-stop-sim">Detener</button>
       </div>
+      <div class="slack-toggle-wrap" id="slackToggleWrap">
+        <div class="slack-status" id="slackStatus">
+          <span class="slack-dot active" id="slackDot"></span>
+          <span id="slackLabel">Alertas Slack ON</span>
+        </div>
+        <button class="slack-toggle-btn" id="slackToggleBtn" title="Pausar/Activar envío de mensajes Slack">
+          ⏸ Pausar Slack
+        </button>
+      </div>
     </div>
   </aside>
 
@@ -905,6 +952,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 </div>
 
 <div id="tooltip" class="tooltip"></div>
+<div id="slackNotif" class="slack-notif"></div>
 <div id="toast" class="toast"></div>
 
 <!-- SheetJS para Excel -->
@@ -1196,6 +1244,8 @@ function checkAlerts() {
         saveData(fkey, firedToday);
         pushAlert({ key: key, type: type, title: title, body: msg });
         sendNotif(title, msg);
+        // Enviar DM por Slack
+        sendSlackDM(fn, msg, type);
       }
     }
 
@@ -1969,6 +2019,8 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-sim').addEventListener('click',        startSim);
   document.getElementById('btn-stop-sim').addEventListener('click',   stopSim);
   document.getElementById('btn-stop-sim2').addEventListener('click',  stopSim);
+  document.getElementById('slackToggleBtn').addEventListener('click', toggleSlack);
+  updateSlackToggleUI();
   document.getElementById('btn-export-json').addEventListener('click', exportJSON);
   document.getElementById('btn-import-json').addEventListener('click', function() {
     document.getElementById('imp-file').click();
