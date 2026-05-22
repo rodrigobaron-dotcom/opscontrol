@@ -800,7 +800,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
             </div>
             <div class="format-hint">
               <strong>Columnas:</strong><br>
-              <code>fecha · nombre · turno · ingreso · descanso1 · descanso2 · salida</code><br><br>
+              <code>fecha · nombre · cola · email · ingreso · descanso1 · descanso2 · salida</code><br><br>
               <strong>Ejemplo:</strong><br>
               <code>09/05/2025 · Carlos · López · Mañana · 06:00 · 09:00 · 10:30 · 14:00</code><br>
               <code>10/05/2025 · Carlos · López · Tarde · 14:00 · 17:00 · 18:30 · 22:00</code>
@@ -832,7 +832,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="table-wrap" style="max-height:320px;overflow-y:auto;margin-bottom:12px">
           <table class="data-table">
             <thead>
-              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Turno</th><th>Cola</th><th>Email</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
+              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Cola</th><th>Email</th><th>Turno (auto)</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
             </thead>
             <tbody id="prev-body"></tbody>
           </table>
@@ -860,9 +860,10 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
             <input type="date" id="f-fecha">
           </div>
           <div class="form-group">
-            <label class="form-label">Turno</label>
-            <input type="text" id="f-turno" placeholder="Mañana / Tarde / Noche" list="dl-turnos">
-            <datalist id="dl-turnos"></datalist>
+            <label class="form-label">Turno (automático)</label>
+            <input type="text" id="f-turno" readonly
+              style="background:var(--bg3);color:var(--text3);cursor:default"
+              placeholder="Se calcula según la hora de ingreso">
           </div>
         </div>
         <div class="form-row">
@@ -880,7 +881,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Ingreso</label>
-            <input type="time" id="f-ingreso" value="08:00">
+            <input type="time" id="f-ingreso" value="08:00" oninput="document.getElementById('f-turno').value=calcTurno(this.value)">
           </div>
           <div class="form-group">
             <label class="form-label">Salida</label>
@@ -1294,6 +1295,16 @@ function sendNotif(title, body) {
 }
 
 // ── Malla ─────────────────────────────────────────────────
+// ── Calcular turno por hora de ingreso ────────────────────
+function calcTurno(ingreso) {
+  if (!ingreso) return '';
+  var mins = timeToMins(ingreso);
+  if (mins >= timeToMins('06:00') && mins < timeToMins('12:00')) return 'Mañana';
+  if (mins >= timeToMins('12:00') && mins < timeToMins('18:00')) return 'Tarde';
+  return 'Noche';
+}
+
+
 function updateHoraLabel() {
   var lbl = document.getElementById('horaDropdownLabel');
   if (!lbl) return;
@@ -1548,7 +1559,7 @@ function refreshDataLists() {
   });
   var dlT = document.getElementById('dl-turnos');
   var dlN = document.getElementById('dl-nombres');
-  if (dlT) dlT.innerHTML = turnos.sort().map(function(t) { return '<option value="' + t + '">'; }).join('');
+  // Turno calculado automáticamente — no necesita datalist
   if (dlN) dlN.innerHTML = nombres.sort().map(function(n) { return '<option value="' + n + '">'; }).join('');
   var colas2 = [];
   malla.forEach(function(r) { if (r.cola && colas2.indexOf(r.cola) < 0) colas2.push(r.cola); });
@@ -1561,7 +1572,7 @@ function saveShift() {
   var fecha    = document.getElementById('f-fecha').value;
   var nombre   = document.getElementById('f-nombre').value.trim();
   var apellido = '';
-  var turno    = document.getElementById('f-turno').value.trim();
+  var turno    = calcTurno(ingreso);
   var cola     = document.getElementById('f-cola').value.trim();
   var email    = document.getElementById('f-email').value.trim().toLowerCase();
   var ingreso  = document.getElementById('f-ingreso').value;
@@ -1617,7 +1628,7 @@ function editShift(key) {
   document.getElementById('f-fecha').value    = s.fecha;
   document.getElementById('f-nombre').value   = s.nombre;
 
-  document.getElementById('f-turno').value    = s.turno || '';
+  document.getElementById('f-turno').value    = s.turno || calcTurno(s.ingreso);
   document.getElementById('f-cola').value     = s.cola  || '';
   document.getElementById('f-email').value    = s.email || '';
   document.getElementById('f-ingreso').value  = s.ingreso;
@@ -1697,7 +1708,7 @@ function parseRows(rows, hMap) {
     var fecha    = normDate(get('fecha'));
     var nombre   = get('nombre');
     var apellido = '';
-    var turno    = get('turno');
+    var turno    = calcTurno(normTime(get('ingreso')));
     var cola     = get('cola');
     var email    = (get('email') || '').toLowerCase();
     var ingreso  = normTime(get('ingreso'));
@@ -1819,7 +1830,7 @@ function resetUpload() {
 }
 
 function downloadTemplate(format) {
-  var headers  = ['fecha','nombre','turno','cola','email','ingreso','descanso1','descanso2','salida'];
+  var headers  = ['fecha','nombre','cola','email','ingreso','descanso1','descanso2','salida'];
   var names    = [['Carlos','López'],['María','García'],['Andrés','Martínez'],['Laura','Rodríguez'],['Juan','Pérez']];
   var shifts   = [['Mañana','06:00','09:00','10:30','14:00'],['Tarde','14:00','17:00','18:30','22:00'],['Noche','22:00','01:00','02:30','06:00']];
   var today    = new Date();
@@ -1831,7 +1842,7 @@ function downloadTemplate(format) {
     names.forEach(function(nm, i) {
       var sh = shifts[i % shifts.length];
       var emailEj = nm[0].toLowerCase() + '.' + nm[1].toLowerCase() + '@tuempresa.com';
-      examples.push([dfmt, nm[0] + ' ' + nm[1], sh[0], colaEj[i % colaEj.length], emailEj].concat(sh.slice(1)));
+      examples.push([dfmt, nm[0] + ' ' + nm[1], colaEj[i % colaEj.length], emailEj].concat(sh.slice(1)));
     });
   }
   if (format === 'csv') {
