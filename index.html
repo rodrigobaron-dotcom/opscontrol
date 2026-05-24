@@ -919,6 +919,19 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         </div>
         <div class="form-row">
           <div class="form-group">
+            <label class="form-label">Cola</label>
+            <input type="text" id="f-cola" placeholder="Ej: Soporte, Ventas" list="dl-colas">
+            <datalist id="dl-colas"></datalist>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Turno (automático)</label>
+            <input type="text" id="f-turno" readonly
+              style="background:var(--bg3);color:var(--text3);cursor:default"
+              placeholder="Se calcula según la hora de ingreso">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
             <label class="form-label">Ingreso</label>
             <input type="time" id="f-ingreso" value="08:00" oninput="document.getElementById('f-turno').value=calcTurno(this.value)">
           </div>
