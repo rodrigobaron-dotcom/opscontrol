@@ -1089,30 +1089,41 @@ var esVistaAgente = false;
 
 function initAgenteMode() {
   var params = new URLSearchParams(window.location.search);
-  var email  = params.get('agente') || params.get('email') || '';
-  if (!email) return;
-  email = email.toLowerCase().trim();
-  agenteEmail  = email;
-  esVistaAgente = true;
-  // Buscar nombre en la malla
-  var found = malla.find(function(r) { return (r.email || '').toLowerCase() === email; });
-  if (!found) found = malla.find(function(r) { return r.nombre && r.nombre.toLowerCase().replace(/\s+/g,'.') === email.split('@')[0].toLowerCase(); });
-  agenteNombre = found ? found.nombre : email;
-  // Aplicar UI modo agente
-  applyAgenteModeUI();
-}
+  var param  = (params.get('agente') || params.get('email') || '').toLowerCase().trim();
+  if (!param) return;
 
-function applyAgenteModeUI() {
-  // Ocultar sidebar completo
+  esVistaAgente = true;
+  agenteEmail   = param;
+
+  // Buscar nombre: por email exacto, luego por parte del email antes del @
+  var emailPrefix = param.split('@')[0]; // ej: "karen.parra"
+  var found = malla.find(function(r) {
+    return (r.email || '').toLowerCase() === param;
+  });
+  if (!found) {
+    // Buscar por nombre: "karen.parra" → buscar "karen" en el nombre
+    var partes = emailPrefix.split('.');
+    found = malla.find(function(r) {
+      if (!r.nombre) return false;
+      var nom = r.nombre.toLowerCase();
+      return partes.every(function(p) { return p.length > 2 && nom.indexOf(p) >= 0; });
+    });
+  }
+  agenteNombre = found ? found.nombre : emailPrefix.replace('.', ' ');
+
+  // Bloquear toda la UI — solo mostrar vista agente
+  document.body.style.overflow = 'hidden';
   var sidebar = document.querySelector('.sidebar');
   if (sidebar) sidebar.style.display = 'none';
-  // Mostrar solo la vista de agente
+  var main = document.querySelector('.main');
+  if (main) { main.style.padding = '0'; main.style.background = 'var(--bg0)'; }
   document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
   var tab = document.getElementById('tab-agente-personal');
   if (tab) tab.classList.add('active');
-  // Pedir permisos de notificación automáticamente
+
+  // Pedir permiso de notificaciones
   if (Notification.permission === 'default') {
-    Notification.requestPermission();
+    setTimeout(function() { Notification.requestPermission(); }, 1500);
   }
 }
 
@@ -1124,10 +1135,19 @@ function renderAgentePersonal() {
 
   // Buscar turno del agente hoy
   var turno = malla.find(function(r) {
-    return r.fecha === today && (
-      (r.email || '').toLowerCase() === agenteEmail ||
-      (r.nombre || '').toLowerCase() === agenteNombre.toLowerCase()
-    );
+    if (r.fecha !== today) return false;
+    // Match por email
+    if (agenteEmail && (r.email || '').toLowerCase() === agenteEmail) return true;
+    // Match por nombre exacto
+    if (agenteNombre && (r.nombre || '').toLowerCase() === agenteNombre.toLowerCase()) return true;
+    // Match por prefijo de email en nombre
+    var prefix = agenteEmail ? agenteEmail.split('@')[0] : '';
+    if (prefix && r.nombre) {
+      var partes = prefix.split('.');
+      var nom = r.nombre.toLowerCase();
+      return partes.length >= 2 && partes.every(function(p) { return p.length > 2 && nom.indexOf(p) >= 0; });
+    }
+    return false;
   });
 
   var wrap = document.getElementById('agente-personal-wrap');
@@ -1436,9 +1456,11 @@ function checkAlerts() {
 
   var shiftsToCheck = shiftsForDate(today);
   // En modo agente, solo alertar por el turno propio
-  if (esVistaAgente && agenteEmail) {
+  if (esVistaAgente) {
     shiftsToCheck = shiftsToCheck.filter(function(s) {
-      return (s.email || '').toLowerCase() === agenteEmail;
+      if (agenteEmail && (s.email || '').toLowerCase() === agenteEmail) return true;
+      if (agenteNombre && (s.nombre || '').toLowerCase() === agenteNombre.toLowerCase()) return true;
+      return false;
     });
   }
   shiftsToCheck.forEach(function(s, i) {
