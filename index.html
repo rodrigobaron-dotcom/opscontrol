@@ -1052,6 +1052,14 @@ function timeToMins(t) {
   var p = t.split(':');
   return parseInt(p[0]) * 60 + parseInt(p[1]);
 }
+
+function timeToMinsAdj(ingreso, salida) {
+  // Si salida <= ingreso, el turno cruza medianoche — sumar 24h a salida
+  var iM = timeToMins(ingreso);
+  var sM = timeToMins(salida);
+  if (sM <= iM) sM += 24 * 60;
+  return sM;
+}
 function dateLabel(iso) {
   var parts = iso.split('-');
   var dt = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
@@ -1165,7 +1173,7 @@ function renderAgentePersonal() {
   }
 
   var iM  = timeToMins(turno.ingreso);
-  var sM  = timeToMins(turno.salida);
+  var sM  = timeToMinsAdj(turno.ingreso, turno.salida);
   var d1M = timeToMins(turno.descanso1);
   var d2M = timeToMins(turno.descanso2);
 
@@ -1317,7 +1325,7 @@ function renderDashboard() {
 
   document.getElementById('s-total').textContent   = todayS.length;
   var active = todayS.filter(function(s) {
-    return nowMins >= timeToMins(s.ingreso) && nowMins < timeToMins(s.salida);
+    return nowMins >= timeToMins(s.ingreso) && nowMins < timeToMinsAdj(s.ingreso, s.salida);
   });
   document.getElementById('s-activos').textContent  = active.length;
   document.getElementById('s-alertas').textContent  = activeAlerts.length;
@@ -1541,7 +1549,7 @@ function checkAlerts() {
                     fn + ' — descanso largo en ' + d2D + ' min (' + s.descanso2 + ') — Avísale para poner AUSENTE');
     }
 
-    var sM = timeToMins(s.salida), sD = sM - nowMins;
+    var sM = timeToMinsAdj(s.ingreso, s.salida), sD = sM - nowMins;
     chk(sM, sD, today + '-s-' + i, 'salida',
       '🔴 Salida en ' + (sD === 0 ? 'ahora' : sD + ' min'),
       sD === 0 ? '¡' + fn + ' sale AHORA (' + s.salida + ')' + tn + '!' :
@@ -1689,7 +1697,7 @@ function renderMalla() {
   tbody.innerHTML = daySWithIdx.map(function(item) {
     var s       = item.s;
     var realIdx = item.idx;
-    var iM    = timeToMins(s.ingreso), sM = timeToMins(s.salida);
+    var iM    = timeToMins(s.ingreso), sM = timeToMinsAdj(s.ingreso, s.salida);
     var d1M   = timeToMins(s.descanso1), d2M = timeToMins(s.descanso2);
     var active   = nowMins >= 0 && nowMins >= iM && nowMins < sM;
     var upcoming = nowMins >= 0 && nowMins < iM;
