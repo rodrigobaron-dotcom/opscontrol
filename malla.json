@@ -1,1 +1,6235 @@
-[]
+[
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Rodrigo Barón Quintero",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:00",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:00",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Mariana Isabel Piñate Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Brayan Smith Rojas Saldarriaga",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:00",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:30",
+    "descanso1": "15:30",
+    "descanso2": "19:00",
+    "salida": "21:30"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:00",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Carolina Toro Yepes",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "id": "mpj4voqzs9y6",
+    "fecha": "2026-05-23",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "",
+    "cola": "soporte",
+    "email": "karen.parra@somosinternet.co",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "19:10",
+    "descanso2": "16:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "19:10",
+    "descanso2": "16:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Willy Yohan Pabon Hernández",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "19:10",
+    "descanso2": "16:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Willy Yohan Pabon Hernández",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:00",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:30",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-23",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-24",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "20:50",
+    "descanso2": "09:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:30",
+    "descanso2": "20:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "17:00",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:30",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:30"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:50",
+    "descanso2": "21:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "11:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:20",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:40",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:50",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "20:30",
+    "salida": "13:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:30",
+    "descanso2": "20:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "17:00",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:30",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:30"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:50",
+    "descanso2": "21:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "17:00",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "11:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:20",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:40",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:50",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:30",
+    "descanso2": "20:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:10",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:30",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:30"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:50",
+    "descanso2": "21:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "11:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:20",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:40",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:50",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "17:30",
+    "descanso2": "09:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:30",
+    "descanso2": "20:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "17:00",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:30",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:30"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:50",
+    "descanso2": "21:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "11:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:20",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:40",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:50",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "16:00",
+    "descanso2": "08:30",
+    "salida": "12:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:30",
+    "descanso2": "20:00",
+    "salida": "11:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:30",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:30"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:50",
+    "descanso2": "21:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "13:30",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:30",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "11:00",
+    "descanso2": "13:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:20",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:40",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:50",
+    "descanso2": "15:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:20",
+    "descanso2": "14:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "15:40",
+    "descanso2": "18:00",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:50",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:00",
+    "descanso2": "13:00",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "09:00",
+    "descanso1": "11:30",
+    "descanso2": "13:30",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "11:00",
+    "descanso1": "16:40",
+    "descanso2": "14:00",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "17:50",
+    "descanso2": "20:00",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "18:10",
+    "descanso2": "20:30",
+    "salida": "23:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "18:30",
+    "descanso2": "21:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "19:10",
+    "descanso2": "16:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "14:10",
+    "descanso2": "17:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:00",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:30",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:30",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-30",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Brigitte Siley Lopez Torres",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Daniela Osorio Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Laura Johanna Mafla Gallego",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Sandra Milena Aristizabal Acevedo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Alejandra Quintero Cardona",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Isabel Yaneth Naranjo Arrieta",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Maria Camila Davila Alzate",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Selena Gomez Herrera",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Manuela Marulanda Muñoz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Yariana Julio Perez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Carlos Andres Lopera Castillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Paola Andrea Velez Lozano",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Elian Durango Pallares",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Kevin Duban Castaño Uribe",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Carmen Yuridia Hernandez Orrego",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "08:40",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Rodrigo Molano Bocanegra",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Karen Tatiana Parra Diaz",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:50",
+    "descanso2": "19:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Tatiana Arenas López",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Juan Esteban Guzman Marin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Diego Alejandro Toro",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Juan Manuel Lopera Betancur",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Daniel Zapata Pulgarin",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Jorge Isaac Zapata Herrera",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "12:00",
+    "descanso1": "17:10",
+    "descanso2": "15:00",
+    "salida": "20:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Sergio Andres Ortiz Mejia",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "07:00",
+    "descanso1": "09:20",
+    "descanso2": "12:00",
+    "salida": "15:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Alvaro Andres Araujo Ruz",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Ever Alexis Guisao Benitez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Gisela Patricia Garcia Buritica",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Angiee Paola Argel Gutierrez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Marvin Farid Martinez Sanchez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Deibis Manuel Díaz García",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "19:10",
+    "descanso2": "16:30",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Diana Paola Arboleda Gutierrez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Walter Osorio Gonzalez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Stewart Camilo Gil Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "22:00",
+    "descanso1": "03:30",
+    "descanso2": "01:00",
+    "salida": "06:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Leandro Calle Jaramillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Wilfredy Lopez Olaya",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Daniel Londoño Giraldo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "David Valencia Florez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "13:00",
+    "descanso1": "16:00",
+    "descanso2": "18:30",
+    "salida": "21:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Viviana Andrea Alcaraz Moreno",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Sebastian Bolivar Guiral",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Maria Gabriela Ascanio",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Mariana Marin Serna",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Carolina Echavarria Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "15:40",
+    "descanso2": "13:00",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Rebeca Sayago",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Brayan Andres Bolivar Alvarez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Andrés Felipe Zapata Argumedo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Andres Felipe Quiroz Restrepo",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Manuela Correa Cano",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Esteban Ospina Jaramillo",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Armando Jose Farfan",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Kevin Henao Galeano",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "06:00",
+    "descanso1": "09:00",
+    "descanso2": "11:30",
+    "salida": "14:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Juan Sebastian Franco Muente",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Marc Dimson Garcia Pinto",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "14:00",
+    "descanso1": "16:30",
+    "descanso2": "19:00",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Willy Yohan Pabon Hernandez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Juan Sebastian Quiceno Guzman",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Daniela Velasquez Bedoya",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Laura Cristina Osorio Zapata",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "David Pineda Tobon",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Josset Esteban Montiel Hernandez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Johan Camilo Vanegas Abellaneda",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:10",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Rosita Del Sol Romero Chapuel",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "08:00",
+    "descanso1": "10:00",
+    "descanso2": "12:30",
+    "salida": "16:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Brayan Mateo Gomez Cadavid",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "00:00",
+    "descanso1": "00:00",
+    "descanso2": "00:00",
+    "salida": "00:00"
+  },
+  {
+    "fecha": "2026-05-31",
+    "nombre": "Luz Eliana Povea Marquez",
+    "apellido": "",
+    "turno": "Mañana",
+    "ingreso": "10:00",
+    "descanso1": "11:50",
+    "descanso2": "14:30",
+    "salida": "18:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "19:00",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:00",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:00"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "16:00",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "19:00"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Gabriela Cano Velez",
+    "apellido": "",
+    "turno": "Tarde",
+    "ingreso": "15:00",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "17:00"
+  },
+  {
+    "fecha": "2026-05-25",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:30",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:30"
+  },
+  {
+    "fecha": "2026-05-26",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:30",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:30"
+  },
+  {
+    "fecha": "2026-05-27",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:30",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:30"
+  },
+  {
+    "fecha": "2026-05-28",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:30",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:30"
+  },
+  {
+    "fecha": "2026-05-29",
+    "nombre": "Juan Esteban Marquez Londoño",
+    "apellido": "",
+    "turno": "Noche",
+    "ingreso": "18:30",
+    "descanso1": "",
+    "descanso2": "",
+    "salida": "22:30"
+  }
+]
