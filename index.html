@@ -1584,6 +1584,11 @@ function renderMalla() {
   });
   dayS.sort(function(a, b) { return timeToMins(a.ingreso) - timeToMins(b.ingreso); });
 
+  // Mapear dayS con sus índices reales en malla
+  var daySWithIdx = dayS.map(function(s) {
+    return { s: s, idx: malla.indexOf(s) };
+  });
+
   var cnt = document.getElementById('mallaCount');
   if (cnt) cnt.textContent = dayS.length + ' agente' + (dayS.length !== 1 ? 's' : '');
 
@@ -1606,7 +1611,9 @@ function renderMalla() {
     return;
   }
 
-  tbody.innerHTML = dayS.map(function(s) {
+  tbody.innerHTML = daySWithIdx.map(function(item) {
+    var s       = item.s;
+    var realIdx = item.idx;
     var iM    = timeToMins(s.ingreso), sM = timeToMins(s.salida);
     var d1M   = timeToMins(s.descanso1), d2M = timeToMins(s.descanso2);
     var active   = nowMins >= 0 && nowMins >= iM && nowMins < sM;
@@ -1623,7 +1630,6 @@ function renderMalla() {
 
     var rowCls  = active && !onBreak ? 'row-active' : upcoming ? 'row-upcoming' : '';
     var col     = avColor(s.nombre);
-    var realIdx = malla.indexOf(s);
     var key     = String(realIdx);
 
     return '<tr class="' + rowCls + '" data-key="' + key + '">' +
@@ -1814,8 +1820,12 @@ function clearForm() {
 
 function editShift(key) {
   var idx = parseInt(key);
+  console.log('editShift key:', key, 'idx:', idx, 'malla length:', malla.length, 'record:', malla[idx]);
   var s   = malla[idx];
-  if (!s) { showToast('No se encontró el turno. Recarga la malla.'); return; }
+  if (isNaN(idx) || idx < 0 || !s) {
+    showToast('Error: no se encontró el turno (idx=' + idx + '). Recarga la página.');
+    return;
+  }
   document.getElementById('f-fecha').value   = s.fecha    || '';
   document.getElementById('f-nombre').value  = s.nombre   || '';
   document.getElementById('f-turno').value   = s.turno    || calcTurno(s.ingreso);
