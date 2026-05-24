@@ -1021,7 +1021,9 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 // =============================================================
 
 // ── Estado global ─────────────────────────────────────────
-var malla        = loadData('malla_v5')       || [];
+var malla        = loadData('malla_v5') || [];
+var mallaLoading = false;
+var mallaFromCloud = false;
 var cfg          = loadData('ops_cfg')        || { ingreso: 5, descanso1: 15, descanso2: 15, salida: 5 };
 var firedToday   = loadData('fired_' + todayKey()) || {};
 var attendance   = loadData('att_'   + todayKey()) || {};
@@ -1233,6 +1235,44 @@ function renderAgentePersonal() {
     '</div>' : '') +
 
     '<div class="ap-footer">Las notificaciones llegarán automáticamente a este navegador</div>';
+}
+
+
+// ── Sincronización con GitHub (malla en la nube) ──────────
+async function loadMallaFromCloud() {
+  try {
+    var res  = await fetch('/api/malla');
+    var data = await res.json();
+    if (data.ok && Array.isArray(data.malla) && data.malla.length > 0) {
+      malla = data.malla;
+      saveMalla(); // cache local
+      mallaFromCloud = true;
+      return true;
+    }
+  } catch(e) { console.warn('Cloud load failed, usando local:', e.message); }
+  return false;
+}
+
+async function saveMallaToCloud() {
+  try {
+    var res  = await fetch('/api/malla', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ malla: malla })
+    });
+    var data = await res.json();
+    if (data.ok) {
+      showToast('✓ Malla guardada en la nube');
+      return true;
+    }
+  } catch(e) { console.warn('Cloud save failed:', e.message); }
+  showToast('⚠ Guardado local solamente (sin conexión a la nube)');
+  return false;
+}
+
+function saveMalla() {
+  saveMalla();
+  saveMallaToCloud();
 }
 
 
@@ -1832,7 +1872,7 @@ function saveShift() {
       malla.push(rec);
     }
   }
-  saveData('malla_v5', malla);
+  saveMalla();
   showToast('Turno guardado — ' + nombre + ' · ' + fecha);
   clearForm();
   mallaDate = fecha;
@@ -1881,7 +1921,7 @@ function deleteShift(key) {
   if (!s) { showToast('No se encontró el turno. Recarga la malla.'); return; }
   if (!confirm('¿Eliminar turno de ' + s.nombre + ' el ' + s.fecha + '?')) return;
   malla.splice(idx, 1);
-  saveData('malla_v5', malla);
+  saveMalla();
   renderMalla();
   showToast('Turno eliminado.');
 }
@@ -2050,7 +2090,7 @@ function confirmImport() {
       if (dup >= 0) malla[dup] = rec; else malla.push(rec);
     });
   }
-  saveData('malla_v5', malla);
+  saveMalla();
   showToast('✓ ' + toImport.length + ' turnos importados correctamente.');
   resetUpload();
   showTab('malla');
@@ -2150,7 +2190,7 @@ function importJSON(file) {
   reader.onload = function(e) {
     try {
       var d = JSON.parse(e.target.result);
-      if (d.malla) { malla = d.malla; saveData('malla_v5', malla); }
+      if (d.malla) { malla = d.malla; saveMalla(); }
       if (d.cfg)   { cfg   = d.cfg;   saveData('ops_cfg',  cfg);   applyConfig(); }
       renderDashboard();
       showToast('Datos importados correctamente.');
@@ -2161,7 +2201,7 @@ function importJSON(file) {
 function clearAll() {
   if (!confirm('¿Borrar TODA la malla de turnos? No se puede deshacer.')) return;
   malla = [];
-  saveData('malla_v5', malla);
+  saveMalla();
   renderDashboard();
   showToast('Malla eliminada.');
 }
@@ -2355,9 +2395,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar
   applyConfig();
   updateClock();
-  initAgenteMode();
-  if (!esVistaAgente) renderDashboard();
-  else renderAgentePersonal();
+  // Cargar malla desde la nube primero
+  loadMallaFromCloud().then(function() {
+    initAgenteMode();
+    if (!esVistaAgente) renderDashboard();
+    else renderAgentePersonal();
+  });
   if (Notification.permission === 'granted') {
     var el = document.getElementById('notif-status');
     if (el) { el.textContent = '✓ Notificaciones activadas'; el.style.display = 'block'; }
