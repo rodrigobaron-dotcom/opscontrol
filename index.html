@@ -1083,6 +1083,7 @@ function initAgenteMode() {
   esVistaAgente = true;
   // Buscar nombre en la malla
   var found = malla.find(function(r) { return (r.email || '').toLowerCase() === email; });
+  if (!found) found = malla.find(function(r) { return r.nombre && r.nombre.toLowerCase().replace(/\s+/g,'.') === email.split('@')[0].toLowerCase(); });
   agenteNombre = found ? found.nombre : email;
   // Aplicar UI modo agente
   applyAgenteModeUI();
@@ -1110,7 +1111,10 @@ function renderAgentePersonal() {
 
   // Buscar turno del agente hoy
   var turno = malla.find(function(r) {
-    return r.fecha === today && (r.email || '').toLowerCase() === agenteEmail;
+    return r.fecha === today && (
+      (r.email || '').toLowerCase() === agenteEmail ||
+      (r.nombre || '').toLowerCase() === agenteNombre.toLowerCase()
+    );
   });
 
   var wrap = document.getElementById('agente-personal-wrap');
@@ -1617,9 +1621,10 @@ function renderMalla() {
     else if (active)  statusHtml = '<span class="status-pill sp-active">● En turno</span>';
     else if (upcoming) statusHtml = '<span class="status-pill sp-upcoming">En ' + (iM - nowMins) + 'min</span>';
 
-    var rowCls = active && !onBreak ? 'row-active' : upcoming ? 'row-upcoming' : '';
-    var col    = avColor(s.nombre);
-    var key    = s.fecha + '|' + s.nombre;
+    var rowCls  = active && !onBreak ? 'row-active' : upcoming ? 'row-upcoming' : '';
+    var col     = avColor(s.nombre);
+    var realIdx = malla.indexOf(s);
+    var key     = String(realIdx);
 
     return '<tr class="' + rowCls + '" data-key="' + key + '">' +
       '<td><div style="display:flex;align-items:center;gap:8px">' +
@@ -1772,9 +1777,8 @@ function saveShift() {
     showToast('Completa fecha, nombre completo, ingreso y salida.');
     return;
   }
-  var editIdx    = (editKey !== '' && editKey !== '-1') ? parseInt(editKey) : -1;
-  var existingId = (editIdx >= 0 && malla[editIdx]) ? malla[editIdx].id : null;
-  var rec = { id: existingId || generateId(), fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola, email: email, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
+  var editIdx = (editKey !== '' && editKey !== '-1') ? parseInt(editKey) : -1;
+  var rec = { id: (editIdx >= 0 && malla[editIdx]) ? (malla[editIdx].id || generateId()) : generateId(), fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola, email: email, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
 
   if (editIdx >= 0 && editIdx < malla.length) {
     malla[editIdx] = rec;
@@ -1809,27 +1813,27 @@ function clearForm() {
 }
 
 function editShift(key) {
-  var idx = malla.findIndex(function(r) { return (r.id || '') === key || (r.fecha + '|' + malla.indexOf(r)) === key; });
+  var idx = parseInt(key);
   var s   = malla[idx];
-  if (!s || idx < 0) { showToast('No se encontró el turno.'); return; }
-  document.getElementById('f-fecha').value    = s.fecha;
-  document.getElementById('f-nombre').value   = s.nombre;
-  document.getElementById('f-turno').value    = s.turno || calcTurno(s.ingreso);
-  document.getElementById('f-cola').value     = s.cola  || '';
-  document.getElementById('f-email').value    = s.email || '';
-  document.getElementById('f-ingreso').value  = s.ingreso;
-  document.getElementById('f-desc1').value    = s.descanso1 || '';
-  document.getElementById('f-desc2').value    = s.descanso2 || '';
-  document.getElementById('f-salida').value   = s.salida;
-  document.getElementById('edit-key').value   = String(idx);
+  if (!s) { showToast('No se encontró el turno. Recarga la malla.'); return; }
+  document.getElementById('f-fecha').value   = s.fecha    || '';
+  document.getElementById('f-nombre').value  = s.nombre   || '';
+  document.getElementById('f-turno').value   = s.turno    || calcTurno(s.ingreso);
+  document.getElementById('f-cola').value    = s.cola     || '';
+  document.getElementById('f-email').value   = s.email    || '';
+  document.getElementById('f-ingreso').value = s.ingreso  || '08:00';
+  document.getElementById('f-desc1').value   = s.descanso1|| '';
+  document.getElementById('f-desc2').value   = s.descanso2|| '';
+  document.getElementById('f-salida').value  = s.salida   || '17:00';
+  document.getElementById('edit-key').value  = String(idx);
   document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + ' · ' + s.fecha;
   showTab('agregar');
 }
 
 function deleteShift(key) {
-  var idx = malla.findIndex(function(r) { return (r.id || '') === key || (r.fecha + '|' + malla.indexOf(r)) === key; });
+  var idx = parseInt(key);
   var s   = malla[idx];
-  if (!s || idx < 0) { showToast('No se encontró el turno.'); return; }
+  if (!s) { showToast('No se encontró el turno. Recarga la malla.'); return; }
   if (!confirm('¿Eliminar turno de ' + s.nombre + ' el ' + s.fecha + '?')) return;
   malla.splice(idx, 1);
   saveData('malla_v5', malla);
