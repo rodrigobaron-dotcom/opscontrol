@@ -227,6 +227,34 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .slack-notif.show{opacity:1;transform:translateY(0)}
 .slack-notif.error{border-color:var(--rb);color:var(--red)}
 
+
+/* ── VISTA AGENTE PERSONAL ── */
+.ap-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+.ap-card{background:var(--bg1);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:440px;width:100%}
+.ap-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.ap-avatar-big{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+.ap-nombre{font-size:18px;font-weight:700;color:var(--text);line-height:1.2}
+.ap-turno-badge{font-size:11px;color:var(--text3);margin-top:4px;background:var(--bg3);padding:2px 8px;border-radius:10px;display:inline-block}
+.ap-estado{font-size:14px;font-weight:600;padding:12px 16px;border-radius:var(--rs);border:1px solid;margin-bottom:18px;text-align:center}
+.ap-horario{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.ap-hora-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px}
+.ap-hora-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:4px}
+.ap-hora-val{font-family:'Courier New',monospace;font-size:13px;font-weight:700}
+.ap-proximos{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:14px;margin-bottom:16px}
+.ap-prox-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:10px}
+.ap-prox-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
+.ap-prox-row:last-child{border-bottom:none}
+.ap-prox-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ap-prox-label{font-size:13px;color:var(--text2);flex:1}
+.ap-prox-time{font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:var(--text)}
+.ap-prox-diff{font-size:11px;color:var(--text3);white-space:nowrap}
+.ap-footer{font-size:11px;color:var(--text3);text-align:center;padding-top:12px;border-top:1px solid var(--border)}
+.ap-no-turno{text-align:center;padding:32px}
+.ap-avatar{width:64px;height:64px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--text2);margin:0 auto 16px}
+.ap-msg{font-size:14px;color:var(--text3);margin-top:8px}
+.ap-clock{font-family:'Courier New',monospace;font-size:40px;font-weight:700;text-align:center;margin-bottom:8px;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ap-date{font-size:13px;color:var(--text3);text-align:center;margin-bottom:24px}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -641,6 +669,17 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
   <!-- MAIN -->
   <main class="main">
 
+    <!-- VISTA AGENTE PERSONAL -->
+    <section class="tab" id="tab-agente-personal">
+      <div class="ap-wrap">
+        <div class="ap-card">
+          <div class="ap-clock" id="ap-clock">--:--:--</div>
+          <div class="ap-date" id="ap-date"></div>
+          <div id="agente-personal-wrap"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- DASHBOARD -->
     <section class="tab active" id="tab-dashboard">
       <div class="page-header">
@@ -1030,11 +1069,144 @@ function initials(n, a) {
   return (parts[0]?.[0] || '').toUpperCase() + (parts[1]?.[0] || '').toUpperCase();
 }
 
+// ── Modo agente (vista personal) ─────────────────────────
+var agenteEmail = null;
+var agenteNombre = null;
+var esVistaAgente = false;
+
+function initAgenteMode() {
+  var params = new URLSearchParams(window.location.search);
+  var email  = params.get('agente') || params.get('email') || '';
+  if (!email) return;
+  email = email.toLowerCase().trim();
+  agenteEmail  = email;
+  esVistaAgente = true;
+  // Buscar nombre en la malla
+  var found = malla.find(function(r) { return (r.email || '').toLowerCase() === email; });
+  agenteNombre = found ? found.nombre : email;
+  // Aplicar UI modo agente
+  applyAgenteModeUI();
+}
+
+function applyAgenteModeUI() {
+  // Ocultar sidebar completo
+  var sidebar = document.querySelector('.sidebar');
+  if (sidebar) sidebar.style.display = 'none';
+  // Mostrar solo la vista de agente
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  var tab = document.getElementById('tab-agente-personal');
+  if (tab) tab.classList.add('active');
+  // Pedir permisos de notificación automáticamente
+  if (Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+}
+
+function renderAgentePersonal() {
+  if (!esVistaAgente) return;
+  var now     = getNow();
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+  var today   = todayISO();
+
+  // Buscar turno del agente hoy
+  var turno = malla.find(function(r) {
+    return r.fecha === today && (r.email || '').toLowerCase() === agenteEmail;
+  });
+
+  var wrap = document.getElementById('agente-personal-wrap');
+  if (!wrap) return;
+
+  if (!turno) {
+    wrap.innerHTML = '<div class="ap-no-turno">' +
+      '<div class="ap-avatar">' + (agenteNombre[0] || '?').toUpperCase() + '</div>' +
+      '<div class="ap-nombre">' + agenteNombre + '</div>' +
+      '<div class="ap-msg">No tienes turno registrado para hoy</div>' +
+      '</div>';
+    return;
+  }
+
+  var iM  = timeToMins(turno.ingreso);
+  var sM  = timeToMins(turno.salida);
+  var d1M = timeToMins(turno.descanso1);
+  var d2M = timeToMins(turno.descanso2);
+
+  // Estado actual
+  var estado = '';
+  var estadoColor = '';
+  if (nowMins < iM) {
+    var mins = iM - nowMins;
+    estado = 'Tu turno inicia en ' + mins + ' min (' + turno.ingreso + ')';
+    estadoColor = 'var(--blue)';
+  } else if (d1M > 0 && nowMins >= d1M && nowMins < d1M + 10) {
+    estado = '☕ Estás en descanso corto';
+    estadoColor = 'var(--amber)';
+  } else if (d2M > 0 && nowMins >= d2M && nowMins < d2M + 30) {
+    estado = '🍽 Estás en descanso largo';
+    estadoColor = 'var(--amber)';
+  } else if (nowMins >= sM) {
+    estado = '✓ Tu turno ha finalizado';
+    estadoColor = 'var(--text3)';
+  } else {
+    estado = '✅ Estás en turno';
+    estadoColor = 'var(--green)';
+  }
+
+  // Próximo evento personal
+  var proximos = [];
+  if (nowMins < iM)  proximos.push({ label: 'Ingreso', time: turno.ingreso, mins: iM, color: 'var(--green)' });
+  if (d1M > 0 && nowMins < d1M) proximos.push({ label: '☕ Descanso corto', time: turno.descanso1, mins: d1M, color: 'var(--amber)' });
+  if (d2M > 0 && nowMins < d2M) proximos.push({ label: '🍽 Descanso largo', time: turno.descanso2, mins: d2M, color: 'var(--amber)' });
+  if (nowMins < sM)  proximos.push({ label: 'Salida', time: turno.salida, mins: sM, color: 'var(--red)' });
+
+  var col = avColor(agenteNombre);
+
+  wrap.innerHTML =
+    '<div class="ap-header">' +
+      '<div class="ap-avatar-big" style="background:' + col[0] + ';color:' + col[1] + '">' +
+        (agenteNombre.split(' ').map(function(w){ return w[0]||''; }).slice(0,2).join('').toUpperCase()) +
+      '</div>' +
+      '<div>' +
+        '<div class="ap-nombre">' + agenteNombre + '</div>' +
+        '<div class="ap-turno-badge">' + (turno.turno || calcTurno(turno.ingreso)) + (turno.cola ? ' · ' + turno.cola : '') + '</div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="ap-estado" style="border-color:' + estadoColor + ';color:' + estadoColor + '">' +
+      estado +
+    '</div>' +
+
+    '<div class="ap-horario">' +
+      '<div class="ap-hora-item"><span class="ap-hora-label">Ingreso</span><span class="ap-hora-val bi">▶ ' + turno.ingreso + '</span></div>' +
+      (turno.descanso1 ? '<div class="ap-hora-item"><span class="ap-hora-label">Desc. corto</span><span class="ap-hora-val bd">☕ ' + turno.descanso1 + '</span></div>' : '') +
+      (turno.descanso2 ? '<div class="ap-hora-item"><span class="ap-hora-label">Desc. largo</span><span class="ap-hora-val bd">🍽 ' + turno.descanso2 + '</span></div>' : '') +
+      '<div class="ap-hora-item"><span class="ap-hora-label">Salida</span><span class="ap-hora-val bs">■ ' + turno.salida + '</span></div>' +
+    '</div>' +
+
+    (proximos.length ? '<div class="ap-proximos">' +
+      '<div class="ap-prox-title">Próximos eventos</div>' +
+      proximos.map(function(p) {
+        var diff = p.mins - nowMins;
+        return '<div class="ap-prox-row">' +
+          '<span class="ap-prox-dot" style="background:' + p.color + '"></span>' +
+          '<span class="ap-prox-label">' + p.label + '</span>' +
+          '<span class="ap-prox-time">' + p.time + '</span>' +
+          '<span class="ap-prox-diff">en ' + diff + ' min</span>' +
+          '</div>';
+      }).join('') +
+    '</div>' : '') +
+
+    '<div class="ap-footer">Las notificaciones llegarán automáticamente a este navegador</div>';
+}
+
+
 // ── Reloj ─────────────────────────────────────────────────
 function updateClock() {
   var n = getNow();
   var el = document.getElementById('clock');
   var de = document.getElementById('clockDate');
+  var apClock = document.getElementById('ap-clock');
+  var apDate  = document.getElementById('ap-date');
+  if (apClock) apClock.textContent = pad(n.getHours()) + ':' + pad(n.getMinutes()) + ':' + pad(n.getSeconds());
   if (el) el.textContent = pad(n.getHours()) + ':' + pad(n.getMinutes()) + ':' + pad(n.getSeconds());
   var days   = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
   var months = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
@@ -1245,7 +1417,14 @@ function checkAlerts() {
   var today   = todayISO();
   var fkey    = 'fired_' + todayKey();
 
-  shiftsForDate(today).forEach(function(s, i) {
+  var shiftsToCheck = shiftsForDate(today);
+  // En modo agente, solo alertar por el turno propio
+  if (esVistaAgente && agenteEmail) {
+    shiftsToCheck = shiftsToCheck.filter(function(s) {
+      return (s.email || '').toLowerCase() === agenteEmail;
+    });
+  }
+  shiftsToCheck.forEach(function(s, i) {
     var fn = s.nombre;
     var tn = s.turno ? ' (' + s.turno + ')' : '';
 
@@ -1292,6 +1471,7 @@ function checkAlerts() {
 
   renderAlerts();
   renderDashboard();
+  if (esVistaAgente) renderAgentePersonal();
 }
 
 // ── Notificaciones ────────────────────────────────────────
@@ -2126,7 +2306,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar
   applyConfig();
   updateClock();
-  renderDashboard();
+  initAgenteMode();
+  if (!esVistaAgente) renderDashboard();
+  else renderAgentePersonal();
   if (Notification.permission === 'granted') {
     var el = document.getElementById('notif-status');
     if (el) { el.textContent = '✓ Notificaciones activadas'; el.style.display = 'block'; }
