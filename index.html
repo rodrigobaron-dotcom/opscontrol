@@ -1239,7 +1239,7 @@ function checkAlerts() {
   var today   = todayISO();
   var fkey    = 'fired_' + todayKey();
 
-  shiftsForDate(today).forEach(function(s) {
+  shiftsForDate(today).forEach(function(s, i) {
     var fn = s.nombre;
     var tn = s.turno ? ' (' + s.turno + ')' : '';
 
@@ -1271,14 +1271,14 @@ function checkAlerts() {
     }
     if (s.descanso2) {
       var d2 = timeToMins(s.descanso2), d2D = d2 - nowMins;
-      chk(d2, d2D, today + '-d2-' + fn, 'descanso',
+      chk(d2, d2D, today + '-d2-' + i, 'descanso',
         '🍽 Descanso largo en ' + (d2D === 0 ? 'ahora' : d2D + ' min') + ' — pon en AUSENTE',
         d2D === 0 ? '¡' + fn + ' entra a descanso largo AHORA (' + s.descanso2 + ')! Ponlo en AUSENTE' :
                     fn + ' — descanso largo en ' + d2D + ' min (' + s.descanso2 + ') — Avísale para poner AUSENTE');
     }
 
     var sM = timeToMins(s.salida), sD = sM - nowMins;
-    chk(sM, sD, today + '-s-' + fn, 'salida',
+    chk(sM, sD, today + '-s-' + i, 'salida',
       '🔴 Salida en ' + (sD === 0 ? 'ahora' : sD + ' min'),
       sD === 0 ? '¡' + fn + ' sale AHORA (' + s.salida + ')' + tn + '!' :
                  fn + ' sale en ' + sD + ' min a las ' + s.salida + tn);
@@ -1588,10 +1588,13 @@ function saveShift() {
   }
   var rec = { fecha: fecha, nombre: nombre, apellido: apellido, turno: turno, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
 
-  if (editKey) {
-    var p = editKey.split('|');
-    var idx = malla.findIndex(function(r) { return r.fecha === p[0] && r.nombre === p[1]; });
-    if (idx >= 0) malla[idx] = rec;
+  if (editKey !== '' && editKey !== '-1') {
+    var idx = parseInt(editKey);
+    if (idx >= 0 && idx < malla.length) {
+      malla[idx] = rec;
+    } else {
+      malla.push(rec);
+    }
   } else {
     var dup = malla.findIndex(function(r) { return r.fecha === fecha && r.nombre === nombre; });
     if (dup >= 0) {
@@ -1618,17 +1621,17 @@ function clearForm() {
   document.getElementById('f-desc1').value    = '10:00';
   document.getElementById('f-desc2').value    = '12:00';
   document.getElementById('f-salida').value   = '17:00';
-  document.getElementById('edit-key').value   = '';
+  document.getElementById('edit-key').value   = '-1';
   document.getElementById('form-title').textContent = 'Agregar turno';
 }
 
 function editShift(key) {
-  var p = key.split('|');
-  var s = malla.find(function(r) { return r.fecha === p[0] && r.nombre === p[1]; });
-  if (!s) return;
+  var p   = key.split('|');
+  var idx = parseInt(p[1]);
+  var s   = malla[idx];
+  if (!s) { showToast('No se encontró el turno.'); return; }
   document.getElementById('f-fecha').value    = s.fecha;
   document.getElementById('f-nombre').value   = s.nombre;
-
   document.getElementById('f-turno').value    = s.turno || calcTurno(s.ingreso);
   document.getElementById('f-cola').value     = s.cola  || '';
   document.getElementById('f-email').value    = s.email || '';
@@ -1636,15 +1639,18 @@ function editShift(key) {
   document.getElementById('f-desc1').value    = s.descanso1 || '';
   document.getElementById('f-desc2').value    = s.descanso2 || '';
   document.getElementById('f-salida').value   = s.salida;
-  document.getElementById('edit-key').value   = key;
-  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre;
+  document.getElementById('edit-key').value   = String(idx);
+  document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + ' · ' + s.fecha;
   showTab('agregar');
 }
 
 function deleteShift(key) {
-  var p = key.split('|');
-  if (!confirm('¿Eliminar turno de ' + p[1] + ' el ' + p[0] + '?')) return;
-  malla = malla.filter(function(r) { return !(r.fecha === p[0] && r.nombre === p[1]); });
+  var p   = key.split('|');
+  var idx = parseInt(p[1]);
+  var s   = malla[idx];
+  if (!s) { showToast('No se encontró el turno.'); return; }
+  if (!confirm('¿Eliminar turno de ' + s.nombre + ' el ' + s.fecha + '?')) return;
+  malla.splice(idx, 1);
   saveData('malla_v5', malla);
   renderMalla();
   showToast('Turno eliminado.');
