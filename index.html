@@ -1007,6 +1007,12 @@ function dateLabel(iso) {
 }
 function shiftsForDate(iso) { return malla.filter(function(r) { return r.fecha === iso; }); }
 
+// ── ID único por turno ────────────────────────────────────
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+}
+
+
 // ── Colores avatar ────────────────────────────────────────
 var AV = [
   ['#1e1640','#a78bfa'], ['#0d2318','#34d399'], ['#2a1a05','#fbbf24'],
@@ -1586,15 +1592,12 @@ function saveShift() {
     showToast('Completa fecha, nombre completo, ingreso y salida.');
     return;
   }
-  var rec = { fecha: fecha, nombre: nombre, apellido: apellido, turno: turno, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
+  var editIdx    = (editKey !== '' && editKey !== '-1') ? parseInt(editKey) : -1;
+  var existingId = (editIdx >= 0 && malla[editIdx]) ? malla[editIdx].id : null;
+  var rec = { id: existingId || generateId(), fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola, email: email, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
 
-  if (editKey !== '' && editKey !== '-1') {
-    var idx = parseInt(editKey);
-    if (idx >= 0 && idx < malla.length) {
-      malla[idx] = rec;
-    } else {
-      malla.push(rec);
-    }
+  if (editIdx >= 0 && editIdx < malla.length) {
+    malla[editIdx] = rec;
   } else {
     var dup = malla.findIndex(function(r) { return r.fecha === fecha && r.nombre === nombre; });
     if (dup >= 0) {
@@ -1626,10 +1629,9 @@ function clearForm() {
 }
 
 function editShift(key) {
-  var p   = key.split('|');
-  var idx = parseInt(p[1]);
+  var idx = malla.findIndex(function(r) { return (r.id || '') === key || (r.fecha + '|' + malla.indexOf(r)) === key; });
   var s   = malla[idx];
-  if (!s) { showToast('No se encontró el turno.'); return; }
+  if (!s || idx < 0) { showToast('No se encontró el turno.'); return; }
   document.getElementById('f-fecha').value    = s.fecha;
   document.getElementById('f-nombre').value   = s.nombre;
   document.getElementById('f-turno').value    = s.turno || calcTurno(s.ingreso);
@@ -1645,10 +1647,9 @@ function editShift(key) {
 }
 
 function deleteShift(key) {
-  var p   = key.split('|');
-  var idx = parseInt(p[1]);
+  var idx = malla.findIndex(function(r) { return (r.id || '') === key || (r.fecha + '|' + malla.indexOf(r)) === key; });
   var s   = malla[idx];
-  if (!s) { showToast('No se encontró el turno.'); return; }
+  if (!s || idx < 0) { showToast('No se encontró el turno.'); return; }
   if (!confirm('¿Eliminar turno de ' + s.nombre + ' el ' + s.fecha + '?')) return;
   malla.splice(idx, 1);
   saveData('malla_v5', malla);
@@ -1809,7 +1810,7 @@ function showPreview(rows) {
 function confirmImport() {
   var replace  = document.getElementById('chk-replace').checked;
   var toImport = previewData.filter(function(r) { return !r.errors.length; }).map(function(r) {
-    return { fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+    return { id: generateId(), fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
