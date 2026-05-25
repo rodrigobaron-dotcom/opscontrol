@@ -1501,65 +1501,87 @@ function checkAlerts() {
   var nowMins = now.getHours() * 60 + now.getMinutes();
   var today   = todayISO();
   var fkey    = 'fired_' + todayKey();
+  var shifts  = shiftsForDate(today);
 
-  var shiftsToCheck = shiftsForDate(today);
-  // En modo agente, solo alertar por el turno propio
+  // ── MODO AGENTE: solo su propio turno, popup personal ──
   if (esVistaAgente) {
-    shiftsToCheck = shiftsToCheck.filter(function(s) {
-      if (agenteEmail && (s.email || '').toLowerCase() === agenteEmail) return true;
-      if (agenteNombre && (s.nombre || '').toLowerCase() === agenteNombre.toLowerCase()) return true;
+    var mine = shifts.filter(function(s) {
+      if (agenteEmail && (s.email||'').toLowerCase() === agenteEmail) return true;
+      if (agenteNombre && (s.nombre||'').toLowerCase() === agenteNombre.toLowerCase()) return true;
       return false;
     });
-  }
-  shiftsToCheck.forEach(function(s, i) {
-    var fn = s.nombre;
-    var tn = s.turno ? ' (' + s.turno + ')' : '';
-
-    function chk(mins, diff, key, type, title, msg) {
-      var limit = type === 'descanso' ? (key.indexOf('-d1-') >= 0 ? cfg.descanso1 : cfg.descanso2) : cfg[type];
-      if (diff >= 0 && diff <= limit && !firedToday[key]) {
-        firedToday[key] = true;
-        saveData(fkey, firedToday);
-        pushAlert({ key: key, type: type, title: title, body: msg });
-        sendNotif(title, msg);
-        // Enviar DM por Slack
-        var agEmail = s.email || '';
-        sendSlackDM(fn, agEmail, msg, type);
+    mine.forEach(function(s, i) {
+      function chkA(mins, diff, key, type, title, msg) {
+        var lim = type==='descanso' ? (key.indexOf('-d1-')>=0 ? cfg.descanso1 : cfg.descanso2) : cfg[type];
+        if (diff>=0 && diff<=lim && !firedToday[key]) {
+          firedToday[key]=true; saveData(fkey, firedToday);
+          pushAlert({key:key, type:type, title:title, body:msg});
+          sendNotif(title, msg);
+        }
       }
+      var iM=timeToMins(s.ingreso), iD=iM-nowMins;
+      chkA(iM,iD,today+'-ai-'+i,'ingreso','🟢 Tu turno inicia en '+(iD===0?'ahora':iD+' min'), iD===0?'¡Es hora! Ingresa a las '+s.ingreso:'Tu turno inicia en '+iD+' min ('+s.ingreso+')');
+      if (s.descanso1){var d1=timeToMins(s.descanso1),d1D=d1-nowMins; chkA(d1,d1D,today+'-ad1-'+i,'descanso','☕ Descanso corto en '+(d1D===0?'ahora':d1D+' min'),'En '+(d1D===0?'ahora':d1D+' min')+' es tu descanso corto ('+s.descanso1+'). Pon AUSENTE en Artemis.');}
+      if (s.descanso2){var d2=timeToMins(s.descanso2),d2D=d2-nowMins; chkA(d2,d2D,today+'-ad2-'+i,'descanso','🍽 Descanso largo en '+(d2D===0?'ahora':d2D+' min'),'En '+(d2D===0?'ahora':d2D+' min')+' es tu descanso largo ('+s.descanso2+'). Pon AUSENTE en Artemis.');}
+      var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
+      chkA(sM,sD,today+'-as-'+i,'salida','🔴 Tu turno termina en '+(sD===0?'ahora':sD+' min'),'Tu turno finaliza '+(sD===0?'ahora':'en '+sD+' min')+' ('+s.salida+'). Prepárate para salir.');
+    });
+    renderAlerts(); renderDashboard(); renderAgentePersonal();
+    return;
+  }
+
+  // ── MODO ADMIN: agrupar por tipo+hora → UN solo popup por grupo ──
+  var grupos = {};
+  shifts.forEach(function(s, i) {
+    var fn = s.nombre;
+
+    function addGrupo(key, type, hora, diff, label, agEmail, slackMsg) {
+      var lim = type==='descanso' ? (key.indexOf('-d1-')>=0 ? cfg.descanso1 : cfg.descanso2) : cfg[type];
+      if (diff<0 || diff>lim || firedToday[key]) return;
+      firedToday[key]=true; saveData(fkey, firedToday);
+      // Slack DM al agente
+      sendSlackDM(fn, agEmail, slackMsg, type);
+      // Agrupar
+      var gk = type+'|'+hora;
+      if (!grupos[gk]) grupos[gk]={type:type, hora:hora, diff:diff, label:label, nombres:[]};
+      grupos[gk].nombres.push(fn);
     }
 
-    var iM = timeToMins(s.ingreso), iD = iM - nowMins;
-    chk(iM, iD, today + '-i-' + fn, 'ingreso',
-      '🟢 Ingreso en ' + (iD === 0 ? 'ahora' : iD + ' min'),
-      iD === 0 ? '¡' + fn + ' debe ingresar AHORA a las ' + s.ingreso + tn + '!' :
-                 fn + ' ingresa en ' + iD + ' min a las ' + s.ingreso + tn);
+    var iM=timeToMins(s.ingreso), iD=iM-nowMins;
+    addGrupo(today+'-i-'+i, 'ingreso', s.ingreso, iD, 'Ingreso', s.email||'',
+      'Tu turno inicia en '+(iD===0?'ahora':iD+' min')+' ('+s.ingreso+'). ¡Prepárate!');
 
-    if (s.descanso1) {
-      var d1 = timeToMins(s.descanso1), d1D = d1 - nowMins;
-      chk(d1, d1D, today + '-d1-' + fn, 'descanso',
-        '☕ Descanso corto en ' + (d1D === 0 ? 'ahora' : d1D + ' min') + ' — pon en AUSENTE',
-        d1D === 0 ? '¡' + fn + ' entra a descanso corto AHORA (' + s.descanso1 + ')! Ponlo en AUSENTE' :
-                    fn + ' — descanso corto en ' + d1D + ' min (' + s.descanso1 + ') — Avísale para poner AUSENTE');
-    }
-    if (s.descanso2) {
-      var d2 = timeToMins(s.descanso2), d2D = d2 - nowMins;
-      chk(d2, d2D, today + '-d2-' + i, 'descanso',
-        '🍽 Descanso largo en ' + (d2D === 0 ? 'ahora' : d2D + ' min') + ' — pon en AUSENTE',
-        d2D === 0 ? '¡' + fn + ' entra a descanso largo AHORA (' + s.descanso2 + ')! Ponlo en AUSENTE' :
-                    fn + ' — descanso largo en ' + d2D + ' min (' + s.descanso2 + ') — Avísale para poner AUSENTE');
-    }
+    if (s.descanso1){var d1=timeToMins(s.descanso1),d1D=d1-nowMins;
+      addGrupo(today+'-d1-'+i,'descanso',s.descanso1,d1D,'☕ Descanso corto',s.email||'',
+        'En '+(d1D===0?'ahora':d1D+' min')+' es tu descanso corto ('+s.descanso1+'). Pon AUSENTE en Artemis.');}
 
-    var sM = timeToMinsAdj(s.ingreso, s.salida), sD = sM - nowMins;
-    chk(sM, sD, today + '-s-' + i, 'salida',
-      '🔴 Salida en ' + (sD === 0 ? 'ahora' : sD + ' min'),
-      sD === 0 ? '¡' + fn + ' sale AHORA (' + s.salida + ')' + tn + '!' :
-                 fn + ' sale en ' + sD + ' min a las ' + s.salida + tn);
+    if (s.descanso2){var d2=timeToMins(s.descanso2),d2D=d2-nowMins;
+      addGrupo(today+'-d2-'+i,'descanso',s.descanso2,d2D,'🍽 Descanso largo',s.email||'',
+        'En '+(d2D===0?'ahora':d2D+' min')+' es tu descanso largo ('+s.descanso2+'). Pon AUSENTE en Artemis.');}
+
+    var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
+    addGrupo(today+'-s-'+i,'salida',s.salida,sD,'Salida',s.email||'',
+      'Tu turno finaliza en '+(sD===0?'ahora':sD+' min')+' ('+s.salida+'). ¡Prepárate para salir!');
+  });
+
+  // Disparar UN popup por grupo con todos los nombres
+  Object.keys(grupos).forEach(function(gk) {
+    var g = grupos[gk];
+    if (!g.nombres.length) return;
+    var icon = g.type==='ingreso'?'🟢':g.type==='descanso'?'☕':'🔴';
+    var title = icon+' '+g.label+' en '+(g.diff===0?'ahora':g.diff+' min')+' ('+g.hora+')';
+    var body  = g.nombres.join('
+');
+    var aKey  = 'admin|'+gk+'|'+today;
+    pushAlert({key:aKey, type:g.type==='ingreso'?'ingreso':g.type==='salida'?'salida':'descanso', title:title, body:g.nombres.join(' · ')});
+    sendNotif(title, body);
   });
 
   renderAlerts();
   renderDashboard();
   if (esVistaAgente) renderAgentePersonal();
 }
+
 
 // ── Notificaciones ────────────────────────────────────────
 function sendNotif(title, body) {
