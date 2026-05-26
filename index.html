@@ -2415,14 +2415,7 @@ function pinSubmit() {
   }
 }
 
-function checkAdminAuth() {
-  // Si es vista agente, nunca pedir PIN
-  if (esVistaAgente) return true;
-  // Verificar si ya autenticó en esta sesión (válido por 8 horas)
-  var auth = loadData('admin_auth');
-  if (auth && (Date.now() - auth) < 8 * 60 * 60 * 1000) return true;
-  return false;
-}
+function checkAdminAuth() { return true; }
 
 // Soporte teclado para el PIN
 document.addEventListener('keydown', function(e) {
@@ -2567,10 +2560,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initAgenteMode();
     if (esVistaAgente) {
       renderAgentePersonal();
-    } else if (checkAdminAuth()) {
-      renderDashboard();
     } else {
-      showLoginScreen();
+      renderDashboard();
     }
   });
   if (Notification.permission === 'granted') {
