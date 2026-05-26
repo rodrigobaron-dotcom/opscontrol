@@ -273,6 +273,59 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .pin-btn-ok{background:rgba(124,108,245,0.2);border-color:rgba(124,108,245,0.4);color:#a78bfa}
 .pin-btn-ok:hover{background:#7c6cf5;color:#fff}
 
+
+/* ── ESTADOS AGENTE ── */
+.estado-agente-wrap{margin-top:20px}
+.estado-agente-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px;text-align:center}
+.estado-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.est-btn{
+  padding:14px 10px;font-size:13px;font-weight:700;
+  border:1px solid var(--border2);border-radius:var(--rs);
+  background:var(--bg2);color:var(--text2);
+  cursor:pointer;font-family:inherit;transition:all .2s;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+}
+.est-btn:hover{transform:translateY(-2px)}
+.est-btn .est-icon{font-size:22px}
+.est-btn .est-label{font-size:11px}
+.est-btn.active-inicio{background:var(--gdim);border-color:var(--gb);color:var(--green);box-shadow:0 0 12px rgba(34,212,126,0.2)}
+.est-btn.active-pausa{background:var(--bdim);border-color:rgba(79,168,240,.3);color:var(--blue);box-shadow:0 0 12px rgba(79,168,240,0.2)}
+.est-btn.active-descanso{background:var(--adim);border-color:var(--ab);color:var(--amber);box-shadow:0 0 12px rgba(245,166,35,0.2)}
+.est-btn.active-fin{background:var(--rdim);border-color:var(--rb);color:var(--red);box-shadow:0 0 12px rgba(240,79,79,0.2)}
+.est-actual{
+  text-align:center;padding:10px;border-radius:var(--rs);
+  font-size:13px;font-weight:700;margin-bottom:12px;
+  border:1px solid var(--border);background:var(--bg2);
+}
+
+/* ── PANEL TIEMPO REAL DASHBOARD ── */
+.realtime-panel{
+  background:var(--bg1);border:1px solid var(--border);
+  border-radius:var(--r);padding:18px 20px;margin-bottom:22px;
+}
+.realtime-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:8px;margin-top:12px;
+}
+.rt-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--rs);padding:10px 12px;
+  display:flex;align-items:center;gap:8px;
+  transition:border-color .2s;
+}
+.rt-card.rt-inicio{border-color:var(--gb)}
+.rt-card.rt-pausa{border-color:rgba(79,168,240,.3)}
+.rt-card.rt-descanso{border-color:var(--ab)}
+.rt-card.rt-fin{border-color:var(--rb)}
+.rt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rt-inicio .rt-dot{background:var(--green);box-shadow:0 0 6px var(--green)}
+.rt-pausa .rt-dot{background:var(--blue)}
+.rt-descanso .rt-dot{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.rt-fin .rt-dot{background:var(--red)}
+.rt-nombre{font-size:12px;font-weight:600;color:var(--text);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rt-hora{font-size:10px;color:var(--text3);font-family:'Courier New',monospace;white-space:nowrap}
+.rt-estado-lbl{font-size:10px;color:var(--text3)}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -753,6 +806,14 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="hour-grid" id="hourGrid"></div>
         <div class="coverage-labels" id="hourLabels"></div>
       </div>
+      <!-- PANEL TIEMPO REAL -->
+      <div class="realtime-panel" id="realtimePanel">
+        <div class="section-label">Estado agentes en tiempo real</div>
+        <div class="realtime-grid" id="realtimeGrid">
+          <div class="empty" style="grid-column:1/-1">Cargando estados...</div>
+        </div>
+      </div>
+
       <div class="two-col">
 
         <!-- ALERTAS -->
@@ -1224,6 +1285,11 @@ function renderAgentePersonal() {
 
   var wrap = document.getElementById('agente-personal-wrap');
   if (!wrap) return;
+  // Cargar estado actual del agente si existe
+  if (estadosHoy[agenteNombre]) {
+    estadoActualAgente = estadosHoy[agenteNombre].estado;
+    updateEstBtns();
+  }
 
   if (!turno) {
     wrap.innerHTML = '<div class="ap-no-turno">' +
@@ -1304,7 +1370,17 @@ function renderAgentePersonal() {
       }).join('') +
     '</div>' : '') +
 
-    '<div class="ap-footer">Las notificaciones llegarán automáticamente a este navegador</div>';
+    '<div class="estado-agente-wrap">' +
+      '<div class="est-actual" id="estActualLabel">Sin estado registrado hoy</div>' +
+      '<div class="estado-agente-title">¿Qué estás haciendo?</div>' +
+      '<div class="estado-btns">' +
+        '<button class="est-btn" id="btn-est-inicio" onclick="marcarEstado(\'inicio\')"><span class="est-icon">▶</span><span class="est-label">Inicio turno</span></button>' +
+        '<button class="est-btn" id="btn-est-pausa" onclick="marcarEstado(\'pausa\')"><span class="est-icon">⏸</span><span class="est-label">En pausa</span></button>' +
+        '<button class="est-btn" id="btn-est-descanso" onclick="marcarEstado(\'descanso\')"><span class="est-icon">☕</span><span class="est-label">En descanso</span></button>' +
+        '<button class="est-btn" id="btn-est-fin" onclick="marcarEstado(\'fin\')"><span class="est-icon">■</span><span class="est-label">Finalicé turno</span></button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="ap-footer" style="margin-top:16px">Las notificaciones llegarán automáticamente a este navegador</div>';
 }
 
 
@@ -2297,6 +2373,105 @@ function clearAll() {
   showToast('Malla eliminada.');
 }
 
+// ── Estados en tiempo real ────────────────────────────────
+var estadosHoy = {};
+var estadoActualAgente = null;
+
+async function cargarEstados() {
+  try {
+    var hoy = todayISO();
+    var res  = await fetch('/api/estados?fecha=' + hoy);
+    var data = await res.json();
+    if (data.ok) {
+      estadosHoy = data.estados || {};
+      renderRealtimePanel();
+    }
+  } catch(e) { console.warn('No se pudieron cargar estados:', e.message); }
+}
+
+async function marcarEstado(estado) {
+  if (!agenteNombre) return;
+  var now  = getNow();
+  var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
+
+  // UI inmediata
+  estadoActualAgente = estado;
+  updateEstBtns();
+
+  try {
+    var res = await fetch('/api/estados', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ nombre: agenteNombre, estado: estado, hora: hora })
+    });
+    var data = await res.json();
+    if (data.ok) {
+      showToast('✓ Estado actualizado: ' + labelEstado(estado));
+    } else {
+      showToast('⚠ Estado guardado localmente');
+    }
+  } catch(e) {
+    showToast('⚠ Sin conexión — estado guardado localmente');
+  }
+}
+
+function labelEstado(e) {
+  var labels = { inicio:'Inicio turno', pausa:'En pausa', descanso:'En descanso', fin:'Finalicé turno' };
+  return labels[e] || e;
+}
+
+function updateEstBtns() {
+  var estados = ['inicio','pausa','descanso','fin'];
+  estados.forEach(function(e) {
+    var btn = document.getElementById('btn-est-' + e);
+    if (!btn) return;
+    btn.className = 'est-btn' + (estadoActualAgente === e ? ' active-' + e : '');
+  });
+  var lbl = document.getElementById('estActualLabel');
+  if (lbl) {
+    var colors = { inicio:'var(--green)', pausa:'var(--blue)', descanso:'var(--amber)', fin:'var(--red)' };
+    var icons  = { inicio:'▶', pausa:'⏸', descanso:'☕', fin:'■' };
+    if (estadoActualAgente) {
+      lbl.textContent = icons[estadoActualAgente] + ' ' + labelEstado(estadoActualAgente);
+      lbl.style.color = colors[estadoActualAgente];
+      lbl.style.borderColor = colors[estadoActualAgente];
+    } else {
+      lbl.textContent = 'Sin estado registrado hoy';
+      lbl.style.color = '';
+      lbl.style.borderColor = '';
+    }
+  }
+}
+
+function renderRealtimePanel() {
+  var grid = document.getElementById('realtimeGrid');
+  if (!grid) return;
+  var keys = Object.keys(estadosHoy);
+  if (!keys.length) {
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1">Ningún agente ha marcado estado aún</div>';
+    return;
+  }
+  // Ordenar: inicio primero, fin último
+  var order = { inicio:0, pausa:1, descanso:2, fin:3 };
+  keys.sort(function(a,b) {
+    return (order[estadosHoy[a].estado]||9) - (order[estadosHoy[b].estado]||9);
+  });
+  grid.innerHTML = keys.map(function(nombre) {
+    var info   = estadosHoy[nombre];
+    var estado = info.estado || 'inicio';
+    var icons  = { inicio:'▶', pausa:'⏸', descanso:'☕', fin:'■' };
+    return '<div class="rt-card rt-' + estado + '">' +
+      '<span class="rt-dot"></span>' +
+      '<div style="flex:1;min-width:0">' +
+        '<div class="rt-nombre">' + nombre + '</div>' +
+        '<div class="rt-estado-lbl">' + icons[estado] + ' ' + labelEstado(estado) + '</div>' +
+      '</div>' +
+      '<span class="rt-hora">' + (info.hora||'') + '</span>' +
+      '</div>';
+  }).join('');
+}
+
+
 // ── Slack DM ─────────────────────────────────────────────
 var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
 
@@ -2571,6 +2746,9 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updateClock, 1000);
   setInterval(function() { checkAlerts(); }, 10000);
   setInterval(function() { if (document.getElementById('tab-control').classList.contains('active')) renderControl(); }, 30000);
+  // Refrescar estados en tiempo real cada 20 segundos
+  setInterval(function() { cargarEstados(); }, 20000);
+  cargarEstados();
   checkAlerts();
 });
 
