@@ -1570,8 +1570,7 @@ function checkAlerts() {
     if (!g.nombres.length) return;
     var icon = g.type==='ingreso'?'🟢':g.type==='descanso'?'☕':'🔴';
     var title = icon+' '+g.label+' en '+(g.diff===0?'ahora':g.diff+' min')+' ('+g.hora+')';
-    var body  = g.nombres.join('
-');
+    var body  = g.nombres.join(', ');
     var aKey  = 'admin|'+gk+'|'+today;
     pushAlert({key:aKey, type:g.type==='ingreso'?'ingreso':g.type==='salida'?'salida':'descanso', title:title, body:g.nombres.join(' · ')});
     sendNotif(title, body);
