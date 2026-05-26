@@ -255,6 +255,24 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .ap-clock{font-family:'Courier New',monospace;font-size:40px;font-weight:700;text-align:center;margin-bottom:8px;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ap-date{font-size:13px;color:var(--text3);text-align:center;margin-bottom:24px}
 
+
+/* ── LOGIN PIN ── */
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid #5a5870;transition:all .2s}
+.pin-dot.filled{background:#7c6cf5;border-color:#7c6cf5;box-shadow:0 0 8px rgba(124,108,245,0.5)}
+.pin-dot.error{background:#f04f4f;border-color:#f04f4f;animation:shake .3s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pin-btn{
+  padding:16px;font-size:18px;font-weight:700;
+  background:#1a1a2e;border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;color:#ededf5;cursor:pointer;
+  transition:all .15s;font-family:inherit;
+}
+.pin-btn:hover{background:#22223a;border-color:rgba(124,108,245,0.4)}
+.pin-btn:active{transform:scale(.93);background:#7c6cf5;color:#fff}
+.pin-btn-clear{color:#9492aa;font-size:16px}
+.pin-btn-ok{background:rgba(124,108,245,0.2);border-color:rgba(124,108,245,0.4);color:#a78bfa}
+.pin-btn-ok:hover{background:#7c6cf5;color:#fff}
+
 /* ── LAYOUT ── */
 .app{display:flex;height:100vh;overflow:hidden}
 
@@ -630,6 +648,41 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 </style>
 </head>
 <body>
+<!-- LOGIN ADMIN -->
+<div id="loginScreen" style="display:none;position:fixed;inset:0;background:#08080f;z-index:999;display:flex;align-items:center;justify-content:center">
+  <div style="background:#13131f;border:1px solid rgba(124,108,245,0.3);border-radius:16px;padding:40px 36px;width:100%;max-width:360px;text-align:center">
+    <div style="font-size:32px;margin-bottom:8px">⬡</div>
+    <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg,#a78bfa,#7c6cf5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px">OpsControl</div>
+    <div style="font-size:12px;color:#5a5870;margin-bottom:28px;text-transform:uppercase;letter-spacing:.07em">Acceso administrador</div>
+    <div style="font-size:13px;color:#9492aa;margin-bottom:12px">Ingresa tu PIN de acceso</div>
+    <div style="display:flex;justify-content:center;gap:10px;margin-bottom:20px" id="pinDots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto 16px">
+      <button class="pin-btn" onclick="pinPress(1)">1</button>
+      <button class="pin-btn" onclick="pinPress(2)">2</button>
+      <button class="pin-btn" onclick="pinPress(3)">3</button>
+      <button class="pin-btn" onclick="pinPress(4)">4</button>
+      <button class="pin-btn" onclick="pinPress(5)">5</button>
+      <button class="pin-btn" onclick="pinPress(6)">6</button>
+      <button class="pin-btn" onclick="pinPress(7)">7</button>
+      <button class="pin-btn" onclick="pinPress(8)">8</button>
+      <button class="pin-btn" onclick="pinPress(9)">9</button>
+      <button class="pin-btn pin-btn-clear" onclick="pinClear()">⌫</button>
+      <button class="pin-btn" onclick="pinPress(0)">0</button>
+      <button class="pin-btn pin-btn-ok" onclick="pinSubmit()">✓</button>
+    </div>
+    <div id="pinError" style="font-size:12px;color:#f04f4f;height:16px;margin-top:4px"></div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07);font-size:11px;color:#5a5870">
+      Primera vez: PIN por defecto es <strong style="color:#7c6cf5">1234</strong><br>
+      Cámbialo en Configuración después de entrar
+    </div>
+  </div>
+</div>
+
 <div class="app">
 
   <!-- SIDEBAR -->
@@ -992,6 +1045,15 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
             <button class="btn-primary btn-sm" id="btn-sim">Simular</button>
           </div>
           <button class="btn-ghost btn-sm" id="btn-stop-sim2">Detener simulación</button>
+        </div>
+        <div class="config-card">
+          <div class="config-title">🔐 PIN de acceso admin</div>
+          <div class="config-desc">PIN de 4 dígitos para acceder al dashboard. Los agentes no lo necesitan.</div>
+          <div class="hstack" style="margin-bottom:10px">
+            <input type="password" id="cfg-pin-new" maxlength="4" placeholder="Nuevo PIN (4 dígitos)" style="width:160px">
+            <button class="btn-primary btn-sm" onclick="savePin()">Guardar PIN</button>
+          </div>
+          <div id="pin-ok" class="ok-msg" style="display:none">✓ PIN actualizado</div>
         </div>
         <div class="config-card">
           <div class="config-title">💾 Respaldo</div>
@@ -2295,6 +2357,83 @@ async function sendSlackDM(agente, email, mensaje, tipo) {
   }
 }
 
+// ── PIN Admin ─────────────────────────────────────────────
+var pinBuffer = [];
+var PIN_KEY   = 'admin_pin';
+
+function getPin()  { return loadData(PIN_KEY) || '1234'; }
+function savePin() {
+  var np = document.getElementById('cfg-pin-new').value.trim();
+  if (!/^\d{4}$/.test(np)) { showToast('El PIN debe ser exactamente 4 dígitos.'); return; }
+  saveData(PIN_KEY, np);
+  document.getElementById('cfg-pin-new').value = '';
+  var el = document.getElementById('pin-ok');
+  el.style.display = 'block';
+  setTimeout(function() { el.style.display = 'none'; }, 2500);
+  showToast('✓ PIN actualizado correctamente');
+}
+
+function showLoginScreen() {
+  var ls = document.getElementById('loginScreen');
+  if (ls) { ls.style.display = 'flex'; pinBuffer = []; updatePinDots(); }
+}
+function hideLoginScreen() {
+  var ls = document.getElementById('loginScreen');
+  if (ls) ls.style.display = 'none';
+}
+
+function pinPress(n) {
+  if (pinBuffer.length >= 4) return;
+  pinBuffer.push(n);
+  updatePinDots();
+  if (pinBuffer.length === 4) setTimeout(pinSubmit, 150);
+}
+function pinClear() {
+  pinBuffer.pop();
+  updatePinDots();
+  document.getElementById('pinError').textContent = '';
+}
+function updatePinDots() {
+  for (var i = 0; i < 4; i++) {
+    var dot = document.getElementById('pd' + i);
+    if (dot) { dot.className = 'pin-dot' + (i < pinBuffer.length ? ' filled' : ''); }
+  }
+}
+function pinSubmit() {
+  var entered = pinBuffer.join('');
+  if (entered === getPin()) {
+    saveData('admin_auth', Date.now());
+    hideLoginScreen();
+    renderDashboard();
+  } else {
+    document.getElementById('pinError').textContent = 'PIN incorrecto. Inténtalo de nuevo.';
+    for (var i = 0; i < 4; i++) {
+      var dot = document.getElementById('pd' + i);
+      if (dot) { dot.className = 'pin-dot error'; }
+    }
+    setTimeout(function() { pinBuffer = []; updatePinDots(); document.getElementById('pinError').textContent = ''; }, 800);
+  }
+}
+
+function checkAdminAuth() {
+  // Si es vista agente, nunca pedir PIN
+  if (esVistaAgente) return true;
+  // Verificar si ya autenticó en esta sesión (válido por 8 horas)
+  var auth = loadData('admin_auth');
+  if (auth && (Date.now() - auth) < 8 * 60 * 60 * 1000) return true;
+  return false;
+}
+
+// Soporte teclado para el PIN
+document.addEventListener('keydown', function(e) {
+  var ls = document.getElementById('loginScreen');
+  if (!ls || ls.style.display === 'none') return;
+  if (e.key >= '0' && e.key <= '9') pinPress(parseInt(e.key));
+  else if (e.key === 'Backspace') pinClear();
+  else if (e.key === 'Enter') pinSubmit();
+});
+
+
 // ── Toast ─────────────────────────────────────────────────
 var toastTimer;
 function showToast(msg) {
@@ -2424,11 +2563,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar
   applyConfig();
   updateClock();
-  // Cargar malla desde la nube primero
   loadMallaFromCloud().then(function() {
     initAgenteMode();
-    if (!esVistaAgente) renderDashboard();
-    else renderAgentePersonal();
+    if (esVistaAgente) {
+      renderAgentePersonal();
+    } else if (checkAdminAuth()) {
+      renderDashboard();
+    } else {
+      showLoginScreen();
+    }
   });
   if (Notification.permission === 'granted') {
     var el = document.getElementById('notif-status');
