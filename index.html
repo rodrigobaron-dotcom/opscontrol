@@ -701,40 +701,6 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 </style>
 </head>
 <body>
-<!-- LOGIN ADMIN -->
-<div id="loginScreen" style="display:none!important;position:fixed;inset:0;background:#08080f;z-index:999;">
-  <div style="background:#13131f;border:1px solid rgba(124,108,245,0.3);border-radius:16px;padding:40px 36px;width:100%;max-width:360px;text-align:center">
-    <div style="font-size:32px;margin-bottom:8px">⬡</div>
-    <div style="font-size:22px;font-weight:800;background:linear-gradient(135deg,#a78bfa,#7c6cf5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px">OpsControl</div>
-    <div style="font-size:12px;color:#5a5870;margin-bottom:28px;text-transform:uppercase;letter-spacing:.07em">Acceso administrador</div>
-    <div style="font-size:13px;color:#9492aa;margin-bottom:12px">Ingresa tu PIN de acceso</div>
-    <div style="display:flex;justify-content:center;gap:10px;margin-bottom:20px" id="pinDots">
-      <div class="pin-dot" id="pd0"></div>
-      <div class="pin-dot" id="pd1"></div>
-      <div class="pin-dot" id="pd2"></div>
-      <div class="pin-dot" id="pd3"></div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:240px;margin:0 auto 16px">
-      <button class="pin-btn" onclick="pinPress(1)">1</button>
-      <button class="pin-btn" onclick="pinPress(2)">2</button>
-      <button class="pin-btn" onclick="pinPress(3)">3</button>
-      <button class="pin-btn" onclick="pinPress(4)">4</button>
-      <button class="pin-btn" onclick="pinPress(5)">5</button>
-      <button class="pin-btn" onclick="pinPress(6)">6</button>
-      <button class="pin-btn" onclick="pinPress(7)">7</button>
-      <button class="pin-btn" onclick="pinPress(8)">8</button>
-      <button class="pin-btn" onclick="pinPress(9)">9</button>
-      <button class="pin-btn pin-btn-clear" onclick="pinClear()">⌫</button>
-      <button class="pin-btn" onclick="pinPress(0)">0</button>
-      <button class="pin-btn pin-btn-ok" onclick="pinSubmit()">✓</button>
-    </div>
-    <div id="pinError" style="font-size:12px;color:#f04f4f;height:16px;margin-top:4px"></div>
-    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.07);font-size:11px;color:#5a5870">
-      Primera vez: PIN por defecto es <strong style="color:#7c6cf5">1234</strong><br>
-      Cámbialo en Configuración después de entrar
-    </div>
-  </div>
-</div>
 
 <!-- LOGIN SCREEN -->
 <div id="loginScreen" style="position:fixed;inset:0;z-index:9999;background:#08080f;display:flex;align-items:center;justify-content:center">
