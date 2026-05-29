@@ -2857,16 +2857,19 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-import-json').addEventListener('click', function() {
     document.getElementById('imp-file').click();
   });
-  document.getElementById('imp-file').addEventListener('change', function() {
-    if (this.files[0]) importJSON(this.files[0]);
-    this.value = '';
-  });
-  document.getElementById('btn-clear-all').addEventListener('click', clearAll);
-
-  // Login listeners
+  // ── Login listeners (PRIMERO — siempre visible) ──────────
   document.getElementById('btn-login').addEventListener('click', doLogin);
   document.getElementById('login-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
   document.getElementById('login-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') document.getElementById('login-pass').focus(); });
+
+  // ── App listeners (dentro del app oculto) ─────────────────
+  try {
+    document.getElementById('imp-file').addEventListener('change', function() {
+      if (this.files[0]) importJSON(this.files[0]);
+      this.value = '';
+    });
+    document.getElementById('btn-clear-all').addEventListener('click', clearAll);
+  } catch(e) { console.warn('App listeners:', e.message); }
 
   // Inicializar
   applyConfig();
