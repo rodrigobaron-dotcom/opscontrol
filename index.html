@@ -755,7 +755,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
   </div>
 </div>
 
-<div class="app" id="appMain" style="display:none">
+<div class="app" id="appMain" style="display:none;visibility:hidden">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
@@ -2589,12 +2589,16 @@ function doLogout() {
   saveData('ops_session', null);
   currentUser = null; currentToken = null;
   document.getElementById('loginScreen').style.display = 'flex';
-  document.getElementById('appMain').style.display     = 'none';
+  var app = document.getElementById('appMain');
+  app.style.display = 'none';
+  app.style.visibility = 'hidden';
 }
 
 function startApp() {
   document.getElementById('loginScreen').style.display = 'none';
-  document.getElementById('appMain').style.display     = 'flex';
+  var app = document.getElementById('appMain');
+  app.style.display = 'flex';
+  app.style.visibility = 'visible';
   window.scrollTo(0, 0);
   // Mostrar info usuario en sidebar
   var uWrap = document.getElementById('user-info-sidebar');
