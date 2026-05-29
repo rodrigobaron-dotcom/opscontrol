@@ -752,7 +752,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         ⏱ Simulación activa
         <button class="btn-link" id="btn-stop-sim">Detener</button>
       </div>
-      <div class="slack-toggle-wrap" id="slackToggleWrap">
+      <div class="slack-toggle-wrap" id="slackToggleWrap" style="display:none">
         <div class="slack-status" id="slackStatus">
           <span class="slack-dot active" id="slackDot"></span>
           <span id="slackLabel">Alertas Slack ON</span>
@@ -2624,7 +2624,7 @@ function showSlackNotif(msg, isError) {
 }
 
 async function sendSlackDM(agente, email, mensaje, tipo) {
-  if (slackPaused) return;
+  return; // Slack desactivado temporalmente
   try {
     var res = await fetch('/api/notify', {
       method: 'POST',
