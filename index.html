@@ -1422,6 +1422,21 @@ function saveMalla() {
 }
 
 
+// ── Cargar agentes desde Supabase ─────────────────────────
+async function loadAgentes() {
+  try {
+    var res  = await fetch('/api/agentes');
+    var data = await res.json();
+    if (data.ok && Array.isArray(data.agentes)) {
+      agentesDB = data.agentes;
+      console.log('Agentes cargados:', agentesDB.length);
+    }
+  } catch(e) {
+    console.warn('No se pudieron cargar agentes:', e.message);
+  }
+}
+
+
 // ── Enriquecer malla con emails de agentesDB ─────────────
 function enrichMallaWithEmails() {
   if (!agentesDB.length) return;
