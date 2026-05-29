@@ -2557,16 +2557,20 @@ async function doLogin() {
   try {
     var res  = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:email, password:pass}) });
     var data = await res.json();
+    console.log('Login response:', data);
     if (data.ok) {
       currentUser  = data.agente;
       currentToken = data.token;
       saveData('ops_session', { user: currentUser, token: currentToken, ts: Date.now() });
+      console.log('Calling startApp...');
       startApp();
+      console.log('startApp done');
     } else {
       errEl.textContent = data.error || 'Email o contraseña incorrectos';
     }
   } catch(e) {
-    errEl.textContent = 'Error de conexión. Intenta de nuevo.';
+    console.error('Login error:', e);
+    errEl.textContent = 'Error: ' + e.message;
   }
   btn.textContent = 'Ingresar'; btn.disabled = false;
 }
