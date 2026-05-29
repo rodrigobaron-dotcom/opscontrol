@@ -1417,8 +1417,36 @@ async function saveMallaToCloud() {
 }
 
 function saveMalla() {
-  saveMalla();
-  saveMallaToCloud();
+  saveData('malla_v5', malla);
+  setTimeout(function() { saveMallaToCloud(); }, 200);
+}
+
+
+// ── Enriquecer malla con emails de agentesDB ─────────────
+function enrichMallaWithEmails() {
+  if (!agentesDB.length) return;
+  var changed = false;
+  malla.forEach(function(s) {
+    if (s.email) return; // ya tiene email
+    // Buscar por nombre completo
+    var nombre = (s.nombre || '').toLowerCase().trim();
+    var agente = agentesDB.find(function(a) {
+      var fullName = (a.nombre + ' ' + a.apellido).toLowerCase().trim();
+      var altName  = (a.apellido + ' ' + a.nombre).toLowerCase().trim();
+      return fullName === nombre || altName === nombre ||
+             fullName.includes(nombre) || nombre.includes(a.nombre.toLowerCase());
+    });
+    if (agente) {
+      s.email    = agente.email;
+      s.agente_id = agente.id;
+      s.cola     = s.cola || agente.linea_atencion;
+      changed    = true;
+    }
+  });
+  if (changed) {
+    saveMalla();
+    console.log('Malla enriquecida con emails de agentesDB');
+  }
 }
 
 
@@ -2310,10 +2338,11 @@ function applyConfig() {
   document.getElementById('cfg-salida').value   = cfg.salida;
 }
 function saveConfig() {
-  cfg.ingreso   = parseInt(document.getElementById('cfg-ingreso').value)   || 5;
-  cfg.descanso1 = parseInt(document.getElementById('cfg-descanso1').value) || 15;
-  cfg.descanso2 = parseInt(document.getElementById('cfg-descanso2').value) || 15;
-  cfg.salida    = parseInt(document.getElementById('cfg-salida').value)    || 5;
+  function gv(id, def) { var el = document.getElementById(id); return el ? (parseInt(el.value) || def) : def; }
+  cfg.ingreso   = gv('cfg-ingreso',   5);
+  cfg.descanso1 = gv('cfg-descanso1', 15);
+  cfg.descanso2 = gv('cfg-descanso2', 15);
+  cfg.salida    = gv('cfg-salida',    5);
   saveData('ops_cfg', cfg);
   var el = document.getElementById('cfg-ok');
   el.style.display = 'block';
