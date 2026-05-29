@@ -2869,9 +2869,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('imp-file').click();
   });
   // ── Login listeners (PRIMERO — siempre visible) ──────────
-  document.getElementById('btn-login').addEventListener('click', doLogin);
-  document.getElementById('login-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
-  document.getElementById('login-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') document.getElementById('login-pass').focus(); });
+  // Login usa onclick directo en HTML — no necesita addEventListener
 
   // ── App listeners (dentro del app oculto) ─────────────────
   try {
