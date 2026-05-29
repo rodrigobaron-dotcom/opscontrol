@@ -7,7 +7,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-24",
@@ -17,7 +20,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-25",
@@ -27,7 +33,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-26",
@@ -37,7 +46,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-27",
@@ -47,7 +59,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-28",
@@ -57,7 +72,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-29",
@@ -67,7 +85,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-30",
@@ -77,7 +98,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-31",
@@ -87,7 +111,10 @@
     "ingreso": "14:00",
     "descanso1": "16:00",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-23",
@@ -97,7 +124,10 @@
     "ingreso": "14:00",
     "descanso1": "16:00",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -107,7 +137,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -117,7 +150,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -127,7 +163,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -137,7 +176,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -147,7 +189,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -157,7 +202,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -167,7 +215,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -177,7 +228,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -187,7 +241,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-24",
@@ -197,7 +254,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-25",
@@ -207,7 +267,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-26",
@@ -217,7 +280,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-27",
@@ -227,7 +293,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-28",
@@ -237,7 +306,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-29",
@@ -247,7 +319,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-30",
@@ -257,7 +332,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-31",
@@ -267,7 +345,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brayan.rojas@somosinternet.co",
+    "agente_id": "17266cb9-6009-468c-a16f-a6efa8732b00",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-23",
@@ -277,7 +358,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -287,7 +371,10 @@
     "ingreso": "14:00",
     "descanso1": "16:00",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -297,7 +384,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -307,7 +397,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -317,7 +410,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -327,7 +423,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -337,7 +436,10 @@
     "ingreso": "13:30",
     "descanso1": "15:30",
     "descanso2": "19:00",
-    "salida": "21:30"
+    "salida": "21:30",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -347,7 +449,10 @@
     "ingreso": "14:00",
     "descanso1": "16:00",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -357,7 +462,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -367,7 +475,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -377,7 +488,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -387,7 +501,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -397,7 +514,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -407,7 +527,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -417,7 +540,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -427,7 +553,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -437,7 +566,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -447,7 +579,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -457,7 +592,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -467,7 +605,10 @@
     "ingreso": "00:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -477,7 +618,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -487,7 +631,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -497,7 +644,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -507,7 +657,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -517,7 +670,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -527,7 +683,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-23",
@@ -537,7 +696,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -547,7 +709,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -557,7 +722,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -567,7 +735,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -577,7 +748,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -587,7 +761,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -597,7 +774,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -607,7 +787,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "id": "mpj4voqzs9y6",
@@ -630,7 +813,10 @@
     "ingreso": "00:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -640,7 +826,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -650,7 +839,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -660,7 +852,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -670,7 +865,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -680,7 +878,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -690,7 +891,10 @@
     "ingreso": "14:00",
     "descanso1": "19:10",
     "descanso2": "16:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -700,7 +904,10 @@
     "ingreso": "14:00",
     "descanso1": "19:10",
     "descanso2": "16:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-23",
@@ -720,7 +927,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -730,7 +940,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -750,7 +963,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-23",
@@ -760,7 +976,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -770,7 +989,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-23",
@@ -780,7 +1002,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -820,7 +1045,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -830,7 +1058,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -840,7 +1071,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -850,7 +1084,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -860,7 +1097,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -870,7 +1110,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -880,7 +1123,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -890,7 +1136,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -900,7 +1149,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -910,7 +1162,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -920,7 +1175,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -930,7 +1188,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -940,7 +1201,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -950,7 +1214,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -960,7 +1227,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -970,7 +1240,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -980,7 +1253,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-24",
@@ -990,7 +1266,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1000,7 +1279,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1010,7 +1292,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1020,7 +1305,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1030,7 +1318,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1040,7 +1331,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1050,7 +1344,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1060,7 +1357,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1070,7 +1370,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1080,7 +1383,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1090,7 +1396,10 @@
     "ingreso": "14:00",
     "descanso1": "19:10",
     "descanso2": "16:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1100,7 +1409,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1110,7 +1422,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1120,7 +1435,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1130,7 +1448,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1140,7 +1461,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1150,7 +1474,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-24",
@@ -1170,7 +1497,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1180,7 +1510,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1200,7 +1533,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-24",
@@ -1210,7 +1546,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1220,7 +1559,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-24",
@@ -1230,7 +1572,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1270,7 +1615,10 @@
     "ingreso": "07:00",
     "descanso1": "09:00",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -1280,7 +1628,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:30",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1290,7 +1641,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-24",
@@ -1300,7 +1654,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1310,7 +1667,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1320,7 +1680,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-23",
@@ -1330,7 +1693,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1340,7 +1706,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1350,7 +1719,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1360,7 +1732,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1370,7 +1745,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -1380,7 +1758,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1390,7 +1771,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1400,7 +1784,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1410,7 +1797,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1420,7 +1810,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-24",
@@ -1430,7 +1823,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1440,7 +1836,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-23",
@@ -1450,7 +1849,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1460,7 +1862,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1470,7 +1875,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-24",
@@ -1480,7 +1888,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-23",
@@ -1490,7 +1901,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -1500,7 +1914,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1510,7 +1927,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-24",
@@ -1520,7 +1940,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-23",
@@ -1530,7 +1953,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1550,7 +1976,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1560,7 +1989,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1570,7 +2002,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1580,7 +2015,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-23",
@@ -1590,7 +2028,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1600,7 +2041,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1620,7 +2064,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1630,7 +2077,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1640,7 +2090,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1650,7 +2103,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-24",
@@ -1660,7 +2116,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -1670,7 +2129,10 @@
     "ingreso": "06:00",
     "descanso1": "20:50",
     "descanso2": "09:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1680,7 +2142,10 @@
     "ingreso": "07:00",
     "descanso1": "09:30",
     "descanso2": "20:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1690,7 +2155,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1700,7 +2168,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1720,7 +2191,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1730,7 +2204,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1740,7 +2217,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1750,7 +2230,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1760,7 +2243,10 @@
     "ingreso": "11:00",
     "descanso1": "17:00",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1770,7 +2256,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1780,7 +2269,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1790,7 +2282,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -1800,7 +2295,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1810,7 +2308,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1820,7 +2321,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1830,7 +2334,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1840,7 +2347,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-25",
@@ -1850,7 +2360,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1860,7 +2373,10 @@
     "ingreso": "06:30",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:30"
+    "salida": "14:30",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1870,7 +2386,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1880,7 +2399,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1890,7 +2412,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1900,7 +2425,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -1910,7 +2438,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1920,7 +2451,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1930,7 +2464,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1940,7 +2477,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1950,7 +2490,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1960,7 +2503,10 @@
     "ingreso": "16:00",
     "descanso1": "18:50",
     "descanso2": "21:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -1970,7 +2516,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -1980,7 +2529,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -1990,7 +2542,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2000,7 +2555,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2010,7 +2568,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2020,7 +2581,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2030,7 +2594,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2040,7 +2607,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-25",
@@ -2050,7 +2620,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2060,7 +2633,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2070,7 +2646,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2080,7 +2659,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2090,7 +2672,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2100,7 +2685,10 @@
     "ingreso": "08:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2120,7 +2708,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -2140,7 +2731,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -2150,7 +2744,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -2160,7 +2757,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -2170,7 +2770,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -2180,7 +2783,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-25",
@@ -2190,7 +2796,10 @@
     "ingreso": "08:00",
     "descanso1": "11:00",
     "descanso2": "13:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2210,7 +2819,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-25",
@@ -2220,7 +2832,10 @@
     "ingreso": "14:00",
     "descanso1": "16:40",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2230,7 +2845,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -2240,7 +2858,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -2250,7 +2871,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-25",
@@ -2260,7 +2884,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-25",
@@ -2270,7 +2897,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -2300,7 +2930,10 @@
     "ingreso": "08:00",
     "descanso1": "10:50",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2310,7 +2943,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "20:30",
-    "salida": "13:00"
+    "salida": "13:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2320,7 +2956,10 @@
     "ingreso": "07:00",
     "descanso1": "09:30",
     "descanso2": "20:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2330,7 +2969,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2340,7 +2982,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2360,7 +3005,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2370,7 +3018,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2380,7 +3031,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2390,7 +3044,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2400,7 +3057,10 @@
     "ingreso": "11:00",
     "descanso1": "17:00",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2410,7 +3070,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2420,7 +3083,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2430,7 +3096,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2440,7 +3109,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2450,7 +3122,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2460,7 +3135,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2470,7 +3148,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2480,7 +3161,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-26",
@@ -2490,7 +3174,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2500,7 +3187,10 @@
     "ingreso": "06:30",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:30"
+    "salida": "14:30",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2510,7 +3200,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2520,7 +3213,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2530,7 +3226,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2540,7 +3239,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2550,7 +3252,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2560,7 +3265,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2570,7 +3278,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2580,7 +3291,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2590,7 +3304,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2600,7 +3317,10 @@
     "ingreso": "16:00",
     "descanso1": "18:50",
     "descanso2": "21:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2610,7 +3330,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2620,7 +3343,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2630,7 +3356,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2640,7 +3369,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2650,7 +3382,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2660,7 +3395,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2670,7 +3408,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2680,7 +3421,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-26",
@@ -2690,7 +3434,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2700,7 +3447,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2710,7 +3460,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2720,7 +3473,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2730,7 +3486,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2740,7 +3499,10 @@
     "ingreso": "11:00",
     "descanso1": "17:00",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2760,7 +3522,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2780,7 +3545,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2790,7 +3558,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2800,7 +3571,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2810,7 +3584,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2820,7 +3597,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-26",
@@ -2830,7 +3610,10 @@
     "ingreso": "08:00",
     "descanso1": "11:00",
     "descanso2": "13:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2850,7 +3633,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-26",
@@ -2860,7 +3646,10 @@
     "ingreso": "14:00",
     "descanso1": "16:40",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2870,7 +3659,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -2880,7 +3672,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2890,7 +3685,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-26",
@@ -2900,7 +3698,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-26",
@@ -2910,7 +3711,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -2940,7 +3744,10 @@
     "ingreso": "08:00",
     "descanso1": "10:50",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -2950,7 +3757,10 @@
     "ingreso": "13:00",
     "descanso1": "15:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -2960,7 +3770,10 @@
     "ingreso": "07:00",
     "descanso1": "09:30",
     "descanso2": "20:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -2970,7 +3783,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -2980,7 +3796,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3000,7 +3819,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3010,7 +3832,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3020,7 +3845,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3030,7 +3858,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3040,7 +3871,10 @@
     "ingreso": "09:00",
     "descanso1": "11:10",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3050,7 +3884,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3060,7 +3897,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3070,7 +3910,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3080,7 +3923,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3090,7 +3936,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3100,7 +3949,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3110,7 +3962,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3120,7 +3975,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-27",
@@ -3130,7 +3988,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3140,7 +4001,10 @@
     "ingreso": "06:30",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:30"
+    "salida": "14:30",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3150,7 +4014,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3160,7 +4027,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3170,7 +4040,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3180,7 +4053,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3190,7 +4066,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3200,7 +4079,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3210,7 +4092,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3220,7 +4105,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3230,7 +4118,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3240,7 +4131,10 @@
     "ingreso": "16:00",
     "descanso1": "18:50",
     "descanso2": "21:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3250,7 +4144,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3260,7 +4157,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3270,7 +4170,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3280,7 +4183,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3290,7 +4196,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3300,7 +4209,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3310,7 +4222,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3320,7 +4235,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-27",
@@ -3330,7 +4248,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3340,7 +4261,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3350,7 +4274,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3360,7 +4287,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3370,7 +4300,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3380,7 +4313,10 @@
     "ingreso": "08:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3400,7 +4336,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3420,7 +4359,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3430,7 +4372,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3440,7 +4385,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3450,7 +4398,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3460,7 +4411,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-27",
@@ -3470,7 +4424,10 @@
     "ingreso": "08:00",
     "descanso1": "11:00",
     "descanso2": "13:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3490,7 +4447,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-27",
@@ -3500,7 +4460,10 @@
     "ingreso": "14:00",
     "descanso1": "16:40",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3510,7 +4473,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -3520,7 +4486,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3530,7 +4499,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-27",
@@ -3540,7 +4512,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-27",
@@ -3550,7 +4525,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-27",
@@ -3580,7 +4558,10 @@
     "ingreso": "08:00",
     "descanso1": "10:50",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -3590,7 +4571,10 @@
     "ingreso": "06:00",
     "descanso1": "17:30",
     "descanso2": "09:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3600,7 +4584,10 @@
     "ingreso": "07:00",
     "descanso1": "09:30",
     "descanso2": "20:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3610,7 +4597,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3620,7 +4610,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3640,7 +4633,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3650,7 +4646,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3660,7 +4659,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3670,7 +4672,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3680,7 +4685,10 @@
     "ingreso": "11:00",
     "descanso1": "17:00",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3690,7 +4698,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3700,7 +4711,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3710,7 +4724,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -3720,7 +4737,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3730,7 +4750,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3740,7 +4763,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3750,7 +4776,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3760,7 +4789,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-28",
@@ -3770,7 +4802,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3780,7 +4815,10 @@
     "ingreso": "06:30",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:30"
+    "salida": "14:30",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3790,7 +4828,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3800,7 +4841,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3810,7 +4854,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3820,7 +4867,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3830,7 +4880,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3840,7 +4893,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3850,7 +4906,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3860,7 +4919,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3870,7 +4932,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3880,7 +4945,10 @@
     "ingreso": "16:00",
     "descanso1": "18:50",
     "descanso2": "21:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -3890,7 +4958,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3900,7 +4971,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3910,7 +4984,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3920,7 +4997,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3930,7 +5010,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3940,7 +5023,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3950,7 +5036,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3960,7 +5049,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-28",
@@ -3970,7 +5062,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -3980,7 +5075,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -3990,7 +5088,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4000,7 +5101,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4010,7 +5114,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4020,7 +5127,10 @@
     "ingreso": "08:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4040,7 +5150,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -4060,7 +5173,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -4070,7 +5186,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -4080,7 +5199,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -4090,7 +5212,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -4100,7 +5225,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-28",
@@ -4110,7 +5238,10 @@
     "ingreso": "08:00",
     "descanso1": "11:00",
     "descanso2": "13:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4130,7 +5261,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-28",
@@ -4140,7 +5274,10 @@
     "ingreso": "14:00",
     "descanso1": "16:40",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4150,7 +5287,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -4160,7 +5300,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -4170,7 +5313,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-28",
@@ -4180,7 +5326,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-28",
@@ -4190,7 +5339,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -4220,7 +5372,10 @@
     "ingreso": "08:00",
     "descanso1": "10:50",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4230,7 +5385,10 @@
     "ingreso": "06:00",
     "descanso1": "16:00",
     "descanso2": "08:30",
-    "salida": "12:00"
+    "salida": "12:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4240,7 +5398,10 @@
     "ingreso": "07:00",
     "descanso1": "09:30",
     "descanso2": "20:00",
-    "salida": "11:00"
+    "salida": "11:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4250,7 +5411,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4260,7 +5424,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4280,7 +5447,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4290,7 +5460,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4300,7 +5473,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4310,7 +5486,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4320,7 +5499,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4330,7 +5512,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4340,7 +5525,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4350,7 +5538,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4360,7 +5551,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4370,7 +5564,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4380,7 +5577,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4390,7 +5590,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4400,7 +5603,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-29",
@@ -4410,7 +5616,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4420,7 +5629,10 @@
     "ingreso": "06:30",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:30"
+    "salida": "14:30",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4430,7 +5642,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4440,7 +5655,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4450,7 +5668,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4460,7 +5681,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4470,7 +5694,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4480,7 +5707,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4490,7 +5720,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4500,7 +5733,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4510,7 +5746,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4520,7 +5759,10 @@
     "ingreso": "16:00",
     "descanso1": "18:50",
     "descanso2": "21:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4530,7 +5772,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4540,7 +5785,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4550,7 +5798,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4560,7 +5811,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4570,7 +5824,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4580,7 +5837,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4590,7 +5850,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4600,7 +5863,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-29",
@@ -4610,7 +5876,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "13:30",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4620,7 +5889,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4630,7 +5902,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4640,7 +5915,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4650,7 +5928,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4660,7 +5941,10 @@
     "ingreso": "08:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4680,7 +5964,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4700,7 +5987,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4710,7 +6000,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4720,7 +6013,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4730,7 +6026,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4740,7 +6039,10 @@
     "ingreso": "06:00",
     "descanso1": "08:30",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-29",
@@ -4750,7 +6052,10 @@
     "ingreso": "08:00",
     "descanso1": "11:00",
     "descanso2": "13:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4770,7 +6075,10 @@
     "ingreso": "13:00",
     "descanso1": "15:40",
     "descanso2": "18:00",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-29",
@@ -4780,7 +6088,10 @@
     "ingreso": "14:00",
     "descanso1": "16:40",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4790,7 +6101,10 @@
     "ingreso": "11:00",
     "descanso1": "16:50",
     "descanso2": "15:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -4800,7 +6114,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4810,7 +6127,10 @@
     "ingreso": "09:00",
     "descanso1": "11:20",
     "descanso2": "14:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-29",
@@ -4820,7 +6140,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-29",
@@ -4830,7 +6153,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -4860,7 +6186,10 @@
     "ingreso": "08:00",
     "descanso1": "10:50",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -4870,7 +6199,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4880,7 +6212,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -4890,7 +6225,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4900,7 +6238,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4920,7 +6261,10 @@
     "ingreso": "09:00",
     "descanso1": "11:00",
     "descanso2": "13:00",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4930,7 +6274,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4940,7 +6287,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4950,7 +6300,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4960,7 +6313,10 @@
     "ingreso": "09:00",
     "descanso1": "11:30",
     "descanso2": "13:30",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4970,7 +6326,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -4980,7 +6339,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -4990,7 +6352,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -5000,7 +6365,10 @@
     "ingreso": "11:00",
     "descanso1": "16:40",
     "descanso2": "14:00",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5010,7 +6378,10 @@
     "ingreso": "00:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5020,7 +6391,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5030,7 +6404,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5040,7 +6417,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-30",
@@ -5050,7 +6430,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5060,7 +6443,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5070,7 +6456,10 @@
     "ingreso": "15:00",
     "descanso1": "17:50",
     "descanso2": "20:00",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5080,7 +6469,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5090,7 +6482,10 @@
     "ingreso": "22:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5100,7 +6495,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5110,7 +6508,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5120,7 +6521,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5130,7 +6534,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5140,7 +6547,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5150,7 +6560,10 @@
     "ingreso": "15:00",
     "descanso1": "18:10",
     "descanso2": "20:30",
-    "salida": "23:00"
+    "salida": "23:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5160,7 +6573,10 @@
     "ingreso": "16:00",
     "descanso1": "18:30",
     "descanso2": "21:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5170,7 +6586,10 @@
     "ingreso": "00:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5180,7 +6599,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5190,7 +6612,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5200,7 +6625,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5210,7 +6638,10 @@
     "ingreso": "22:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5220,7 +6651,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5230,7 +6664,10 @@
     "ingreso": "14:00",
     "descanso1": "19:10",
     "descanso2": "16:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5240,7 +6677,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-30",
@@ -5250,7 +6690,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5260,7 +6703,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5270,7 +6716,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5280,7 +6729,10 @@
     "ingreso": "12:00",
     "descanso1": "14:10",
     "descanso2": "17:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5290,7 +6742,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5300,7 +6755,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5320,7 +6778,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5340,7 +6801,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5350,7 +6814,10 @@
     "ingreso": "00:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5360,7 +6827,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5370,7 +6840,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -5380,7 +6853,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-30",
@@ -5390,7 +6866,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5410,7 +6889,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-30",
@@ -5420,7 +6902,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5430,7 +6915,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-30",
@@ -5440,7 +6928,10 @@
     "ingreso": "07:00",
     "descanso1": "09:00",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -5450,7 +6941,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:30",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-30",
@@ -5460,7 +6954,10 @@
     "ingreso": "06:00",
     "descanso1": "08:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-30",
@@ -5470,7 +6967,10 @@
     "ingreso": "08:00",
     "descanso1": "10:30",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-30",
@@ -5500,7 +7000,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5510,7 +7013,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5520,7 +7026,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5530,7 +7039,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brigitte.lopez@somosinternet.co",
+    "agente_id": "087e483c-8645-4fc5-8c50-2d52bd76ef62",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5540,7 +7052,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5560,7 +7075,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sandra.aristizabal@somosinternet.co",
+    "agente_id": "1339e0a9-5394-4461-b78c-c0b2b0cce6c4",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5570,7 +7088,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "alejandra.quinteroc@somosinternet.co",
+    "agente_id": "7235b52e-2269-40db-984a-94c04520dec8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5580,7 +7101,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "isabel.naranjo@somosinternet.co",
+    "agente_id": "22cb76e9-a200-4f14-8215-7338721efe3e",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5590,7 +7114,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "maria.davila@somosinternet.co",
+    "agente_id": "2943403a-c4b6-44db-b290-caa91456fa17",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5600,7 +7127,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "selena.gomez@somosinternet.co",
+    "agente_id": "2c335043-6145-4543-a8aa-2feacf5c87c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5610,7 +7140,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5620,7 +7153,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "yariana.julio@somosinternet.co",
+    "agente_id": "345c9012-8025-4aa0-b3a1-dd7beadf3db3",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5630,7 +7166,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "carlos.lopera@somosinternet.co",
+    "agente_id": "8bd0439a-a881-43ba-87bc-b64cfad5dcf8",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -5640,7 +7179,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "paola.velez@somosinternet.co",
+    "agente_id": "789fb955-75db-4233-b822-2b59ba2182ca",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5650,7 +7192,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5660,7 +7205,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "kevin.duban@somosinternet.co",
+    "agente_id": "d5596395-1270-4b36-a6d4-fc588d368a30",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5670,7 +7218,10 @@
     "ingreso": "06:00",
     "descanso1": "08:40",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "carmen.hernandez@somosinternet.co",
+    "agente_id": "126df0c5-77d6-45bf-bfa0-56f16ac5557e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5680,7 +7231,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "rodrigo.baron@somosinternet.co",
+    "agente_id": "5d3d9fe4-dd06-4894-abf7-7c8553a63fb1",
+    "cola": "LIDER"
   },
   {
     "fecha": "2026-05-31",
@@ -5690,7 +7244,10 @@
     "ingreso": "14:00",
     "descanso1": "16:50",
     "descanso2": "19:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5700,7 +7257,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "tatiana.arenas@somosinternet.co",
+    "agente_id": "ca1d3e8d-3d23-43bf-b2c8-cabbd3ab2e52",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5710,7 +7270,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5720,7 +7283,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "Diego.toro@somosinternet.co",
+    "agente_id": "485f8266-d0a8-4283-b502-98f40a9ca19f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5730,7 +7296,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "juan.lopera@somosinternet.co",
+    "agente_id": "3b5d0f9a-5db4-469a-8c2a-b80d3237b27a",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5740,7 +7309,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5750,7 +7322,10 @@
     "ingreso": "12:00",
     "descanso1": "17:10",
     "descanso2": "15:00",
-    "salida": "20:00"
+    "salida": "20:00",
+    "email": "jorge.zapata@somosinternet.co",
+    "agente_id": "33e75ea7-da29-4277-9f71-d344ca0b6a50",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5760,7 +7335,10 @@
     "ingreso": "07:00",
     "descanso1": "09:20",
     "descanso2": "12:00",
-    "salida": "15:00"
+    "salida": "15:00",
+    "email": "sergio.ortiz@somosinternet.co",
+    "agente_id": "34e09c9e-1104-4c71-b449-301949189c32",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5770,7 +7348,10 @@
     "ingreso": "08:00",
     "descanso1": "10:10",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "alvaro.araujo@somosinternet.co",
+    "agente_id": "0af7aef8-7af9-4096-a043-c5bde94d787f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5780,7 +7361,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "ever.guisao@somosinternet.co",
+    "agente_id": "1c128aa7-3e50-4030-acb9-0331e7a1e62c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5790,7 +7374,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "gisela.garcia@somosinternet.co",
+    "agente_id": "a7bbc314-5cf4-4454-9a5c-339a008420e7",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5800,7 +7387,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "angee.argel@somosinternet.co",
+    "agente_id": "53fa6697-dad5-42ce-9b7d-fac67a1c1896",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5810,7 +7400,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "marvin.martinez@somosinternet.co",
+    "agente_id": "60bdaf1b-0b31-4b35-96e8-960256b0af7c",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5820,7 +7413,10 @@
     "ingreso": "14:00",
     "descanso1": "19:10",
     "descanso2": "16:30",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "deibis.diaz@somosinternet.co",
+    "agente_id": "ca70f2fa-06cf-4e7a-9a9a-919210c7ae64",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5830,7 +7426,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "diana.arboleda@somosinternet.co",
+    "agente_id": "74888513-0012-48a1-adad-b5033f905cd0",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5840,7 +7439,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "walter.osorio@somosinternet.co",
+    "agente_id": "4a0101d8-0a31-4658-9007-3565689c8822",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5850,7 +7452,10 @@
     "ingreso": "22:00",
     "descanso1": "03:30",
     "descanso2": "01:00",
-    "salida": "06:00"
+    "salida": "06:00",
+    "email": "stewart.gil@somosinternet.co",
+    "agente_id": "6f16cb05-106f-4d74-af21-eabffdc92254",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5860,7 +7465,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "leandro.calle@somosinternet.co",
+    "agente_id": "dea1017e-85e9-4304-a6cb-b75d7eee278e",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5870,7 +7478,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "wilfredy.lopez@somosinternet.co",
+    "agente_id": "68772fe9-6a61-4bb7-920c-e64a7af6050b",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5880,7 +7491,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniel.giraldo@somosinternet.co",
+    "agente_id": "3ba044a3-d364-4155-b08a-2d37f7855603",
+    "cola": "N2"
   },
   {
     "fecha": "2026-05-31",
@@ -5890,7 +7504,10 @@
     "ingreso": "13:00",
     "descanso1": "16:00",
     "descanso2": "18:30",
-    "salida": "21:00"
+    "salida": "21:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5900,7 +7517,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "viviana.alcaraz@somosinternet.co",
+    "agente_id": "cc46cfc1-615b-4544-920d-a876540b2665",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5910,7 +7530,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5920,7 +7543,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "maria.gabriela@somosinternet.co",
+    "agente_id": "6e1cae45-4aab-4223-9d03-5f541b3b15e7",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5930,7 +7556,10 @@
     "ingreso": "08:00",
     "descanso1": "10:00",
     "descanso2": "12:30",
-    "salida": "16:00"
+    "salida": "16:00",
+    "email": "mariana.marin@somosinternet.co",
+    "agente_id": "d3fe9929-2285-4d0c-aafa-bfb2089e59b3",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5940,7 +7569,10 @@
     "ingreso": "10:00",
     "descanso1": "15:40",
     "descanso2": "13:00",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "carolina.echavarria@somosinternet.co",
+    "agente_id": "9278a68d-0575-4e70-9e14-8997ef5bb51a",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -5960,7 +7592,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "brayan.bolivar@somosinternet.co",
+    "agente_id": "8efe4955-a77e-4dde-8f63-e4630f5ad51f",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5980,7 +7615,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "andres.quiroz@somosinternet.co",
+    "agente_id": "9648934c-f138-491b-956a-aff452bfcb4e",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -5990,7 +7628,10 @@
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "manuela.correa@somosinternet.co",
+    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -6000,7 +7641,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "esteban.ospina@somosinternet.co",
+    "agente_id": "665e6474-b039-4fe3-90f5-cf80a5729546",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-31",
@@ -6010,7 +7654,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "armando.jose@somosinternet.co",
+    "agente_id": "73a232da-b38c-4eaf-a5ac-e07b9aaea12f",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -6020,7 +7667,10 @@
     "ingreso": "06:00",
     "descanso1": "09:00",
     "descanso2": "11:30",
-    "salida": "14:00"
+    "salida": "14:00",
+    "email": "kevin.henao@somosinternet.co",
+    "agente_id": "4a789ea1-485c-4466-b818-8efd2a9c65ef",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-31",
@@ -6030,7 +7680,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -6050,7 +7703,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "willy.pabon@somosinternet.co",
+    "agente_id": "7cfb77a1-fb7a-48a4-bbe2-a75405ef0e82",
+    "cola": "TV"
   },
   {
     "fecha": "2026-05-31",
@@ -6060,7 +7716,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "sebastian.bolivar@somosinternet.co",
+    "agente_id": "6bc4972a-bd3c-4b59-b754-bb711e964578",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -6070,7 +7729,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "daniela.osorio@somosinternet.co",
+    "agente_id": "f0f90919-9f29-4b54-8693-44fb1410a13c",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -6080,7 +7742,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "laura.osorio@somosinternet.co",
+    "agente_id": "9899d69b-e889-41c7-9e75-c15d6f70a040",
+    "cola": "SARA"
   },
   {
     "fecha": "2026-05-31",
@@ -6090,7 +7755,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -6100,7 +7768,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "josset.montiel@somosinternet.co",
+    "agente_id": "5b3f8195-31ee-4646-9032-5f33645217f0",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-31",
@@ -6130,7 +7801,10 @@
     "ingreso": "00:00",
     "descanso1": "00:00",
     "descanso2": "00:00",
-    "salida": "00:00"
+    "salida": "00:00",
+    "email": "david.valencia@somosinternet.co",
+    "agente_id": "4a1a4901-2d37-45c0-a1da-61455ff7655b",
+    "cola": "RETENCIÓN"
   },
   {
     "fecha": "2026-05-31",
@@ -6140,7 +7814,10 @@
     "ingreso": "10:00",
     "descanso1": "11:50",
     "descanso2": "14:30",
-    "salida": "18:00"
+    "salida": "18:00",
+    "email": "elian.durango@somosinternet.co",
+    "agente_id": "572b98b2-1449-42ab-8fe2-d758ff1a7655",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-25",
@@ -6150,7 +7827,10 @@
     "ingreso": "19:00",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-26",
@@ -6160,7 +7840,10 @@
     "ingreso": "18:00",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:00"
+    "salida": "22:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-28",
@@ -6170,7 +7853,10 @@
     "ingreso": "16:00",
     "descanso1": "",
     "descanso2": "",
-    "salida": "19:00"
+    "salida": "19:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-29",
@@ -6180,7 +7866,10 @@
     "ingreso": "15:00",
     "descanso1": "",
     "descanso2": "",
-    "salida": "17:00"
+    "salida": "17:00",
+    "email": "gabriela.cano@somosinternet.co",
+    "agente_id": "79b5d7b3-7959-4616-b274-86c2bdb1f8c7",
+    "cola": "SAC"
   },
   {
     "fecha": "2026-05-25",
@@ -6190,7 +7879,10 @@
     "ingreso": "18:30",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:30"
+    "salida": "22:30",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-26",
@@ -6200,7 +7892,10 @@
     "ingreso": "18:30",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:30"
+    "salida": "22:30",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-27",
@@ -6210,7 +7905,10 @@
     "ingreso": "18:30",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:30"
+    "salida": "22:30",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-28",
@@ -6220,7 +7918,10 @@
     "ingreso": "18:30",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:30"
+    "salida": "22:30",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   },
   {
     "fecha": "2026-05-29",
@@ -6230,6 +7931,9 @@
     "ingreso": "18:30",
     "descanso1": "",
     "descanso2": "",
-    "salida": "22:30"
+    "salida": "22:30",
+    "email": "juan.guzman@somosinternet.co",
+    "agente_id": "8462471f-87fb-450e-8759-10853166c56c",
+    "cola": "SOPORTE"
   }
 ]
