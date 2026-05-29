@@ -2604,6 +2604,13 @@ function startApp() {
     var rlEl = document.getElementById('user-role-sidebar');
     if (rlEl) rlEl.textContent = currentUser.rol || 'agente';
   }
+  // Cargar datos y renderizar
+  Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
+    enrichMallaWithEmails();
+    renderDashboard();
+    checkAlerts();
+    cargarEstados();
+  });
 }
 
 
