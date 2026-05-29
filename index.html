@@ -2760,7 +2760,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializar
   applyConfig();
   updateClock();
-  loadMallaFromCloud().then(function() {
+  Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
+    enrichMallaWithEmails();
     initAgenteMode();
     if (esVistaAgente) {
       renderAgentePersonal();
