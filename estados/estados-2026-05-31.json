@@ -15,10 +15,15 @@
         "estado": "pausa",
         "hora": "18:14",
         "ts": 1780269283798
+      },
+      {
+        "estado": "inicio_turno",
+        "hora": "18:14",
+        "ts": 1780269290608
       }
     ],
-    "estado": "pausa",
+    "estado": "inicio_turno",
     "hora": "18:14",
-    "ts": 1780269283798
+    "ts": 1780269290608
   }
 }
