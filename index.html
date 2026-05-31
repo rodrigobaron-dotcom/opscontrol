@@ -2380,26 +2380,173 @@ function doLogout() {
 function startApp() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('appMain').style.display = 'flex';
-  // Mostrar info usuario en sidebar
-  var uWrap = document.getElementById('user-info-sidebar');
-  if (uWrap && currentUser) {
-    uWrap.style.display = 'block';
-    var col = avColor(currentUser.nombre + currentUser.apellido);
-    var ini = ((currentUser.nombre||'')[0]||'').toUpperCase() + ((currentUser.apellido||'')[0]||'').toUpperCase();
-    var avEl = document.getElementById('user-avatar-sidebar');
-    if (avEl) { avEl.style.background = col[0]; avEl.style.color = col[1]; avEl.textContent = ini; }
-    var nmEl = document.getElementById('user-name-sidebar');
-    if (nmEl) nmEl.textContent = (currentUser.nombre||'') + ' ' + (currentUser.apellido||'');
-    var rlEl = document.getElementById('user-role-sidebar');
-    if (rlEl) rlEl.textContent = currentUser.rol || 'agente';
+
+  var rol = currentUser ? currentUser.rol : 'agente';
+
+  if (rol === 'agente') {
+    // Agente: ocultar sidebar, mostrar solo vista personal
+    document.querySelector('.sidebar').style.display = 'none';
+    document.querySelector('.main').style.flex = '1';
+    Promise.all([loadMallaFromCloud()]).then(function() {
+      renderVistaAgente();
+      setInterval(function() { renderVistaAgente(); }, 60000);
+      setInterval(function() { checkAlerts(); }, 10000);
+      checkAlerts();
+    });
+  } else {
+    // Admin / Supervisor: dashboard completo
+    document.querySelector('.sidebar').style.display = 'flex';
+    var uWrap = document.getElementById('user-info-sidebar');
+    if (uWrap && currentUser) {
+      uWrap.style.display = 'block';
+      var col = avColor(currentUser.nombre + ' ' + currentUser.apellido);
+      var ini = ((currentUser.nombre||'')[0]||'').toUpperCase() + ((currentUser.apellido||'')[0]||'').toUpperCase();
+      var avEl = document.getElementById('user-avatar-sidebar');
+      if (avEl) { avEl.style.background = col[0]; avEl.style.color = col[1]; avEl.textContent = ini; }
+      var nmEl = document.getElementById('user-name-sidebar');
+      if (nmEl) nmEl.textContent = (currentUser.nombre||'') + ' ' + (currentUser.apellido||'');
+      var rlEl = document.getElementById('user-role-sidebar');
+      if (rlEl) rlEl.textContent = currentUser.rol;
+    }
+    Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
+      enrichMallaWithEmails();
+      renderDashboard();
+      checkAlerts();
+      cargarEstados();
+    });
   }
-  // Cargar datos y renderizar
-  Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
-    enrichMallaWithEmails();
-    renderDashboard();
-    checkAlerts();
-    cargarEstados();
+}
+
+// ── Vista personal del agente ─────────────────────────────
+function renderVistaAgente() {
+  var wrap = document.getElementById('agente-personal-wrap');
+  if (!wrap || !currentUser) return;
+
+  // Activar tab vista agente
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  var tab = document.getElementById('tab-agente-personal');
+  if (tab) tab.classList.add('active');
+
+  var now     = getNow();
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+  var today   = todayISO();
+  var nombre  = currentUser.nombre + ' ' + currentUser.apellido;
+  var email   = currentUser.email;
+
+  // Buscar turno del agente hoy por email o nombre
+  var turno = malla.find(function(r) {
+    if (r.fecha !== today) return false;
+    return (r.email && r.email.toLowerCase() === email.toLowerCase()) ||
+           (r.nombre && r.nombre.toLowerCase() === nombre.toLowerCase());
   });
+
+  var col = avColor(nombre);
+  var ini = (currentUser.nombre[0]||'').toUpperCase() + (currentUser.apellido[0]||'').toUpperCase();
+
+  // Header del agente
+  var header = '<div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">' +
+    '<div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;background:' + col[0] + ';color:' + col[1] + '">' + ini + '</div>' +
+    '<div><div style="font-size:17px;font-weight:700">' + nombre + '</div>' +
+    '<div style="font-size:11px;color:var(--text3);background:var(--bg3);padding:2px 8px;border-radius:10px;display:inline-block;margin-top:4px">' + (currentUser.linea_atencion||'') + (currentUser.nivel?' · Nivel '+currentUser.nivel:'') + '</div></div>' +
+    '</div>';
+
+  if (!turno) {
+    wrap.innerHTML = header +
+      '<div style="font-size:14px;font-weight:600;padding:16px;border-radius:var(--rs);border:1px solid var(--border);text-align:center;color:var(--text3)">No tienes turno registrado para hoy</div>' +
+      '<button onclick="doLogout()" style="width:100%;margin-top:16px;padding:10px;font-size:12px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
+    return;
+  }
+
+  var iM  = timeToMins(turno.ingreso);
+  var sM  = timeToMinsAdj(turno.ingreso, turno.salida);
+  var d1M = timeToMins(turno.descanso1);
+  var d2M = timeToMins(turno.descanso2);
+
+  // Estado actual
+  var estadoTxt = '', estadoColor = '';
+  if (nowMins < iM) {
+    estadoTxt = 'Tu turno inicia en ' + (iM - nowMins) + ' min (' + turno.ingreso + ')';
+    estadoColor = 'var(--blue)';
+  } else if (d1M > 0 && nowMins >= d1M && nowMins < d1M + 15) {
+    estadoTxt = '☕ Estás en descanso corto';
+    estadoColor = 'var(--amber)';
+  } else if (d2M > 0 && nowMins >= d2M && nowMins < d2M + 45) {
+    estadoTxt = '🍽 Estás en descanso largo';
+    estadoColor = 'var(--amber)';
+  } else if (nowMins >= sM) {
+    estadoTxt = '✓ Tu turno ha finalizado';
+    estadoColor = 'var(--text3)';
+  } else {
+    estadoTxt = '✅ Estás en turno activo';
+    estadoColor = 'var(--green)';
+  }
+
+  // Próximos eventos
+  var proximos = [];
+  if (nowMins < iM)  proximos.push({ label: 'Ingreso', time: turno.ingreso, mins: iM, color: 'var(--green)' });
+  if (d1M > 0 && nowMins < d1M) proximos.push({ label: '☕ Desc. corto', time: turno.descanso1, mins: d1M, color: 'var(--amber)' });
+  if (d2M > 0 && nowMins < d2M) proximos.push({ label: '🍽 Desc. largo', time: turno.descanso2, mins: d2M, color: 'var(--amber)' });
+  if (nowMins < sM)  proximos.push({ label: 'Salida', time: turno.salida, mins: sM, color: 'var(--red)' });
+
+  wrap.innerHTML = header +
+
+    // Estado actual
+    '<div style="font-size:14px;font-weight:600;padding:12px 16px;border-radius:var(--rs);border:1px solid ' + estadoColor + ';color:' + estadoColor + ';text-align:center;margin-bottom:16px">' + estadoTxt + '</div>' +
+
+    // Horario del día
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">' +
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Ingreso</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--green)">▶ ' + turno.ingreso + '</div></div>' +
+      (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. corto</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--amber)">☕ ' + turno.descanso1 + '</div></div>' : '') +
+      (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. largo</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--amber)">🍽 ' + turno.descanso2 + '</div></div>' : '') +
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Salida</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--red)">■ ' + turno.salida + '</div></div>' +
+    '</div>' +
+
+    // Próximos eventos
+    (proximos.length ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:14px;margin-bottom:16px">' +
+      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:10px">Próximos eventos</div>' +
+      proximos.map(function(p) {
+        var diff = p.mins - nowMins;
+        return '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">' +
+          '<span style="width:7px;height:7px;border-radius:50%;background:' + p.color + ';flex-shrink:0;display:inline-block"></span>' +
+          '<span style="font-size:13px;color:var(--text2);flex:1">' + p.label + '</span>' +
+          '<span style="font-family:'Courier New',monospace;font-size:12px;font-weight:700">' + p.time + '</span>' +
+          '<span style="font-size:11px;color:var(--text3)">en ' + diff + ' min</span>' +
+          '</div>';
+      }).join('') +
+    '</div>' : '') +
+
+    // Botones de marcación
+    '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:10px;text-align:center">Marcar estado</div>' +
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">' +
+      '<button onclick="marcarEstadoAgente('inicio_turno')" style="padding:12px 8px;font-size:12px;font-weight:700;border:1px solid var(--gb);background:var(--gdim);color:var(--green);border-radius:var(--rs);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:18px">▶</span>Inicio turno</button>' +
+      '<button onclick="marcarEstadoAgente('pausa')" style="padding:12px 8px;font-size:12px;font-weight:700;border:1px solid rgba(79,168,240,.3);background:var(--bdim);color:var(--blue);border-radius:var(--rs);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:18px">⏸</span>En pausa</button>' +
+      '<button onclick="marcarEstadoAgente('descanso_corto')" style="padding:12px 8px;font-size:12px;font-weight:700;border:1px solid var(--ab);background:var(--adim);color:var(--amber);border-radius:var(--rs);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:18px">☕</span>Desc. corto</button>' +
+      '<button onclick="marcarEstadoAgente('descanso_largo')" style="padding:12px 8px;font-size:12px;font-weight:700;border:1px solid var(--ab);background:var(--adim);color:var(--amber);border-radius:var(--rs);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:18px">🍽</span>Desc. largo</button>' +
+      '<button onclick="marcarEstadoAgente('fin_turno')" style="grid-column:1/-1;padding:12px 8px;font-size:12px;font-weight:700;border:1px solid var(--rb);background:var(--rdim);color:var(--red);border-radius:var(--rs);cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:18px">■</span>Finalicé mi turno</button>' +
+    '</div>' +
+
+    '<div style="font-size:11px;color:var(--text3);text-align:center;padding-top:12px;border-top:1px solid var(--border);margin-bottom:8px">Las notificaciones llegarán automáticamente</div>' +
+    '<button onclick="doLogout()" style="width:100%;padding:8px;font-size:11px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
+}
+
+async function marcarEstadoAgente(estado) {
+  var now  = getNow();
+  var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
+  var today = todayISO();
+  try {
+    await fetch('/api/estados', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: estado, hora: hora })
+    });
+    await fetch('/api/marcaciones', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ agente_id: currentUser.id, tipo: estado, hora_marcada: hora, fecha: today })
+    });
+  } catch(e) { console.warn('marcacion:', e.message); }
+  var labels = { inicio_turno:'▶ Inicio turno', pausa:'⏸ En pausa', descanso_corto:'☕ Desc. corto', descanso_largo:'🍽 Desc. largo', fin_turno:'■ Fin de turno' };
+  showToast('✓ ' + (labels[estado]||estado) + ' registrado a las ' + hora);
 }
 
 // ── Slack DM ─────────────────────────────────────────────
