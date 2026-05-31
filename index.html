@@ -739,14 +739,12 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
   <main class="main">
 
     <!-- VISTA AGENTE PERSONAL -->
-    <section class="tab" id="tab-agente-personal">
-      <div class="ap-wrap">
-        <div class="ap-card">
-          <div class="ap-clock" id="ap-clock">--:--:--</div>
-          <div class="ap-date" id="ap-date"></div>
-          <div id="agente-personal-wrap"></div>
-        </div>
+    <section class="tab" id="tab-agente-personal" style="padding:20px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div class="ap-clock" id="ap-clock" style="font-size:28px">--:--:--</div>
+        <div class="ap-date" id="ap-date"></div>
       </div>
+      <div id="agente-personal-wrap"></div>
     </section>
 
     <!-- DASHBOARD -->
@@ -2317,16 +2315,7 @@ function renderVistaAgente() {
   var wrap = document.getElementById('agente-personal-wrap');
   if (!wrap || !currentUser) return;
 
-  // Event delegation para botones de estado
-  var wrap2 = document.getElementById('agente-personal-wrap');
-  if (wrap2) {
-    wrap2.addEventListener('click', function(e) {
-      var btn = e.target.closest('[data-estado]');
-      if (btn) marcarEstadoAgente(btn.getAttribute('data-estado'));
-    });
-  }
-
-  // Activar tab vista agente
+  // Activar tab
   document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
   var tab = document.getElementById('tab-agente-personal');
   if (tab) tab.classList.add('active');
@@ -2336,163 +2325,211 @@ function renderVistaAgente() {
   var today   = todayISO();
   var nombre  = currentUser.nombre + ' ' + currentUser.apellido;
   var email   = currentUser.email;
+  var col     = avColor(nombre);
+  var ini     = (currentUser.nombre[0]||'').toUpperCase() + (currentUser.apellido[0]||'').toUpperCase();
 
-  // Buscar turno del agente hoy por email o nombre
+  // Turno de hoy
   var turno = malla.find(function(r) {
     if (r.fecha !== today) return false;
     return (r.email && r.email.toLowerCase() === email.toLowerCase()) ||
            (r.nombre && r.nombre.toLowerCase() === nombre.toLowerCase());
   });
 
-  var col = avColor(nombre);
-  var ini = (currentUser.nombre[0]||'').toUpperCase() + (currentUser.apellido[0]||'').toUpperCase();
-
-  // Header del agente
-  var header = '<div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">' +
-    '<div style="width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;background:' + col[0] + ';color:' + col[1] + '">' + ini + '</div>' +
-    '<div><div style="font-size:17px;font-weight:700">' + nombre + '</div>' +
-    '<div style="font-size:11px;color:var(--text3);background:var(--bg3);padding:2px 8px;border-radius:10px;display:inline-block;margin-top:4px">' + (currentUser.linea_atencion||'') + (currentUser.nivel?' · Nivel '+currentUser.nivel:'') + '</div></div>' +
-    '</div>';
-
-  if (!turno) {
-    wrap.innerHTML = header +
-      '<div style="font-size:14px;font-weight:600;padding:16px;border-radius:var(--rs);border:1px solid var(--border);text-align:center;color:var(--text3)">No tienes turno registrado para hoy</div>' +
-      '<button onclick="doLogout()" style="width:100%;margin-top:16px;padding:10px;font-size:12px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
-    return;
-  }
-
-  var iM  = timeToMins(turno.ingreso);
-  var sM  = timeToMinsAdj(turno.ingreso, turno.salida);
-  var d1M = timeToMins(turno.descanso1);
-  var d2M = timeToMins(turno.descanso2);
-
   // Estado actual
-  var estadoTxt = '', estadoColor = '';
-  if (nowMins < iM) {
-    estadoTxt = 'Tu turno inicia en ' + (iM - nowMins) + ' min (' + turno.ingreso + ')';
-    estadoColor = 'var(--blue)';
-  } else if (d1M > 0 && nowMins >= d1M && nowMins < d1M + 15) {
-    estadoTxt = '☕ Estás en descanso corto';
-    estadoColor = 'var(--amber)';
-  } else if (d2M > 0 && nowMins >= d2M && nowMins < d2M + 45) {
-    estadoTxt = '🍽 Estás en descanso largo';
-    estadoColor = 'var(--amber)';
-  } else if (nowMins >= sM) {
-    estadoTxt = '✓ Tu turno ha finalizado';
-    estadoColor = 'var(--text3)';
-  } else {
-    estadoTxt = '✅ Estás en turno activo';
-    estadoColor = 'var(--green)';
+  var estadoTxt = 'Sin turno hoy', estadoColor = 'var(--text3)';
+  var iM = -1, sM = -1, d1M = -1, d2M = -1;
+  if (turno) {
+    iM = timeToMins(turno.ingreso);
+    sM = timeToMinsAdj(turno.ingreso, turno.salida);
+    d1M = timeToMins(turno.descanso1);
+    d2M = timeToMins(turno.descanso2);
+    if (nowMins < iM) {
+      estadoTxt = 'Inicia en ' + (iM - nowMins) + ' min';
+      estadoColor = 'var(--blue)';
+    } else if (d1M > 0 && nowMins >= d1M && nowMins < d1M + 15) {
+      estadoTxt = '☕ Descanso corto'; estadoColor = 'var(--amber)';
+    } else if (d2M > 0 && nowMins >= d2M && nowMins < d2M + 45) {
+      estadoTxt = '🍽 Descanso largo'; estadoColor = 'var(--amber)';
+    } else if (nowMins >= sM) {
+      estadoTxt = '✓ Turno finalizado'; estadoColor = 'var(--text3)';
+    } else {
+      estadoTxt = '✅ En turno activo'; estadoColor = 'var(--green)';
+    }
   }
 
   // Próximos eventos
   var proximos = [];
-  if (nowMins < iM)  proximos.push({ label: 'Ingreso', time: turno.ingreso, mins: iM, color: 'var(--green)' });
-  if (d1M > 0 && nowMins < d1M) proximos.push({ label: '☕ Desc. corto', time: turno.descanso1, mins: d1M, color: 'var(--amber)' });
-  if (d2M > 0 && nowMins < d2M) proximos.push({ label: '🍽 Desc. largo', time: turno.descanso2, mins: d2M, color: 'var(--amber)' });
-  if (nowMins < sM)  proximos.push({ label: 'Salida', time: turno.salida, mins: sM, color: 'var(--red)' });
+  if (turno) {
+    if (nowMins < iM)  proximos.push({ label:'Ingreso',       time:turno.ingreso,   mins:iM,  color:'var(--green)' });
+    if (d1M > 0 && nowMins < d1M) proximos.push({ label:'☕ Desc. corto', time:turno.descanso1, mins:d1M, color:'var(--amber)' });
+    if (d2M > 0 && nowMins < d2M) proximos.push({ label:'🍽 Desc. largo', time:turno.descanso2, mins:d2M, color:'var(--amber)' });
+    if (nowMins < sM)  proximos.push({ label:'Salida',        time:turno.salida,    mins:sM,  color:'var(--red)'   });
+  }
 
-  wrap.innerHTML = header +
+  // Adherencia del día
+  var marcacionesHoy = window._marcacionesHoy || [];
+  var totalEventos = turno ? 2 + (turno.descanso1?1:0) + (turno.descanso2?1:0) : 0;
+  var pctAdh = marcacionesHoy.length && totalEventos ? Math.round(marcacionesHoy.length / totalEventos * 100) : null;
+
+  // ── COLUMNA IZQUIERDA: turno + estado + botones ──────────
+  var colLeft =
+    // Header agente
+    '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)">' +
+      '<div style="width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;background:' + col[0] + ';color:' + col[1] + '">' + ini + '</div>' +
+      '<div><div style="font-size:15px;font-weight:700;line-height:1.2">' + nombre + '</div>' +
+      '<div style="font-size:11px;color:var(--text3);margin-top:3px">' + (currentUser.linea_atencion||'—') + (currentUser.nivel?' · Nivel '+currentUser.nivel:'') + '</div></div>' +
+    '</div>' +
 
     // Estado actual
-    '<div style="font-size:14px;font-weight:600;padding:12px 16px;border-radius:var(--rs);border:1px solid ' + estadoColor + ';color:' + estadoColor + ';text-align:center;margin-bottom:16px">' + estadoTxt + '</div>' +
+    '<div style="font-size:13px;font-weight:700;padding:10px 14px;border-radius:var(--rs);border:1px solid ' + estadoColor + ';color:' + estadoColor + ';text-align:center;margin-bottom:14px">' + estadoTxt + '</div>' +
 
-    // Horario del día
-    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">' +
-      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Ingreso</div><div style="font-weight:700;color:var(--green) mono">▶ ' + turno.ingreso + '</div></div>' +
-      (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. corto</div><div style="font-weight:700;color:var(--amber) mono">☕ ' + turno.descanso1 + '</div></div>' : '') +
-      (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. largo</div><div style="font-weight:700;color:var(--amber) mono">🍽 ' + turno.descanso2 + '</div></div>' : '') +
-      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Salida</div><div style="font-weight:700;color:var(--red) mono">■ ' + turno.salida + '</div></div>' +
-    '</div>' +
+    // Horario
+    (turno ?
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">' +
+        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Ingreso</div><div class="mono" style="font-weight:700;color:var(--green)">▶ ' + turno.ingreso + '</div></div>' +
+        (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. corto</div><div class="mono" style="font-weight:700;color:var(--amber)">☕ ' + turno.descanso1 + '</div></div>' : '') +
+        (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. largo</div><div class="mono" style="font-weight:700;color:var(--amber)">🍽 ' + turno.descanso2 + '</div></div>' : '') +
+        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Salida</div><div class="mono" style="font-weight:700;color:var(--red)">■ ' + turno.salida + '</div></div>' +
+      '</div>'
+    : '') +
 
     // Próximos eventos
-    (proximos.length ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:14px;margin-bottom:16px">' +
-      '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:10px">Próximos eventos</div>' +
+    (proximos.length ?
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:12px;margin-bottom:14px">' +
+      '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:8px">Próximos</div>' +
       proximos.map(function(p) {
         var diff = p.mins - nowMins;
-        return '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">' +
-          '<span style="width:7px;height:7px;border-radius:50%;background:' + p.color + ';flex-shrink:0;display:inline-block"></span>' +
-          '<span style="font-size:13px;color:var(--text2);flex:1">' + p.label + '</span>' +
-          '<span style="font-weight:700">' + p.time + '</span>' +
-          '<span style="font-size:11px;color:var(--text3)">en ' + diff + ' min</span>' +
+        return '<div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--border)">' +
+          '<span style="width:6px;height:6px;border-radius:50%;background:' + p.color + ';flex-shrink:0;display:inline-block"></span>' +
+          '<span style="font-size:12px;color:var(--text2);flex:1">' + p.label + '</span>' +
+          '<span class="mono" style="font-size:11px;font-weight:700">' + p.time + '</span>' +
+          '<span style="font-size:10px;color:var(--text3)">en ' + diff + 'min</span>' +
           '</div>';
-      }).join('') +
-    '</div>' : '') +
+      }).join('') + '</div>'
+    : '') +
 
-    // Botones de marcación
-    '<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:10px;text-align:center">Marcar estado</div>' +
-    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">' +
-      '<button class="est-btn-agente state-green" data-estado="inicio_turno"><span style="font-size:18px">▶</span>Inicio turno</button>' +
-      '<button class="est-btn-agente state-blue" data-estado="pausa"><span style="font-size:18px">⏸</span>En pausa</button>' +
-      '<button class="est-btn-agente state-amber" data-estado="descanso_corto"><span style="font-size:18px">☕</span>Desc. corto</button>' +
-      '<button class="est-btn-agente state-amber" data-estado="descanso_largo"><span style="font-size:18px">🍽</span>Desc. largo</button>' +
-      '<button class="est-btn-agente state-red" data-estado="fin_turno" style="grid-column:1/-1"><span style="font-size:18px">■</span>Finalicé mi turno</button>' +
+    // Botones marcación
+    '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:8px">Marcar estado</div>' +
+    '<div id="est-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px">' +
+      '<button class="est-btn-agente state-green"  data-estado="inicio_turno"><span style="font-size:16px">▶</span>Inicio turno</button>' +
+      '<button class="est-btn-agente state-blue"   data-estado="pausa"><span style="font-size:16px">⏸</span>En pausa</button>' +
+      '<button class="est-btn-agente state-amber"  data-estado="descanso_corto"><span style="font-size:16px">☕</span>Desc. corto</button>' +
+      '<button class="est-btn-agente state-amber"  data-estado="descanso_largo"><span style="font-size:16px">🍽</span>Desc. largo</button>' +
+      '<button class="est-btn-agente state-red"    data-estado="fin_turno" style="grid-column:1/-1"><span style="font-size:16px">■</span>Finalicé mi turno</button>' +
     '</div>' +
 
-    '<div style="font-size:11px;color:var(--text3);text-align:center;padding-top:12px;border-top:1px solid var(--border);margin-bottom:8px">Las notificaciones llegarán automáticamente</div>' +
-    // Mis turnos del mes
-    '<div style="margin-top:16px;border-top:1px solid var(--border);padding-top:16px">' +
-    '<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:10px">Mis turnos — ' + now.toLocaleString('es', {month:'long', year:'numeric'}) + '</div>' +
-    renderMisMallaTurnos(email, nombre) +
+    // Adherencia
+    (pctAdh !== null ?
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:12px;margin-bottom:14px;text-align:center">' +
+      '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:6px">Adherencia hoy</div>' +
+      '<div style="font-size:28px;font-weight:800;font-family:'Courier New',monospace;color:' + (pctAdh>=80?'var(--green)':pctAdh>=60?'var(--amber)':'var(--red)') + '">' + pctAdh + '%</div>' +
+      '<div style="font-size:10px;color:var(--text3);margin-top:2px">' + marcacionesHoy.length + ' de ' + totalEventos + ' eventos marcados</div>' +
+      '</div>' : '') +
+
+    // Logout
+    '<button id="btn-agente-logout" style="width:100%;padding:7px;font-size:11px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
+
+  // ── COLUMNA DERECHA: malla del mes con filtros ───────────
+  var mesNav  = window._agenteMesOffset || 0;
+  var mesDate = new Date(now.getFullYear(), now.getMonth() + mesNav, 1);
+  var mesLabel = mesDate.toLocaleString('es', { month:'long', year:'numeric' });
+  var mesY = mesDate.getFullYear(), mesM = mesDate.getMonth() + 1;
+  var filtroT = window._agenteFiltroTurno || '';
+
+  var turnosMes = malla.filter(function(r) {
+    if (!r.fecha) return false;
+    var p = r.fecha.split('-');
+    if (parseInt(p[0]) !== mesY || parseInt(p[1]) !== mesM) return false;
+    return (r.email && r.email.toLowerCase() === email.toLowerCase()) ||
+           (r.nombre && r.nombre.toLowerCase() === nombre.toLowerCase());
+  }).sort(function(a,b) { return a.fecha < b.fecha ? -1 : 1; });
+
+  var turnosF = filtroT ? turnosMes.filter(function(t) { return t.turno === filtroT; }) : turnosMes;
+
+  var colRight =
+    // Navegación mes
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">' +
+      '<button class="day-arrow" id="btn-mes-prev">&#8249;</button>' +
+      '<div style="flex:1;text-align:center;font-size:13px;font-weight:600;text-transform:capitalize">' + mesLabel + '</div>' +
+      '<button class="day-arrow" id="btn-mes-next">&#8250;</button>' +
     '</div>' +
-    '<div style="font-size:11px;color:var(--text3);text-align:center;padding-top:12px;border-top:1px solid var(--border);margin-top:8px;margin-bottom:8px">Las notificaciones llegarán automáticamente</div>' +
-    '<button onclick="doLogout()" style="width:100%;padding:8px;font-size:11px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
+
+    // Filtros turno
+    '<div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">' +
+      '<button class="chip' + (!filtroT?' active':'') + '" data-turno-fil="">Todos</button>' +
+      '<button class="chip turno-manana' + (filtroT==='Mañana'?' active':'') + '" data-turno-fil="Mañana">☀ Mañana</button>' +
+      '<button class="chip turno-tarde'  + (filtroT==='Tarde' ?' active':'') + '" data-turno-fil="Tarde">🌤 Tarde</button>' +
+      '<button class="chip turno-noche'  + (filtroT==='Noche' ?' active':'') + '" data-turno-fil="Noche">🌙 Noche</button>' +
+    '</div>' +
+
+    // Lista turnos
+    '<div style="display:flex;flex-direction:column;gap:4px;max-height:calc(100vh - 260px);overflow-y:auto;padding-right:4px">' +
+    (turnosF.length ?
+      turnosF.map(function(t) {
+        var esHoy = t.fecha === today;
+        var p     = t.fecha.split('-');
+        var dt    = new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
+        var dias  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+        var dLabel = dias[dt.getDay()] + ' ' + dt.getDate();
+        var tColor = t.turno==='Mañana'?'var(--green)':t.turno==='Tarde'?'var(--amber)':'#a78bfa';
+        return '<div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--rs);background:' + (esHoy?'var(--gdim)':'var(--bg2)') + ';border:1px solid ' + (esHoy?'var(--gb)':'var(--border)') + ';transition:border-color .15s">' +
+          '<div style="min-width:54px"><div style="font-size:12px;font-weight:700;color:' + (esHoy?'var(--green)':'var(--text)') + '">' + dLabel + (esHoy?' ★':'') + '</div>' +
+          '<div style="font-size:9px;color:var(--text3)">' + pad(parseInt(p[1])) + '/' + p[0] + '</div></div>' +
+          '<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--bg3);color:' + tColor + ';white-space:nowrap">' + (t.turno||'—') + '</span>' +
+          '<span class="mono" style="font-size:11px;color:var(--text2);flex:1">' + t.ingreso + '→' + t.salida + '</span>' +
+          (t.descanso1 ? '<span style="font-size:10px;color:var(--amber)">☕</span>' : '') +
+          (t.descanso2 ? '<span style="font-size:10px;color:var(--amber)">🍽</span>' : '') +
+          (t.conexion ? '<span style="font-size:9px;color:var(--text3);background:var(--bg3);padding:1px 6px;border-radius:8px">' + t.conexion + '</span>' : '') +
+          '</div>';
+      }).join('')
+    : '<div style="font-size:12px;color:var(--text3);text-align:center;padding:24px">Sin turnos ' + (filtroT?'de turno '+filtroT+' ':'') + 'en este mes</div>') +
+    '</div>';
+
+  // ── LAYOUT DOS COLUMNAS ──────────────────────────────────
+  wrap.innerHTML =
+    '<div style="display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start;min-height:100%">' +
+      '<div style="background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:20px">' + colLeft + '</div>' +
+      '<div style="background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:20px">' + colRight + '</div>' +
+    '</div>';
+
+  // Event listeners
+  wrap.addEventListener('click', function(e) {
+    // Botones estado
+    var btnEst = e.target.closest('[data-estado]');
+    if (btnEst) { marcarEstadoAgente(btnEst.getAttribute('data-estado')); return; }
+    // Filtro turno
+    var btnFil = e.target.closest('[data-turno-fil]');
+    if (btnFil) { window._agenteFiltroTurno = btnFil.getAttribute('data-turno-fil'); renderVistaAgente(); return; }
+    // Navegación mes
+    if (e.target.id === 'btn-mes-prev') { window._agenteMesOffset = (window._agenteMesOffset||0) - 1; renderVistaAgente(); return; }
+    if (e.target.id === 'btn-mes-next') { window._agenteMesOffset = (window._agenteMesOffset||0) + 1; renderVistaAgente(); return; }
+    // Logout
+    if (e.target.id === 'btn-agente-logout') { doLogout(); return; }
+  }, { once: false });
 }
 
 async function marcarEstadoAgente(estado) {
-  var now  = getNow();
-  var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
+  var now   = getNow();
+  var hora  = pad(now.getHours()) + ':' + pad(now.getMinutes());
   var today = todayISO();
+  // Registrar marcación local
+  window._marcacionesHoy = window._marcacionesHoy || [];
+  window._marcacionesHoy.push({ estado: estado, hora: hora });
   try {
     await fetch('/api/estados', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: estado, hora: hora })
     });
     await fetch('/api/marcaciones', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ agente_id: currentUser.id, tipo: estado, hora_marcada: hora, fecha: today })
     });
   } catch(e) { console.warn('marcacion:', e.message); }
   var labels = { inicio_turno:'▶ Inicio turno', pausa:'⏸ En pausa', descanso_corto:'☕ Desc. corto', descanso_largo:'🍽 Desc. largo', fin_turno:'■ Fin de turno' };
-  showToast('✓ ' + (labels[estado]||estado) + ' registrado a las ' + hora);
+  showToast('✓ ' + (labels[estado]||estado) + ' · ' + hora);
+  renderVistaAgente();
 }
 
-// ── Malla de turnos del agente (solo lectura) ─────────────
-function renderMisMallaTurnos(email, nombre) {
-  var mes  = getNow();
-  var year = mes.getFullYear();
-  var mon  = mes.getMonth() + 1;
-
-  // Filtrar turnos del mes del agente
-  var turnos = malla.filter(function(r) {
-    if (!r.fecha) return false;
-    var p = r.fecha.split('-');
-    if (parseInt(p[0]) !== year || parseInt(p[1]) !== mon) return false;
-    return (r.email && r.email.toLowerCase() === email.toLowerCase()) ||
-           (r.nombre && r.nombre.toLowerCase() === nombre.toLowerCase());
-  }).sort(function(a, b) { return a.fecha < b.fecha ? -1 : 1; });
-
-  if (!turnos.length) return '<div style="font-size:12px;color:var(--text3);text-align:center;padding:16px">Sin turnos registrados para este mes</div>';
-
-  var today = todayISO();
-  return turnos.map(function(t) {
-    var esHoy   = t.fecha === today;
-    var p       = t.fecha.split('-');
-    var dt      = new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
-    var dias    = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-    var fechaLbl = dias[dt.getDay()] + ' ' + dt.getDate() + '/' + pad(parseInt(p[1]));
-    var turnoColor = t.turno === 'Mañana' ? 'var(--green)' : t.turno === 'Tarde' ? 'var(--amber)' : '#a78bfa';
-    return '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--rs);margin-bottom:4px;background:' + (esHoy ? 'var(--gdim)' : 'var(--bg2)') + ';border:1px solid ' + (esHoy ? 'var(--gb)' : 'var(--border)') + '">' +
-      '<div style="font-size:11px;font-weight:700;min-width:60px;color:' + (esHoy ? 'var(--green)' : 'var(--text2)') + '">' + fechaLbl + (esHoy ? ' ★' : '') + '</div>' +
-      '<span style="font-size:10px;font-weight:700;padding:1px 7px;border-radius:10px;background:var(--bg3);color:' + turnoColor + '">' + (t.turno||'—') + '</span>' +
-      '<span style="font-size:11px;color:var(--text2)">' + t.ingreso + '→' + t.salida + '</span>' +
-      (t.descanso1 ? '<span style="font-size:10px;color:var(--amber)">☕' + t.descanso1 + '</span>' : '') +
-      (t.conexion  ? '<span style="font-size:10px;color:var(--text3);margin-left:auto">' + t.conexion + '</span>' : '') +
-      '</div>';
-  }).join('');
-}
 
 // ── Slack DM ─────────────────────────────────────────────
 var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
