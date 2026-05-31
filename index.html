@@ -1144,6 +1144,97 @@ var simTicker    = null;
 var previewData  = [];
 var mallaDate    = todayISO();
 
+// ── Login / Sesión ────────────────────────────────────────
+var currentUser  = null;
+var currentToken = null;
+
+async function doLogin() {
+  var email = (document.getElementById('login-email').value || '').trim().toLowerCase();
+  var pass  = (document.getElementById('login-pass').value  || '').trim();
+  var errEl = document.getElementById('login-error');
+  errEl.textContent = '';
+  if (!email || !pass) { errEl.textContent = 'Completa email y contraseña'; return; }
+  var btn = document.getElementById('btn-login');
+  btn.textContent = 'Ingresando...'; btn.disabled = true;
+  try {
+    var res  = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:email, password:pass}) });
+    var data = await res.json();
+    console.log('Login response:', data);
+    if (data.ok) {
+      currentUser  = data.agente;
+      currentToken = data.token;
+      saveData('ops_session', { user: currentUser, token: currentToken, ts: Date.now() });
+      console.log('Calling startApp...');
+      startApp();
+      console.log('startApp done');
+    } else {
+      errEl.textContent = data.error || 'Email o contraseña incorrectos';
+    }
+  } catch(e) {
+    console.error('Login error:', e);
+    errEl.textContent = 'Error: ' + e.message;
+  }
+  btn.textContent = 'Ingresar'; btn.disabled = false;
+}
+
+function restoreSession() {
+  var s = loadData('ops_session');
+  if (s && s.ts && (Date.now() - s.ts) < 12 * 60 * 60 * 1000 && s.user && s.token) {
+    currentUser  = s.user;
+    currentToken = s.token;
+    return true;
+  }
+  return false;
+}
+
+function doLogout() {
+  saveData('ops_session', null);
+  currentUser = null; currentToken = null;
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('appMain').style.display = 'none';
+}
+
+function startApp() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('appMain').style.display = 'flex';
+
+  var rol = currentUser ? currentUser.rol : 'agente';
+
+  if (rol === 'agente') {
+    // Agente: ocultar sidebar, mostrar solo vista personal
+    document.querySelector('.sidebar').style.display = 'none';
+    document.querySelector('.main').style.flex = '1';
+    Promise.all([loadMallaFromCloud()]).then(function() {
+      renderVistaAgente();
+      setInterval(function() { renderVistaAgente(); }, 60000);
+      setInterval(function() { checkAlerts(); }, 10000);
+      checkAlerts();
+    });
+  } else {
+    // Admin / Supervisor: dashboard completo
+    document.querySelector('.sidebar').style.display = 'flex';
+    var uWrap = document.getElementById('user-info-sidebar');
+    if (uWrap && currentUser) {
+      uWrap.style.display = 'block';
+      var col = avColor(currentUser.nombre + ' ' + currentUser.apellido);
+      var ini = ((currentUser.nombre||'')[0]||'').toUpperCase() + ((currentUser.apellido||'')[0]||'').toUpperCase();
+      var avEl = document.getElementById('user-avatar-sidebar');
+      if (avEl) { avEl.style.background = col[0]; avEl.style.color = col[1]; avEl.textContent = ini; }
+      var nmEl = document.getElementById('user-name-sidebar');
+      if (nmEl) nmEl.textContent = (currentUser.nombre||'') + ' ' + (currentUser.apellido||'');
+      var rlEl = document.getElementById('user-role-sidebar');
+      if (rlEl) rlEl.textContent = currentUser.rol;
+    }
+    Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
+      enrichMallaWithEmails();
+      renderDashboard();
+      checkAlerts();
+      cargarEstados();
+    });
+  }
+}
+
+
 // ── Persistencia ──────────────────────────────────────────
 function saveData(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
 function loadData(k)    { try { return JSON.parse(localStorage.getItem(k)); } catch(e) { return null; } }
@@ -2327,95 +2418,6 @@ function renderRealtimePanel() {
   }).join('');
 }
 
-// ── Login / Sesión ────────────────────────────────────────
-var currentUser  = null;
-var currentToken = null;
-
-async function doLogin() {
-  var email = (document.getElementById('login-email').value || '').trim().toLowerCase();
-  var pass  = (document.getElementById('login-pass').value  || '').trim();
-  var errEl = document.getElementById('login-error');
-  errEl.textContent = '';
-  if (!email || !pass) { errEl.textContent = 'Completa email y contraseña'; return; }
-  var btn = document.getElementById('btn-login');
-  btn.textContent = 'Ingresando...'; btn.disabled = true;
-  try {
-    var res  = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:email, password:pass}) });
-    var data = await res.json();
-    console.log('Login response:', data);
-    if (data.ok) {
-      currentUser  = data.agente;
-      currentToken = data.token;
-      saveData('ops_session', { user: currentUser, token: currentToken, ts: Date.now() });
-      console.log('Calling startApp...');
-      startApp();
-      console.log('startApp done');
-    } else {
-      errEl.textContent = data.error || 'Email o contraseña incorrectos';
-    }
-  } catch(e) {
-    console.error('Login error:', e);
-    errEl.textContent = 'Error: ' + e.message;
-  }
-  btn.textContent = 'Ingresar'; btn.disabled = false;
-}
-
-function restoreSession() {
-  var s = loadData('ops_session');
-  if (s && s.ts && (Date.now() - s.ts) < 12 * 60 * 60 * 1000 && s.user && s.token) {
-    currentUser  = s.user;
-    currentToken = s.token;
-    return true;
-  }
-  return false;
-}
-
-function doLogout() {
-  saveData('ops_session', null);
-  currentUser = null; currentToken = null;
-  document.getElementById('loginScreen').style.display = 'flex';
-  document.getElementById('appMain').style.display = 'none';
-}
-
-function startApp() {
-  document.getElementById('loginScreen').style.display = 'none';
-  document.getElementById('appMain').style.display = 'flex';
-
-  var rol = currentUser ? currentUser.rol : 'agente';
-
-  if (rol === 'agente') {
-    // Agente: ocultar sidebar, mostrar solo vista personal
-    document.querySelector('.sidebar').style.display = 'none';
-    document.querySelector('.main').style.flex = '1';
-    Promise.all([loadMallaFromCloud()]).then(function() {
-      renderVistaAgente();
-      setInterval(function() { renderVistaAgente(); }, 60000);
-      setInterval(function() { checkAlerts(); }, 10000);
-      checkAlerts();
-    });
-  } else {
-    // Admin / Supervisor: dashboard completo
-    document.querySelector('.sidebar').style.display = 'flex';
-    var uWrap = document.getElementById('user-info-sidebar');
-    if (uWrap && currentUser) {
-      uWrap.style.display = 'block';
-      var col = avColor(currentUser.nombre + ' ' + currentUser.apellido);
-      var ini = ((currentUser.nombre||'')[0]||'').toUpperCase() + ((currentUser.apellido||'')[0]||'').toUpperCase();
-      var avEl = document.getElementById('user-avatar-sidebar');
-      if (avEl) { avEl.style.background = col[0]; avEl.style.color = col[1]; avEl.textContent = ini; }
-      var nmEl = document.getElementById('user-name-sidebar');
-      if (nmEl) nmEl.textContent = (currentUser.nombre||'') + ' ' + (currentUser.apellido||'');
-      var rlEl = document.getElementById('user-role-sidebar');
-      if (rlEl) rlEl.textContent = currentUser.rol;
-    }
-    Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
-      enrichMallaWithEmails();
-      renderDashboard();
-      checkAlerts();
-      cargarEstados();
-    });
-  }
-}
 
 // ── Vista personal del agente ─────────────────────────────
 function renderVistaAgente() {
