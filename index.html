@@ -20,7 +20,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
   --r:12px;--rs:8px;--rx:6px;
 }
 
-
 /* ── FILTROS MALLA ── */
 .filtros-wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;padding:12px 16px;background:var(--bg1);border:1px solid var(--border);border-radius:var(--r)}
 .filtro-group{display:flex;align-items:center;gap:10px}
@@ -86,7 +85,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .hora-check-count{font-size:11px;color:var(--text3);margin-left:auto}
 .hora-check-bar{height:4px;border-radius:2px;background:var(--accent);margin-top:3px;opacity:.5}
 
-
 /* ── DASH PANELS ── */
 .dash-panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
 .dash-panel-section{padding:14px 16px}
@@ -108,7 +106,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .dash-header-amber .dash-section-count{background:var(--adim);color:var(--amber);border:1px solid var(--ab)}
 .dash-header-green{color:var(--green)!important}
 .dash-header-amber{color:var(--amber)!important}
-
 
 /* ── CONTROL DE MANDO ── */
 .control-resumen{
@@ -189,7 +186,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .estado-pendiente{background:var(--text3)}
 .estado-leyenda{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);flex-wrap:wrap}
 
-
 /* ── SLACK TOGGLE ── */
 .slack-toggle-wrap{
   margin-top:10px;padding:10px;
@@ -227,7 +223,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .slack-notif.show{opacity:1;transform:translateY(0)}
 .slack-notif.error{border-color:var(--rb);color:var(--red)}
 
-
 /* ── VISTA AGENTE PERSONAL ── */
 .ap-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
 .ap-card{background:var(--bg1);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:440px;width:100%}
@@ -254,49 +249,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .ap-msg{font-size:14px;color:var(--text3);margin-top:8px}
 .ap-clock{font-family:'Courier New',monospace;font-size:40px;font-weight:700;text-align:center;margin-bottom:8px;background:linear-gradient(135deg,#fff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ap-date{font-size:13px;color:var(--text3);text-align:center;margin-bottom:24px}
-
-
-/* ── LOGIN PIN ── */
-.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid #5a5870;transition:all .2s}
-.pin-dot.filled{background:#7c6cf5;border-color:#7c6cf5;box-shadow:0 0 8px rgba(124,108,245,0.5)}
-.pin-dot.error{background:#f04f4f;border-color:#f04f4f;animation:shake .3s ease}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-.pin-btn{
-  padding:16px;font-size:18px;font-weight:700;
-  background:#1a1a2e;border:1px solid rgba(255,255,255,0.1);
-  border-radius:10px;color:#ededf5;cursor:pointer;
-  transition:all .15s;font-family:inherit;
-}
-.pin-btn:hover{background:#22223a;border-color:rgba(124,108,245,0.4)}
-.pin-btn:active{transform:scale(.93);background:#7c6cf5;color:#fff}
-.pin-btn-clear{color:#9492aa;font-size:16px}
-.pin-btn-ok{background:rgba(124,108,245,0.2);border-color:rgba(124,108,245,0.4);color:#a78bfa}
-.pin-btn-ok:hover{background:#7c6cf5;color:#fff}
-
-
-/* ── ESTADOS AGENTE ── */
-.estado-agente-wrap{margin-top:20px}
-.estado-agente-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px;text-align:center}
-.estado-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.est-btn{
-  padding:14px 10px;font-size:13px;font-weight:700;
-  border:1px solid var(--border2);border-radius:var(--rs);
-  background:var(--bg2);color:var(--text2);
-  cursor:pointer;font-family:inherit;transition:all .2s;
-  display:flex;flex-direction:column;align-items:center;gap:4px;
-}
-.est-btn:hover{transform:translateY(-2px)}
-.est-btn .est-icon{font-size:22px}
-.est-btn .est-label{font-size:11px}
-.est-btn.active-inicio{background:var(--gdim);border-color:var(--gb);color:var(--green);box-shadow:0 0 12px rgba(34,212,126,0.2)}
-.est-btn.active-pausa{background:var(--bdim);border-color:rgba(79,168,240,.3);color:var(--blue);box-shadow:0 0 12px rgba(79,168,240,0.2)}
-.est-btn.active-descanso{background:var(--adim);border-color:var(--ab);color:var(--amber);box-shadow:0 0 12px rgba(245,166,35,0.2)}
-.est-btn.active-fin{background:var(--rdim);border-color:var(--rb);color:var(--red);box-shadow:0 0 12px rgba(240,79,79,0.2)}
-.est-actual{
-  text-align:center;padding:10px;border-radius:var(--rs);
-  font-size:13px;font-weight:700;margin-bottom:12px;
-  border:1px solid var(--border);background:var(--bg2);
-}
 
 /* ── PANEL TIEMPO REAL DASHBOARD ── */
 .realtime-panel{
@@ -1143,6 +1095,7 @@ var simTime_val  = null;
 var simTicker    = null;
 var previewData  = [];
 var mallaDate    = todayISO();
+var agentesDB    = [];
 
 // ── Login / Sesión ────────────────────────────────────────
 var currentUser  = null;
@@ -1159,15 +1112,12 @@ async function doLogin() {
   try {
     var res  = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email:email, password:pass}) });
     var data = await res.json();
-    console.log('Login response:', data);
     if (data.ok) {
       currentUser  = data.agente;
       currentToken = data.token;
       saveData('ops_session', { user: currentUser, token: currentToken, ts: Date.now() });
-      console.log('Calling startApp...');
-      startApp();
-      console.log('startApp done');
-    } else {
+        startApp();
+      } else {
       errEl.textContent = data.error || 'Email o contraseña incorrectos';
     }
   } catch(e) {
@@ -1233,7 +1183,6 @@ function startApp() {
     });
   }
 }
-
 
 // ── Persistencia ──────────────────────────────────────────
 function saveData(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
@@ -1590,33 +1539,6 @@ function checkAlerts() {
   var fkey    = 'fired_' + todayKey();
   var shifts  = shiftsForDate(today);
 
-  // ── MODO AGENTE: solo su propio turno, popup personal ──
-  if (esVistaAgente) {
-    var mine = shifts.filter(function(s) {
-      if (agenteEmail && (s.email||'').toLowerCase() === agenteEmail) return true;
-      if (agenteNombre && (s.nombre||'').toLowerCase() === agenteNombre.toLowerCase()) return true;
-      return false;
-    });
-    mine.forEach(function(s, i) {
-      function chkA(mins, diff, key, type, title, msg) {
-        var lim = type==='descanso' ? (key.indexOf('-d1-')>=0 ? cfg.descanso1 : cfg.descanso2) : cfg[type];
-        if (diff>=0 && diff<=lim && !firedToday[key]) {
-          firedToday[key]=true; saveData(fkey, firedToday);
-          pushAlert({key:key, type:type, title:title, body:msg});
-          sendNotif(title, msg);
-        }
-      }
-      var iM=timeToMins(s.ingreso), iD=iM-nowMins;
-      chkA(iM,iD,today+'-ai-'+i,'ingreso','🟢 Tu turno inicia en '+(iD===0?'ahora':iD+' min'), iD===0?'¡Es hora! Ingresa a las '+s.ingreso:'Tu turno inicia en '+iD+' min ('+s.ingreso+')');
-      if (s.descanso1){var d1=timeToMins(s.descanso1),d1D=d1-nowMins; chkA(d1,d1D,today+'-ad1-'+i,'descanso','☕ Descanso corto en '+(d1D===0?'ahora':d1D+' min'),'En '+(d1D===0?'ahora':d1D+' min')+' es tu descanso corto ('+s.descanso1+'). Pon AUSENTE en Artemis.');}
-      if (s.descanso2){var d2=timeToMins(s.descanso2),d2D=d2-nowMins; chkA(d2,d2D,today+'-ad2-'+i,'descanso','🍽 Descanso largo en '+(d2D===0?'ahora':d2D+' min'),'En '+(d2D===0?'ahora':d2D+' min')+' es tu descanso largo ('+s.descanso2+'). Pon AUSENTE en Artemis.');}
-      var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
-      chkA(sM,sD,today+'-as-'+i,'salida','🔴 Tu turno termina en '+(sD===0?'ahora':sD+' min'),'Tu turno finaliza '+(sD===0?'ahora':'en '+sD+' min')+' ('+s.salida+'). Prepárate para salir.');
-    });
-    renderAlerts(); renderDashboard(); renderAgentePersonal();
-    return;
-  }
-
   // ── MODO ADMIN: agrupar por tipo+hora → UN solo popup por grupo ──
   var grupos = {};
   shifts.forEach(function(s, i) {
@@ -1665,7 +1587,6 @@ function checkAlerts() {
 
   renderAlerts();
   renderDashboard();
-  if (esVistaAgente) renderAgentePersonal();
 }
 
 // ── Notificaciones ────────────────────────────────────────
@@ -2322,7 +2243,6 @@ function clearAll() {
 
 // ── Estados en tiempo real ────────────────────────────────
 var estadosHoy = {};
-var estadoActualAgente = null;
 
 async function cargarEstados() {
   try {
@@ -2334,60 +2254,6 @@ async function cargarEstados() {
       renderRealtimePanel();
     }
   } catch(e) { console.warn('No se pudieron cargar estados:', e.message); }
-}
-
-async function marcarEstado(estado) {
-  if (!agenteNombre) return;
-  var now  = getNow();
-  var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
-
-  // UI inmediata
-  estadoActualAgente = estado;
-  updateEstBtns();
-
-  try {
-    var res = await fetch('/api/estados', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ nombre: agenteNombre, estado: estado, hora: hora })
-    });
-    var data = await res.json();
-    if (data.ok) {
-      showToast('✓ Estado actualizado: ' + labelEstado(estado));
-    } else {
-      showToast('⚠ Estado guardado localmente');
-    }
-  } catch(e) {
-    showToast('⚠ Sin conexión — estado guardado localmente');
-  }
-}
-
-function labelEstado(e) {
-  var labels = { inicio:'Inicio turno', pausa:'En pausa', descanso:'En descanso', fin:'Finalicé turno' };
-  return labels[e] || e;
-}
-
-function updateEstBtns() {
-  var estados = ['inicio','pausa','descanso','fin'];
-  estados.forEach(function(e) {
-    var btn = document.getElementById('btn-est-' + e);
-    if (!btn) return;
-    btn.className = 'est-btn' + (estadoActualAgente === e ? ' active-' + e : '');
-  });
-  var lbl = document.getElementById('estActualLabel');
-  if (lbl) {
-    var colors = { inicio:'var(--green)', pausa:'var(--blue)', descanso:'var(--amber)', fin:'var(--red)' };
-    var icons  = { inicio:'▶', pausa:'⏸', descanso:'☕', fin:'■' };
-    if (estadoActualAgente) {
-      lbl.textContent = icons[estadoActualAgente] + ' ' + labelEstado(estadoActualAgente);
-      lbl.style.color = colors[estadoActualAgente];
-      lbl.style.borderColor = colors[estadoActualAgente];
-    } else {
-      lbl.textContent = 'Sin estado registrado hoy';
-      lbl.style.color = '';
-      lbl.style.borderColor = '';
-    }
-  }
 }
 
 function renderRealtimePanel() {
@@ -2418,6 +2284,10 @@ function renderRealtimePanel() {
   }).join('');
 }
 
+function labelEstado(e) {
+  var labels = { inicio_turno:"▶ Inicio turno", pausa:"⏸ En pausa", descanso_corto:"☕ Desc. corto", descanso_largo:"🍽 Desc. largo", fin_turno:"■ Fin de turno", inicio:"▶ Inicio", descanso:"☕ Descanso", fin:"■ Fin" };
+  return labels[e] || e;
+}
 
 // ── Vista personal del agente ─────────────────────────────
 function renderVistaAgente() {
@@ -2592,7 +2462,6 @@ function renderMisMallaTurnos(email, nombre) {
   }).join('');
 }
 
-
 // ── Slack DM ─────────────────────────────────────────────
 var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
 
@@ -2678,7 +2547,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-login').addEventListener('click', doLogin);
   document.getElementById('login-pass').addEventListener('keydown', function(e) { if (e.key === 'Enter') doLogin(); });
   document.getElementById('login-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') document.getElementById('login-pass').focus(); });
-
 
   // Nav sidebar
   document.getElementById('btn-dashboard').addEventListener('click', function() { showTab('dashboard'); });
@@ -2772,16 +2640,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-stop-sim').addEventListener('click',   stopSim);
   document.getElementById('btn-stop-sim2').addEventListener('click',  stopSim);
   updateSlackToggleUI();
-  // slackToggleBtn usa onclick directo en HTML — no necesita addEventListener
-  updateSlackToggleUI();
   document.getElementById('btn-export-json').addEventListener('click', exportJSON);
   document.getElementById('btn-import-json').addEventListener('click', function() {
     document.getElementById('imp-file').click();
   });
-  // ── Login listeners (PRIMERO — siempre visible) ──────────
-  // Login usa onclick directo en HTML — no necesita addEventListener
-
-  // ── App listeners (dentro del app oculto) ─────────────────
+  // ── App listeners ─────────────────────────────────────────
   try {
     document.getElementById('imp-file').addEventListener('change', function() {
       if (this.files[0]) importJSON(this.files[0]);
@@ -2819,7 +2682,6 @@ function changeDay(delta) {
   mallaDate = isoDate(dt);
   renderMalla();
 }
-
 
 </script>
 </body>
