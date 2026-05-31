@@ -241,7 +241,7 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .ap-prox-row:last-child{border-bottom:none}
 .ap-prox-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .ap-prox-label{font-size:13px;color:var(--text2);flex:1}
-.ap-prox-time{font-family:'Courier New',monospace;font-size:12px;font-weight:700;color:var(--text)}
+.ap-prox-time{font-weight:700;color:var(--text)}
 .ap-prox-diff{font-size:11px;color:var(--text3);white-space:nowrap}
 .ap-footer{font-size:11px;color:var(--text3);text-align:center;padding-top:12px;border-top:1px solid var(--border)}
 .ap-no-turno{text-align:center;padding:32px}
@@ -432,7 +432,7 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 /* ── EVENTOS ── */
 .ev-row{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid var(--border)}
 .ev-row:last-child{border-bottom:none}
-.ev-time{font-family:'Courier New',monospace;font-size:12px;font-weight:700;min-width:44px;color:var(--text)}
+.ev-time{font-weight:700;min-width:44px;color:var(--text)}
 .ev-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .dot-i{background:var(--green);box-shadow:0 0 6px var(--green)}
 .dot-d{background:var(--amber);box-shadow:0 0 6px var(--amber)}
@@ -481,7 +481,7 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 .row-err td{background:rgba(240,79,79,.07)!important}
 
 /* ── BADGES ── */
-.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 9px;border-radius:20px;font-family:'Courier New',monospace;font-size:11px;font-weight:700}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700}
 .bi{background:var(--gdim);color:var(--green);border:1px solid var(--gb)}
 .bd{background:var(--adim);color:var(--amber);border:1px solid var(--ab)}
 .bs{background:var(--rdim);color:var(--red);border:1px solid var(--rb)}
@@ -514,7 +514,7 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 }
 .inf-row:hover{border-color:var(--border2)}
 .inf-name{flex:1;font-size:13px;font-weight:600}
-.inf-time{font-family:'Courier New',monospace;font-size:11px;color:var(--text2)}
+.inf-time{font-size:11px;color:var(--text2)}
 .sdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .sdot-g{background:var(--green);box-shadow:0 0 6px var(--green)}
 .sdot-a{background:var(--amber);box-shadow:0 0 6px var(--amber)}
@@ -656,6 +656,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 .state-amber{background:var(--adim);color:var(--amber);border:1px solid var(--ab)}
 .state-red  {background:var(--rdim);color:var(--red);  border:1px solid var(--rb)}
 .state-blue {background:var(--bdim);color:var(--blue); border:1px solid rgba(79,168,240,.3)}
+.mono{font-family:'Courier New',monospace}
 
 /* ── UTILITY: login form ── */
 .login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse at top,rgba(124,108,245,0.1),transparent 60%)}
@@ -2388,10 +2389,10 @@ function renderVistaAgente() {
 
     // Horario del día
     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">' +
-      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Ingreso</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--green)">▶ ' + turno.ingreso + '</div></div>' +
-      (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. corto</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--amber)">☕ ' + turno.descanso1 + '</div></div>' : '') +
-      (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. largo</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--amber)">🍽 ' + turno.descanso2 + '</div></div>' : '') +
-      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Salida</div><div style="font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:var(--red)">■ ' + turno.salida + '</div></div>' +
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Ingreso</div><div style="font-weight:700;color:var(--green) mono">▶ ' + turno.ingreso + '</div></div>' +
+      (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. corto</div><div style="font-weight:700;color:var(--amber) mono">☕ ' + turno.descanso1 + '</div></div>' : '') +
+      (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Desc. largo</div><div style="font-weight:700;color:var(--amber) mono">🍽 ' + turno.descanso2 + '</div></div>' : '') +
+      '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:10px 13px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Salida</div><div style="font-weight:700;color:var(--red) mono">■ ' + turno.salida + '</div></div>' +
     '</div>' +
 
     // Próximos eventos
@@ -2402,7 +2403,7 @@ function renderVistaAgente() {
         return '<div style="display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)">' +
           '<span style="width:7px;height:7px;border-radius:50%;background:' + p.color + ';flex-shrink:0;display:inline-block"></span>' +
           '<span style="font-size:13px;color:var(--text2);flex:1">' + p.label + '</span>' +
-          '<span style="font-family:'Courier New',monospace;font-size:12px;font-weight:700">' + p.time + '</span>' +
+          '<span style="font-weight:700">' + p.time + '</span>' +
           '<span style="font-size:11px;color:var(--text3)">en ' + diff + ' min</span>' +
           '</div>';
       }).join('') +
@@ -2476,7 +2477,7 @@ function renderMisMallaTurnos(email, nombre) {
     return '<div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--rs);margin-bottom:4px;background:' + (esHoy ? 'var(--gdim)' : 'var(--bg2)') + ';border:1px solid ' + (esHoy ? 'var(--gb)' : 'var(--border)') + '">' +
       '<div style="font-size:11px;font-weight:700;min-width:60px;color:' + (esHoy ? 'var(--green)' : 'var(--text2)') + '">' + fechaLbl + (esHoy ? ' ★' : '') + '</div>' +
       '<span style="font-size:10px;font-weight:700;padding:1px 7px;border-radius:10px;background:var(--bg3);color:' + turnoColor + '">' + (t.turno||'—') + '</span>' +
-      '<span style="font-family:'Courier New',monospace;font-size:11px;color:var(--text2)">' + t.ingreso + '→' + t.salida + '</span>' +
+      '<span style="font-size:11px;color:var(--text2)">' + t.ingreso + '→' + t.salida + '</span>' +
       (t.descanso1 ? '<span style="font-size:10px;color:var(--amber)">☕' + t.descanso1 + '</span>' : '') +
       (t.conexion  ? '<span style="font-size:10px;color:var(--text3);margin-left:auto">' + t.conexion + '</span>' : '') +
       '</div>';
