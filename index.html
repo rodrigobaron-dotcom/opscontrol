@@ -702,7 +702,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 </head>
 <body>
 
-<!-- LOGIN SCREEN -->
+<!-- LOGIN -->
 <div id="loginScreen" style="position:fixed;inset:0;z-index:9999;background:#08080f;display:flex;align-items:center;justify-content:center">
   <div style="background:var(--bg1);border:1px solid rgba(124,108,245,0.25);border-radius:16px;padding:40px 36px;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,0.5)">
     <div style="font-size:28px;font-weight:800;background:linear-gradient(135deg,#a78bfa,#7c6cf5,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:4px">⬡ OpsControl</div>
@@ -712,7 +712,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
       <input type="email" id="login-email" onkeydown="if(event.key==='Enter')document.getElementById('login-pass').focus()" style="width:100%;padding:12px 14px;font-size:14px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);outline:none;font-family:inherit" placeholder="tu.nombre@empresa.com">
     </div>
     <div style="margin-bottom:8px">
-      <label style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px">Contraseña (número de documento)</label>
+      <label style="font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px">Contraseña</label>
       <input type="password" id="login-pass" onkeydown="if(event.key==='Enter')doLogin()" style="width:100%;padding:12px 14px;font-size:14px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);outline:none;font-family:inherit" placeholder="Número de documento">
     </div>
     <button onclick="doLogin()" style="width:100%;padding:13px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#7c6cf5,#5d52d4);color:#fff;border:none;border-radius:var(--rs);cursor:pointer;font-family:inherit;margin-top:8px;box-shadow:0 4px 16px rgba(124,108,245,0.35)" id="btn-login">Ingresar</button>
@@ -722,8 +722,6 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 </div>
 
 <div class="app" id="appMain" style="display:none">
-
-  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
       <div class="brand-logo">⬡ OpsControl</div>
@@ -763,8 +761,6 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
       </div>
     </div>
   </aside>
-
-  <!-- MAIN -->
   <main class="main">
 
     <!-- VISTA AGENTE PERSONAL -->
@@ -1031,7 +1027,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
           </div>
           <div class="form-group">
             <label class="form-label">Turno (automático)</label>
-            <input type="text" id="f-turno" readonly
+            <input type="text" id="f-turno-display" readonly
               style="background:var(--bg3);color:var(--text3);cursor:default"
               placeholder="Se calcula según la hora de ingreso">
           </div>
@@ -1127,9 +1123,9 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
 <div id="slackNotif" class="slack-notif"></div>
 <div id="toast" class="toast"></div>
 
-<!-- SheetJS para Excel -->
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
+
 // =============================================================
 //  OpsControl v5 — app.js
 //  Todos los eventos via addEventListener, sin onclick en HTML
@@ -1189,7 +1185,6 @@ function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 }
 
-
 // ── Colores avatar ────────────────────────────────────────
 var AV = [
   ['#1e1640','#a78bfa'], ['#0d2318','#34d399'], ['#2a1a05','#fbbf24'],
@@ -1206,175 +1201,6 @@ function initials(n, a) {
   var parts = n.trim().split(' ');
   return (parts[0]?.[0] || '').toUpperCase() + (parts[1]?.[0] || '').toUpperCase();
 }
-
-// ── Modo agente (vista personal) ─────────────────────────
-var agenteEmail = null;
-var agenteNombre = null;
-var esVistaAgente = false;
-
-function initAgenteMode() {
-  var params = new URLSearchParams(window.location.search);
-  var param  = (params.get('agente') || params.get('email') || '').toLowerCase().trim();
-  if (!param) return;
-
-  esVistaAgente = true;
-  agenteEmail   = param;
-
-  // Buscar nombre: por email exacto, luego por parte del email antes del @
-  var emailPrefix = param.split('@')[0]; // ej: "karen.parra"
-  var found = malla.find(function(r) {
-    return (r.email || '').toLowerCase() === param;
-  });
-  if (!found) {
-    // Buscar por nombre: "karen.parra" → buscar "karen" en el nombre
-    var partes = emailPrefix.split('.');
-    found = malla.find(function(r) {
-      if (!r.nombre) return false;
-      var nom = r.nombre.toLowerCase();
-      return partes.every(function(p) { return p.length > 2 && nom.indexOf(p) >= 0; });
-    });
-  }
-  agenteNombre = found ? found.nombre : emailPrefix.replace('.', ' ');
-
-  // Bloquear toda la UI — solo mostrar vista agente
-  document.body.style.overflow = 'hidden';
-  var sidebar = document.querySelector('.sidebar');
-  if (sidebar) sidebar.style.display = 'none';
-  var main = document.querySelector('.main');
-  if (main) { main.style.padding = '0'; main.style.background = 'var(--bg0)'; }
-  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
-  var tab = document.getElementById('tab-agente-personal');
-  if (tab) tab.classList.add('active');
-
-  // Pedir permiso de notificaciones
-  if (Notification.permission === 'default') {
-    setTimeout(function() { Notification.requestPermission(); }, 1500);
-  }
-}
-
-function renderAgentePersonal() {
-  if (!esVistaAgente) return;
-  var now     = getNow();
-  var nowMins = now.getHours() * 60 + now.getMinutes();
-  var today   = todayISO();
-
-  // Buscar turno del agente hoy
-  var turno = malla.find(function(r) {
-    if (r.fecha !== today) return false;
-    // Match por email
-    if (agenteEmail && (r.email || '').toLowerCase() === agenteEmail) return true;
-    // Match por nombre exacto
-    if (agenteNombre && (r.nombre || '').toLowerCase() === agenteNombre.toLowerCase()) return true;
-    // Match por prefijo de email en nombre
-    var prefix = agenteEmail ? agenteEmail.split('@')[0] : '';
-    if (prefix && r.nombre) {
-      var partes = prefix.split('.');
-      var nom = r.nombre.toLowerCase();
-      return partes.length >= 2 && partes.every(function(p) { return p.length > 2 && nom.indexOf(p) >= 0; });
-    }
-    return false;
-  });
-
-  var wrap = document.getElementById('agente-personal-wrap');
-  if (!wrap) return;
-  // Cargar estado actual del agente si existe
-  if (estadosHoy[agenteNombre]) {
-    estadoActualAgente = estadosHoy[agenteNombre].estado;
-    updateEstBtns();
-  }
-
-  if (!turno) {
-    wrap.innerHTML = '<div class="ap-no-turno">' +
-      '<div class="ap-avatar">' + (agenteNombre[0] || '?').toUpperCase() + '</div>' +
-      '<div class="ap-nombre">' + agenteNombre + '</div>' +
-      '<div class="ap-msg">No tienes turno registrado para hoy</div>' +
-      '</div>';
-    return;
-  }
-
-  var iM  = timeToMins(turno.ingreso);
-  var sM  = timeToMinsAdj(turno.ingreso, turno.salida);
-  var d1M = timeToMins(turno.descanso1);
-  var d2M = timeToMins(turno.descanso2);
-
-  // Estado actual
-  var estado = '';
-  var estadoColor = '';
-  if (nowMins < iM) {
-    var mins = iM - nowMins;
-    estado = 'Tu turno inicia en ' + mins + ' min (' + turno.ingreso + ')';
-    estadoColor = 'var(--blue)';
-  } else if (d1M > 0 && nowMins >= d1M && nowMins < d1M + 10) {
-    estado = '☕ Estás en descanso corto';
-    estadoColor = 'var(--amber)';
-  } else if (d2M > 0 && nowMins >= d2M && nowMins < d2M + 30) {
-    estado = '🍽 Estás en descanso largo';
-    estadoColor = 'var(--amber)';
-  } else if (nowMins >= sM) {
-    estado = '✓ Tu turno ha finalizado';
-    estadoColor = 'var(--text3)';
-  } else {
-    estado = '✅ Estás en turno';
-    estadoColor = 'var(--green)';
-  }
-
-  // Próximo evento personal
-  var proximos = [];
-  if (nowMins < iM)  proximos.push({ label: 'Ingreso', time: turno.ingreso, mins: iM, color: 'var(--green)' });
-  if (d1M > 0 && nowMins < d1M) proximos.push({ label: '☕ Descanso corto', time: turno.descanso1, mins: d1M, color: 'var(--amber)' });
-  if (d2M > 0 && nowMins < d2M) proximos.push({ label: '🍽 Descanso largo', time: turno.descanso2, mins: d2M, color: 'var(--amber)' });
-  if (nowMins < sM)  proximos.push({ label: 'Salida', time: turno.salida, mins: sM, color: 'var(--red)' });
-
-  var col = avColor(agenteNombre);
-
-  wrap.innerHTML =
-    '<div class="ap-header">' +
-      '<div class="ap-avatar-big" style="background:' + col[0] + ';color:' + col[1] + '">' +
-        (agenteNombre.split(' ').map(function(w){ return w[0]||''; }).slice(0,2).join('').toUpperCase()) +
-      '</div>' +
-      '<div>' +
-        '<div class="ap-nombre">' + agenteNombre + '</div>' +
-        '<div class="ap-turno-badge">' + (turno.turno || calcTurno(turno.ingreso)) + (turno.cola ? ' · ' + turno.cola : '') + '</div>' +
-      '</div>' +
-    '</div>' +
-
-    '<div class="ap-estado" style="border-color:' + estadoColor + ';color:' + estadoColor + '">' +
-      estado +
-    '</div>' +
-
-    '<div class="ap-horario">' +
-      '<div class="ap-hora-item"><span class="ap-hora-label">Ingreso</span><span class="ap-hora-val bi">▶ ' + turno.ingreso + '</span></div>' +
-      (turno.descanso1 ? '<div class="ap-hora-item"><span class="ap-hora-label">Desc. corto</span><span class="ap-hora-val bd">☕ ' + turno.descanso1 + '</span></div>' : '') +
-      (turno.descanso2 ? '<div class="ap-hora-item"><span class="ap-hora-label">Desc. largo</span><span class="ap-hora-val bd">🍽 ' + turno.descanso2 + '</span></div>' : '') +
-      '<div class="ap-hora-item"><span class="ap-hora-label">Salida</span><span class="ap-hora-val bs">■ ' + turno.salida + '</span></div>' +
-    '</div>' +
-
-    (proximos.length ? '<div class="ap-proximos">' +
-      '<div class="ap-prox-title">Próximos eventos</div>' +
-      proximos.map(function(p) {
-        var diff = p.mins - nowMins;
-        return '<div class="ap-prox-row">' +
-          '<span class="ap-prox-dot" style="background:' + p.color + '"></span>' +
-          '<span class="ap-prox-label">' + p.label + '</span>' +
-          '<span class="ap-prox-time">' + p.time + '</span>' +
-          '<span class="ap-prox-diff">en ' + diff + ' min</span>' +
-          '</div>';
-      }).join('') +
-    '</div>' : '') +
-
-    '<div class="estado-agente-wrap">' +
-      '<div class="est-actual" id="estActualLabel">Sin estado registrado hoy</div>' +
-      '<div class="estado-agente-title">¿Qué estás haciendo?</div>' +
-      '<div class="estado-btns">' +
-        '<button class="est-btn" id="btn-est-inicio" onclick="marcarEstado(\'inicio\')"><span class="est-icon">▶</span><span class="est-label">Inicio turno</span></button>' +
-        '<button class="est-btn" id="btn-est-pausa" onclick="marcarEstado(\'pausa\')"><span class="est-icon">⏸</span><span class="est-label">En pausa</span></button>' +
-        '<button class="est-btn" id="btn-est-descanso" onclick="marcarEstado(\'descanso\')"><span class="est-icon">☕</span><span class="est-label">En descanso</span></button>' +
-        '<button class="est-btn" id="btn-est-fin" onclick="marcarEstado(\'fin\')"><span class="est-icon">■</span><span class="est-label">Finalicé turno</span></button>' +
-      '</div>' +
-    '</div>' +
-    '<div class="ap-footer" style="margin-top:16px">Las notificaciones llegarán automáticamente a este navegador</div>';
-}
-
 
 // ── Sincronización con GitHub (malla en la nube) ──────────
 async function loadMallaFromCloud() {
@@ -1413,7 +1239,6 @@ function saveMalla() {
   setTimeout(function() { saveMallaToCloud(); }, 200);
 }
 
-
 // ── Cargar agentes desde Supabase ─────────────────────────
 async function loadAgentes() {
   try {
@@ -1427,7 +1252,6 @@ async function loadAgentes() {
     console.warn('No se pudieron cargar agentes:', e.message);
   }
 }
-
 
 // ── Enriquecer malla con emails de agentesDB ─────────────
 function enrichMallaWithEmails() {
@@ -1455,7 +1279,6 @@ function enrichMallaWithEmails() {
     console.log('Malla enriquecida con emails de agentesDB');
   }
 }
-
 
 // ── Reloj ─────────────────────────────────────────────────
 function updateClock() {
@@ -1754,7 +1577,6 @@ function checkAlerts() {
   if (esVistaAgente) renderAgentePersonal();
 }
 
-
 // ── Notificaciones ────────────────────────────────────────
 function sendNotif(title, body) {
   if (Notification.permission === 'granted') {
@@ -1772,7 +1594,6 @@ function calcTurno(ingreso) {
   return 'Noche';
 }
 
-
 function updateHoraLabel() {
   var lbl = document.getElementById('horaDropdownLabel');
   if (!lbl) return;
@@ -1782,7 +1603,6 @@ function updateHoraLabel() {
   if (arr.length === 1) lbl.textContent = arr[0];
   else lbl.textContent = arr.length + ' horas seleccionadas';
 }
-
 
 function renderMalla() {
   var iso = mallaDate;
@@ -2507,7 +2327,6 @@ function renderRealtimePanel() {
   }).join('');
 }
 
-
 // ── Login / Sesión ────────────────────────────────────────
 var currentUser  = null;
 var currentToken = null;
@@ -2583,7 +2402,6 @@ function startApp() {
   });
 }
 
-
 // ── Slack DM ─────────────────────────────────────────────
 var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
 
@@ -2643,76 +2461,6 @@ async function sendSlackDM(agente, email, mensaje, tipo) {
     console.warn('Slack DM error:', e.message);
   }
 }
-
-// ── PIN Admin ─────────────────────────────────────────────
-var pinBuffer = [];
-var PIN_KEY   = 'admin_pin';
-
-function getPin()  { return loadData(PIN_KEY) || '1234'; }
-function savePin() {
-  var np = document.getElementById('cfg-pin-new').value.trim();
-  if (!/^\d{4}$/.test(np)) { showToast('El PIN debe ser exactamente 4 dígitos.'); return; }
-  saveData(PIN_KEY, np);
-  document.getElementById('cfg-pin-new').value = '';
-  var el = document.getElementById('pin-ok');
-  el.style.display = 'block';
-  setTimeout(function() { el.style.display = 'none'; }, 2500);
-  showToast('✓ PIN actualizado correctamente');
-}
-
-function showLoginScreen() {
-  var ls = document.getElementById('loginScreen');
-  if (ls) { ls.style.display = 'flex'; pinBuffer = []; updatePinDots(); }
-}
-function hideLoginScreen() {
-  var ls = document.getElementById('loginScreen');
-  if (ls) ls.style.display = 'none';
-}
-
-function pinPress(n) {
-  if (pinBuffer.length >= 4) return;
-  pinBuffer.push(n);
-  updatePinDots();
-  if (pinBuffer.length === 4) setTimeout(pinSubmit, 150);
-}
-function pinClear() {
-  pinBuffer.pop();
-  updatePinDots();
-  document.getElementById('pinError').textContent = '';
-}
-function updatePinDots() {
-  for (var i = 0; i < 4; i++) {
-    var dot = document.getElementById('pd' + i);
-    if (dot) { dot.className = 'pin-dot' + (i < pinBuffer.length ? ' filled' : ''); }
-  }
-}
-function pinSubmit() {
-  var entered = pinBuffer.join('');
-  if (entered === getPin()) {
-    saveData('admin_auth', Date.now());
-    hideLoginScreen();
-    renderDashboard();
-  } else {
-    document.getElementById('pinError').textContent = 'PIN incorrecto. Inténtalo de nuevo.';
-    for (var i = 0; i < 4; i++) {
-      var dot = document.getElementById('pd' + i);
-      if (dot) { dot.className = 'pin-dot error'; }
-    }
-    setTimeout(function() { pinBuffer = []; updatePinDots(); document.getElementById('pinError').textContent = ''; }, 800);
-  }
-}
-
-function checkAdminAuth() { return true; }
-
-// Soporte teclado para el PIN
-document.addEventListener('keydown', function(e) {
-  var ls = document.getElementById('loginScreen');
-  if (!ls || ls.style.display === 'none') return;
-  if (e.key >= '0' && e.key <= '9') pinPress(parseInt(e.key));
-  else if (e.key === 'Backspace') pinClear();
-  else if (e.key === 'Enter') pinSubmit();
-});
-
 
 // ── Toast ─────────────────────────────────────────────────
 var toastTimer;
@@ -2854,12 +2602,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Restaurar sesión o mostrar login
   if (restoreSession()) {
     startApp();
-    Promise.all([loadMallaFromCloud(), loadAgentes()]).then(function() {
-      enrichMallaWithEmails();
-      initAgenteMode();
-      if (esVistaAgente) renderAgentePersonal();
-      else renderDashboard();
-    });
   }
   // Si no hay sesión, el login screen ya está visible
   if (Notification.permission === 'granted') {
@@ -2881,6 +2623,7 @@ function changeDay(delta) {
   mallaDate = isoDate(dt);
   renderMalla();
 }
+
 
 </script>
 </body>
