@@ -1177,6 +1177,7 @@ function startApp() {
     document.querySelector('.main').style.flex = '1';
     Promise.all([loadMallaFromCloud()]).then(function() {
       renderVistaAgente();
+      initAgenteListeners();
       setInterval(function() { renderVistaAgente(); }, 60000);
       setInterval(function() { checkAlerts(); }, 10000);
       checkAlerts();
@@ -2492,20 +2493,22 @@ function renderVistaAgente() {
       '<div style="background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:20px">' + colRight + '</div>' +
     '</div>';
 
-  // Event listeners
+}
+
+// ── Delegación de eventos vista agente (registrar UNA sola vez) ──
+function initAgenteListeners() {
+  var wrap = document.getElementById('agente-personal-wrap');
+  if (!wrap || wrap._listenersInit) return;
+  wrap._listenersInit = true;
   wrap.addEventListener('click', function(e) {
-    // Botones estado
     var btnEst = e.target.closest('[data-estado]');
     if (btnEst) { marcarEstadoAgente(btnEst.getAttribute('data-estado')); return; }
-    // Filtro turno
     var btnFil = e.target.closest('[data-turno-fil]');
     if (btnFil) { window._agenteFiltroTurno = btnFil.getAttribute('data-turno-fil'); renderVistaAgente(); return; }
-    // Navegación mes
     if (e.target.id === 'btn-mes-prev') { window._agenteMesOffset = (window._agenteMesOffset||0) - 1; renderVistaAgente(); return; }
     if (e.target.id === 'btn-mes-next') { window._agenteMesOffset = (window._agenteMesOffset||0) + 1; renderVistaAgente(); return; }
-    // Logout
     if (e.target.id === 'btn-agente-logout') { doLogout(); return; }
-  }, { once: false });
+  });
 }
 
 async function marcarEstadoAgente(estado) {
