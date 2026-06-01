@@ -7621,17 +7621,17 @@
     "cola": "SOPORTE"
   },
   {
+    "id": "mpuksac8thct",
     "fecha": "2026-05-31",
     "nombre": "Manuela Correa Cano",
     "apellido": "",
-    "turno": "Tarde",
+    "turno": "",
+    "cola": "SOPORTE",
+    "email": "manuela.correa@somosinternet.co",
     "ingreso": "14:00",
     "descanso1": "16:30",
     "descanso2": "19:00",
-    "salida": "22:00",
-    "email": "manuela.correa@somosinternet.co",
-    "agente_id": "fe396b3c-f636-48e7-bd04-4faf5bb5439b",
-    "cola": "SOPORTE"
+    "salida": "22:00"
   },
   {
     "fecha": "2026-05-31",
