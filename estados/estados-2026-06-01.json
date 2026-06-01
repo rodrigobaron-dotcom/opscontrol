@@ -20,10 +20,15 @@
         "estado": "descanso_corto",
         "hora": "18:14",
         "ts": 1780355666207
+      },
+      {
+        "estado": "descanso_corto",
+        "hora": "18:15",
+        "ts": 1780355738504
       }
     ],
     "estado": "descanso_corto",
-    "hora": "18:14",
-    "ts": 1780355666207
+    "hora": "18:15",
+    "ts": 1780355738504
   }
 }
