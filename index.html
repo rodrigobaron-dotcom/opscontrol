@@ -1559,7 +1559,37 @@ function checkAlerts() {
   var nowMins = now.getHours() * 60 + now.getMinutes();
   var today   = todayISO();
   var fkey    = 'fired_' + todayKey();
-  var shifts  = shiftsForDate(today);
+  var rol     = currentUser ? currentUser.rol : 'agente';
+  var allShifts = shiftsForDate(today);
+
+  // ── MODO AGENTE: solo su propio turno ────────────────────────
+  if (rol === 'agente' && currentUser) {
+    var email  = currentUser.email;
+    var nombre = currentUser.nombre + ' ' + currentUser.apellido;
+    var shifts = allShifts.filter(function(s) {
+      return (s.email && s.email.toLowerCase() === email.toLowerCase()) ||
+             (s.nombre && s.nombre.toLowerCase() === nombre.toLowerCase());
+    });
+    shifts.forEach(function(s, i) {
+      function chkA(mins, diff, key, type, title, msg) {
+        var lim = cfg[type] || 5;
+        if (diff >= 0 && diff <= lim && !firedToday[key]) {
+          firedToday[key] = true; saveData(fkey, firedToday);
+          sendNotif(title, msg);
+        }
+      }
+      var iM = timeToMins(s.ingreso), iD = iM - nowMins;
+      chkA(iM, iD, today+'-ai-'+i, 'ingreso', '🟢 Tu turno inicia en '+(iD===0?'ahora':iD+' min'), 'Tu turno comienza a las '+s.ingreso+'. ¡Prepárate!');
+      if (s.descanso1) { var d1=timeToMins(s.descanso1),d1D=d1-nowMins; chkA(d1,d1D,today+'-ad1-'+i,'ingreso','☕ Descanso corto en '+(d1D===0?'ahora':d1D+' min'),'Tu descanso corto es a las '+s.descanso1+'. Pon AUSENTE en Artemis.'); }
+      if (s.descanso2) { var d2=timeToMins(s.descanso2),d2D=d2-nowMins; chkA(d2,d2D,today+'-ad2-'+i,'ingreso','🍽 Descanso largo en '+(d2D===0?'ahora':d2D+' min'),'Tu descanso largo es a las '+s.descanso2+'. Pon AUSENTE en Artemis.'); }
+      var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
+      chkA(sM,sD,today+'-as-'+i,'salida','🔴 Tu turno termina en '+(sD===0?'ahora':sD+' min'),'Tu turno finaliza a las '+s.salida+'. ¡Prepárate para salir!');
+    });
+    return;
+  }
+
+  // ── MODO ADMIN/SUPERVISOR: todos los turnos agrupados ────────
+  var shifts = allShifts;
 
   // ── MODO ADMIN: agrupar por tipo+hora → UN solo popup por grupo ──
   var grupos = {};
