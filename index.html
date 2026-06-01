@@ -1178,8 +1178,10 @@ function startApp() {
     Promise.all([loadMallaFromCloud(), loadMarcacionesHoy()]).then(function() {
       renderVistaAgente();
       initAgenteListeners();
-      setInterval(function() { renderVistaAgente(); }, 60000);
+      setInterval(function() { renderVistaAgente(); }, 30000);
       setInterval(function() { checkAlerts(); }, 10000);
+      // Auto-detectar fin de break cada 30 segundos
+      setInterval(function() { checkAutoBreakEnd(); }, 30000);
       checkAlerts();
     });
   } else {
@@ -2462,6 +2464,14 @@ function renderVistaAgente() {
       }).join('') + '</div>'
     : '') +
 
+    // Indicador de break activo con cuenta regresiva
+    ((estadoActual === 'descanso_corto' || estadoActual === 'descanso_largo') && tiempoEnBreak !== null ?
+      '<div style="padding:8px 12px;border-radius:var(--rs);margin-bottom:8px;text-align:center;background:var(--adim);border:1px solid var(--ab)">' +
+        '<div style="font-size:10px;color:var(--amber);font-weight:700">' + (estadoActual==='descanso_corto'?'☕ Descanso corto':'🍽 Descanso largo') + ' en curso</div>' +
+        '<div class="mono" style="font-size:22px;font-weight:800;color:var(--amber)">' + tiempoEnBreak + ' min</div>' +
+        '<div style="font-size:9px;color:var(--text3)">Finaliza automático en ' + Math.max(0,(estadoActual==='descanso_corto'?10:30)-tiempoEnBreak) + ' min</div>' +
+      '</div>'
+    : '') +
     // Botones marcación
     '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:8px">Marcar estado</div>' +
     '<div id="est-btns" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px">' +
@@ -2655,6 +2665,41 @@ async function loadMarcacionesHoy() {
       window._marcacionesHoy = data.marcaciones || [];
     }
   } catch(e) { console.warn('marcaciones:', e.message); }
+}
+
+
+// ── Auto-detectar fin de break ────────────────────────────
+function checkAutoBreakEnd() {
+  if (!currentUser || !window._marcacionesHoy) return;
+  var marcaciones = window._marcacionesHoy;
+  if (!marcaciones.length) return;
+  var ultima = marcaciones[marcaciones.length - 1];
+  if (!ultima || (ultima.tipo !== 'descanso_corto' && ultima.tipo !== 'descanso_largo')) return;
+
+  var meta = ultima.tipo === 'descanso_corto' ? 10 : 30;
+  var now  = getNow();
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+  var p = ultima.hora_marcada.split(':');
+  var inicioMins = parseInt(p[0]) * 60 + parseInt(p[1]);
+  var transcurrido = nowMins - inicioMins;
+
+  if (transcurrido >= meta) {
+    // Break terminado — registrar automáticamente
+    var tipoFin = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
+    var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    console.log('Auto-fin de break:', tipoFin, 'tras', transcurrido, 'min');
+    fetch('/api/estados', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: 'inicio_turno', hora: hora })
+    }).catch(function() {});
+    fetch('/api/marcaciones', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFin, hora_marcada: hora, fecha: todayISO() })
+    }).then(function() {
+      loadMarcacionesHoy().then(function() { renderVistaAgente(); });
+    }).catch(function() {});
+    sendNotif('✅ Break finalizado', 'Tu ' + (ultima.tipo === 'descanso_corto' ? 'descanso corto (10 min)' : 'descanso largo (30 min)') + ' ha terminado. Ya puedes continuar.');
+  }
 }
 
 
