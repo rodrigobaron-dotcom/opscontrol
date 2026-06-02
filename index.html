@@ -1182,11 +1182,14 @@ function startApp() {
     document.querySelector('.sidebar').style.display = 'none';
     document.querySelector('.main').style.flex = '1';
     Promise.all([loadMallaFromCloud(), loadMarcacionesHoy()]).then(function() {
-      renderVistaAgente();
-      initAgenteListeners();
+      // Verificar break pendiente INMEDIATAMENTE al cargar
+      checkAutoBreakEnd().then(function() {
+        renderVistaAgente();
+        initAgenteListeners();
+      });
       setInterval(function() { renderVistaAgente(); }, 30000);
       setInterval(function() { checkAlerts(); }, 10000);
-      // Auto-detectar fin de break cada 30 segundos
+      // Auto-detectar fin de break cada 60 segundos
       setInterval(function() { checkAutoBreakEnd(); }, 60000);
       checkAlerts();
     });
@@ -2681,7 +2684,11 @@ async function loadMarcacionesHoy() {
 // ── Auto-detectar fin de break ────────────────────────────
 async function checkAutoBreakEnd() {
   if (!currentUser) return;
-  // Siempre recargar desde Supabase para tener datos frescos
+  // Llamar al servidor para cerrar breaks pendientes (funciona aunque la página haya estado cerrada)
+  try {
+    await fetch('/api/autobreak', { method: 'POST', headers: { 'Content-Type': 'application/json' } });
+  } catch(e) { /* silencioso */ }
+  // Recargar marcaciones actualizadas
   await loadMarcacionesHoy();
   var marcaciones = window._marcacionesHoy || [];
   if (!marcaciones.length) return;
