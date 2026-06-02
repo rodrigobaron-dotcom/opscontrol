@@ -1187,7 +1187,7 @@ function startApp() {
       setInterval(function() { renderVistaAgente(); }, 30000);
       setInterval(function() { checkAlerts(); }, 10000);
       // Auto-detectar fin de break cada 30 segundos
-      setInterval(function() { checkAutoBreakEnd(); }, 30000);
+      setInterval(function() { checkAutoBreakEnd(); }, 60000);
       checkAlerts();
     });
   } else {
@@ -2679,36 +2679,42 @@ async function loadMarcacionesHoy() {
 
 
 // ── Auto-detectar fin de break ────────────────────────────
-function checkAutoBreakEnd() {
-  if (!currentUser || !window._marcacionesHoy) return;
-  var marcaciones = window._marcacionesHoy;
+async function checkAutoBreakEnd() {
+  if (!currentUser) return;
+  // Siempre recargar desde Supabase para tener datos frescos
+  await loadMarcacionesHoy();
+  var marcaciones = window._marcacionesHoy || [];
   if (!marcaciones.length) return;
   var ultima = marcaciones[marcaciones.length - 1];
   if (!ultima || (ultima.tipo !== 'descanso_corto' && ultima.tipo !== 'descanso_largo')) return;
 
-  var meta = ultima.tipo === 'descanso_corto' ? 10 : 30;
-  var now  = getNow();
-  var nowMins = now.getHours() * 60 + now.getMinutes();
-  var p = ultima.hora_marcada.split(':');
+  var meta      = ultima.tipo === 'descanso_corto' ? 10 : 30;
+  var now       = getNow();
+  var nowMins   = now.getHours() * 60 + now.getMinutes();
+  var p         = ultima.hora_marcada.split(':');
   var inicioMins = parseInt(p[0]) * 60 + parseInt(p[1]);
   var transcurrido = nowMins - inicioMins;
 
   if (transcurrido >= meta) {
-    // Break terminado — registrar automáticamente
     var tipoFin = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
-    var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
-    console.log('Auto-fin de break:', tipoFin, 'tras', transcurrido, 'min');
-    fetch('/api/estados', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: 'inicio_turno', hora: hora })
-    }).catch(function() {});
-    fetch('/api/marcaciones', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFin, hora_marcada: hora, fecha: todayISO() })
-    }).then(function() {
-      loadMarcacionesHoy().then(function() { renderVistaAgente(); });
-    }).catch(function() {});
-    sendNotif('✅ Break finalizado', 'Tu ' + (ultima.tipo === 'descanso_corto' ? 'descanso corto (10 min)' : 'descanso largo (30 min)') + ' ha terminado. Ya puedes continuar.');
+    var hora    = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    var label   = ultima.tipo === 'descanso_corto' ? 'descanso corto (10 min)' : 'descanso largo (30 min)';
+    // Registrar fin de break y volver a inicio_turno
+    try {
+      await fetch('/api/estados', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: 'inicio_turno', hora: hora })
+      });
+      await fetch('/api/marcaciones', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFin, hora_marcada: hora, fecha: todayISO() })
+      });
+      sendNotif('✅ Break finalizado', 'Tu ' + label + ' terminó. Ya puedes continuar.');
+      showToast('✅ Break finalizado automáticamente — ' + hora);
+    } catch(e) { console.warn('Auto-break error:', e.message); }
+    // Recargar y renderizar
+    await loadMarcacionesHoy();
+    renderVistaAgente();
   }
 }
 
