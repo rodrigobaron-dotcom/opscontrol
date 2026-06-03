@@ -2526,9 +2526,9 @@ function renderVistaAgente() {
       '<div style="margin-bottom:14px">' +
       '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:8px">Historial de hoy</div>' +
       window._marcacionesHoy.slice().reverse().map(function(m) {
-        var icons = { inicio_turno:'▶', pausa:'⏸', descanso_corto:'☕', descanso_largo:'🍽', fin_descanso_corto:'✓', fin_descanso_largo:'✓', fin_turno:'■' };
-        var colors = { inicio_turno:'var(--green)', pausa:'var(--blue)', descanso_corto:'var(--amber)', descanso_largo:'var(--amber)', fin_descanso_corto:'var(--green)', fin_descanso_largo:'var(--green)', fin_turno:'var(--red)' };
-        var labels = { inicio_turno:'Inicio turno', pausa:'En pausa', descanso_corto:'Desc. corto', descanso_largo:'Desc. largo', fin_descanso_corto:'Fin desc. corto', fin_descanso_largo:'Fin desc. largo', fin_turno:'Fin turno' };
+        var icons = { inicio_turno:'▶', continuar_turno:'▶', descanso_corto:'☕', descanso_largo:'🍽', fin_descanso_corto:'✓', fin_descanso_largo:'✓', otros:'📋', fin_turno:'■' };
+        var colors = { inicio_turno:'var(--green)', continuar_turno:'var(--green)', descanso_corto:'var(--amber)', descanso_largo:'var(--amber)', fin_descanso_corto:'var(--green)', fin_descanso_largo:'var(--green)', otros:'var(--text2)', fin_turno:'var(--red)' };
+        var labels = { inicio_turno:'Inicio turno', continuar_turno:'Continuar turno', descanso_corto:'Desc. corto', descanso_largo:'Desc. largo', fin_descanso_corto:'Fin desc. corto', fin_descanso_largo:'Fin desc. largo', otros:'Otros', fin_turno:'Fin turno' };
         var icon  = icons[m.tipo]  || '·';
         var color = colors[m.tipo] || 'var(--text2)';
         var label = labels[m.tipo] || m.tipo;
@@ -2651,18 +2651,34 @@ async function marcarEstadoAgente(estado) {
   var today = todayISO();
   // Registrar marcación local
   window._marcacionesHoy = window._marcacionesHoy || [];
-  window._marcacionesHoy.push({ estado: estado, hora: hora });
+  // Si es continuar_turno, registrar fin del descanso activo + inicio_turno
+  var estadoReal = estado;
+  if (estado === 'continuar_turno') {
+    var marcaciones = window._marcacionesHoy;
+    var ultima = marcaciones.length ? marcaciones[marcaciones.length - 1] : null;
+    if (ultima && (ultima.tipo === 'descanso_corto' || ultima.tipo === 'descanso_largo')) {
+      var tipoFin = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
+      try {
+        await fetch('/api/marcaciones', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFin, hora_marcada: hora, fecha: today })
+        });
+      } catch(e) { console.warn('fin descanso:', e.message); }
+    }
+    estadoReal = 'inicio_turno';
+  }
+  window._marcacionesHoy.push({ tipo: estadoReal, hora_marcada: hora });
   try {
     await fetch('/api/estados', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: estado, hora: hora })
+      body: JSON.stringify({ nombre: currentUser.nombre + ' ' + currentUser.apellido, estado: estadoReal, hora: hora })
     });
     await fetch('/api/marcaciones', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ agente_id: currentUser.id, tipo: estado, hora_marcada: hora, fecha: today })
+      body: JSON.stringify({ agente_id: currentUser.id, tipo: estadoReal, hora_marcada: hora, fecha: today })
     });
   } catch(e) { console.warn('marcacion:', e.message); }
-  var labels = { inicio_turno:'▶ Inicio turno', pausa:'⏸ En pausa', descanso_corto:'☕ Desc. corto', descanso_largo:'🍽 Desc. largo', fin_descanso_corto:'✓ Fin desc. corto', fin_descanso_largo:'✓ Fin desc. largo', fin_turno:'■ Fin de turno' };
+  var labels = { inicio_turno:'▶ Inicio turno', continuar_turno:'▶ Continuar turno', descanso_corto:'☕ Desc. corto', descanso_largo:'🍽 Desc. largo', fin_descanso_corto:'✓ Fin desc. corto', fin_descanso_largo:'✓ Fin desc. largo', otros:'📋 Otros', fin_turno:'■ Fin de turno' };
   showToast('✓ ' + (labels[estado]||estado) + ' · ' + hora);
   loadMarcacionesHoy().then(function() { renderVistaAgente(); });
 }
