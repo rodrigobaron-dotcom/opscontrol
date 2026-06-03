@@ -72,10 +72,15 @@
         "estado": "otros",
         "hora": "14:05",
         "ts": 1780513537853
+      },
+      {
+        "estado": "fin_turno",
+        "hora": "14:05",
+        "ts": 1780513545485
       }
     ],
-    "estado": "otros",
+    "estado": "fin_turno",
     "hora": "14:05",
-    "ts": 1780513537853
+    "ts": 1780513545485
   }
 }
