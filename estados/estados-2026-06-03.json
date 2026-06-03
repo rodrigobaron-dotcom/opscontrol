@@ -25,5 +25,17 @@
     "estado": "descanso_corto",
     "hora": "10:29",
     "ts": 1780500596723
+  },
+  "Juan Manuel  Lopera Betancur": {
+    "historial": [
+      {
+        "estado": "inicio_turno",
+        "hora": "10:31",
+        "ts": 1780500664841
+      }
+    ],
+    "estado": "inicio_turno",
+    "hora": "10:31",
+    "ts": 1780500664841
   }
 }
