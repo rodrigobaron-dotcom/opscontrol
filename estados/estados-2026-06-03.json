@@ -15,10 +15,15 @@
         "estado": "descanso_largo",
         "hora": "07:58",
         "ts": 1780491508113
+      },
+      {
+        "estado": "descanso_corto",
+        "hora": "10:29",
+        "ts": 1780500596723
       }
     ],
-    "estado": "descanso_largo",
-    "hora": "07:58",
-    "ts": 1780491508113
+    "estado": "descanso_corto",
+    "hora": "10:29",
+    "ts": 1780500596723
   }
 }
