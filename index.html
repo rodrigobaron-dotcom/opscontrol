@@ -1293,16 +1293,18 @@ async function saveMallaToCloud() {
     });
     var data = await res.json();
     if (data.ok) {
-      showToast('✓ Malla guardada en la nube');
+      var msg = '✓ Malla guardada en Supabase';
+      if (data.errores && data.errores.length) msg += ' (' + data.errores.length + ' errores)';
+      showToast(msg);
       return true;
     }
   } catch(e) { console.warn('Cloud save failed:', e.message); }
-  showToast('⚠ Guardado local solamente (sin conexión a la nube)');
+  showToast('⚠ Guardado local solamente (sin conexión)');
   return false;
 }
 
 function saveMalla() {
-  saveData('malla_v5', malla);
+  saveData('malla_v5', malla); // cache local
   setTimeout(function() { saveMallaToCloud(); }, 200);
 }
 
@@ -2007,13 +2009,19 @@ function editShift(key) {
   showTab('agregar');
 }
 
-function deleteShift(key) {
+async function deleteShift(key) {
   var idx = parseInt(key);
   var s   = malla[idx];
   if (!s) { showToast('No se encontró el turno. Recarga la malla.'); return; }
   if (!confirm('¿Eliminar turno de ' + s.nombre + ' el ' + s.fecha + '?')) return;
+  // Eliminar en Supabase si tiene id
+  if (s.id) {
+    try {
+      await fetch('/api/malla?id=' + s.id, { method: 'DELETE' });
+    } catch(e) { console.warn('Delete error:', e.message); }
+  }
   malla.splice(idx, 1);
-  saveMalla();
+  saveData('malla_v5', malla);
   renderMalla();
   showToast('Turno eliminado.');
 }
