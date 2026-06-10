@@ -2230,7 +2230,7 @@ function downloadTemplate(format) {
 // ── Config ────────────────────────────────────────────────
 function applyConfig() {
   document.getElementById('cfg-ingreso').value  = cfg.ingreso;
-  // cfg-descanso field removed — using cfg-descanso1/2 via gv() in saveConfig
+  document.getElementById('cfg-descanso').value = cfg.descanso1 || 15;
   document.getElementById('cfg-salida').value   = cfg.salida;
 }
 function saveConfig() {
