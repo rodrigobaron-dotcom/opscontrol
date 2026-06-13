@@ -10,10 +10,15 @@
         "estado": "inicio_turno",
         "hora": "06:07",
         "ts": 1781348823045
+      },
+      {
+        "estado": "inicio_turno",
+        "hora": "06:07",
+        "ts": 1781348862395
       }
     ],
     "estado": "inicio_turno",
     "hora": "06:07",
-    "ts": 1781348823045
+    "ts": 1781348862395
   }
 }
