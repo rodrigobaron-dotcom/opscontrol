@@ -42,5 +42,17 @@
     "estado": "fin_turno",
     "hora": "13:06",
     "ts": 1781546779192
+  },
+  "Armando Jose Farfan": {
+    "historial": [
+      {
+        "estado": "descanso_corto",
+        "hora": "13:10",
+        "ts": 1781547002195
+      }
+    ],
+    "estado": "descanso_corto",
+    "hora": "13:10",
+    "ts": 1781547002195
   }
 }
