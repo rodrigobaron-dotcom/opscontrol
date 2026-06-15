@@ -2699,36 +2699,23 @@ async function loadMarcacionesHoy() {
 // ── Auto-detectar fin de break ────────────────────────────
 async function checkAutoBreakEnd() {
   if (!currentUser) return;
-  // Llamar al servidor para cerrar breaks pendientes (funciona aunque la página haya estado cerrada)
-  try {
-    await fetch('/api/autobreak', { method: 'POST', headers: { 'Content-Type': 'application/json' } });
-  } catch(e) { /* silencioso */ }
-  // Recargar marcaciones actualizadas
   await loadMarcacionesHoy();
   var marcaciones = window._marcacionesHoy || [];
   if (!marcaciones.length) return;
-  // [0] es la mas reciente (DESC) — si ya no es descanso, no hacer nada
   var ultima = marcaciones[0];
   if (!ultima || (ultima.tipo !== 'descanso_corto' && ultima.tipo !== 'descanso_largo')) return;
-  // Verificar que no exista ya un fin_descanso posterior
   var tipoFinCheck = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
-  var yaFinalizado = marcaciones.some(function(m) {
-    return m.tipo === tipoFinCheck;
-  });
-  if (yaFinalizado) return; // Ya se registró el fin — no duplicar
-
-  var meta      = ultima.tipo === 'descanso_corto' ? 10 : 30;
-  var now       = getNow();
-  var nowMins   = now.getHours() * 60 + now.getMinutes();
-  var p         = ultima.hora_marcada.split(':');
+  var yaFinalizado = marcaciones.some(function(m) { return m.tipo === tipoFinCheck; });
+  if (yaFinalizado) return;
+  var meta = ultima.tipo === 'descanso_corto' ? 10 : 30;
+  var now = getNow();
+  var nowMins = now.getHours() * 60 + now.getMinutes();
+  var p = ultima.hora_marcada.split(':');
   var inicioMins = parseInt(p[0]) * 60 + parseInt(p[1]);
   var transcurrido = nowMins - inicioMins;
-
   if (transcurrido >= meta) {
-    var tipoFin = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
-    var hora    = pad(now.getHours()) + ':' + pad(now.getMinutes());
-    var label   = ultima.tipo === 'descanso_corto' ? 'descanso corto (10 min)' : 'descanso largo (30 min)';
-    // Registrar fin de break y volver a inicio_turno
+    var hora = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    var label = ultima.tipo === 'descanso_corto' ? 'descanso corto (10 min)' : 'descanso largo (30 min)';
     try {
       await fetch('/api/estados', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -2736,17 +2723,15 @@ async function checkAutoBreakEnd() {
       });
       await fetch('/api/marcaciones', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFin, hora_marcada: hora, fecha: todayISO() })
+        body: JSON.stringify({ agente_id: currentUser.id, tipo: tipoFinCheck, hora_marcada: hora, fecha: todayISO() })
       });
-      sendNotif('✅ Break finalizado', 'Tu ' + label + ' terminó. Ya puedes continuar.');
-      showToast('✅ Break finalizado automáticamente — ' + hora);
+      sendNotif('Break finalizado', 'Tu ' + label + ' termino. Puedes continuar.');
+      showToast('Break finalizado automaticamente — ' + hora);
     } catch(e) { console.warn('Auto-break error:', e.message); }
-    // Recargar y renderizar
     await loadMarcacionesHoy();
     renderVistaAgente();
   }
 }
-
 
 // ── Slack DM ─────────────────────────────────────────────
 var slackPaused = true; // Pausado por defecto — activar manualmente desde el botón
