@@ -91,10 +91,15 @@
         "estado": "descanso_corto",
         "hora": "13:19",
         "ts": 1781547589275
+      },
+      {
+        "estado": "inicio_turno",
+        "hora": "13:24",
+        "ts": 1781547859657
       }
     ],
-    "estado": "descanso_corto",
-    "hora": "13:19",
-    "ts": 1781547589275
+    "estado": "inicio_turno",
+    "hora": "13:24",
+    "ts": 1781547859657
   }
 }
