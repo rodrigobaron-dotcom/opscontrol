@@ -2696,7 +2696,6 @@ async function loadMarcacionesHoy() {
   } catch(e) { console.warn('marcaciones:', e.message); }
 }
 
-
 // ── Auto-detectar fin de break ────────────────────────────
 async function checkAutoBreakEnd() {
   if (!currentUser) return;
@@ -2708,8 +2707,15 @@ async function checkAutoBreakEnd() {
   await loadMarcacionesHoy();
   var marcaciones = window._marcacionesHoy || [];
   if (!marcaciones.length) return;
-  var ultima = marcaciones[marcaciones.length - 1];
+  // [0] es la mas reciente (DESC) — si ya no es descanso, no hacer nada
+  var ultima = marcaciones[0];
   if (!ultima || (ultima.tipo !== 'descanso_corto' && ultima.tipo !== 'descanso_largo')) return;
+  // Verificar que no exista ya un fin_descanso posterior
+  var tipoFinCheck = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
+  var yaFinalizado = marcaciones.some(function(m) {
+    return m.tipo === tipoFinCheck;
+  });
+  if (yaFinalizado) return; // Ya se registró el fin — no duplicar
 
   var meta      = ultima.tipo === 'descanso_corto' ? 10 : 30;
   var now       = getNow();
