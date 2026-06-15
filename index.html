@@ -151,8 +151,6 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#08080
 
 .aec-conectado::before{background:var(--green);box-shadow:0 0 6px var(--green)}
 .aec-conectado{border-color:rgba(34,212,126,0.2)!important}
-.aec-pausa::before{background:var(--blue)}
-.aec-pausa{border-color:rgba(79,168,240,0.2)!important}
 .aec-descanso::before{background:var(--amber);box-shadow:0 0 6px var(--amber)}
 .aec-descanso{border-color:rgba(245,166,35,0.2)!important}
 .aec-ausente::before{background:var(--red)}
@@ -1266,11 +1264,11 @@ async function loadMallaFromCloud() {
     var res  = await fetch('/api/malla');
     var data = await res.json();
     if (data.ok && Array.isArray(data.malla) && data.malla.length > 0) {
-      malla = data.malla;
-      saveMalla(); // cache local
-      mallaFromCloud = true;
-      return true;
-    }
+  malla = data.malla;
+  saveData('malla_v5', malla); // solo cache local, sin llamar cloud
+  mallaFromCloud = true;
+  return true;
+}
   } catch(e) { console.warn('Cloud load failed, usando local:', e.message); }
   return false;
 }
@@ -2170,7 +2168,13 @@ function showPreview(rows) {
 function confirmImport() {
   var replace  = document.getElementById('chk-replace').checked;
   var toImport = previewData.filter(function(r) { return !r.errors.length; }).map(function(r) {
-    return { id: generateId(), fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email, ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+    // Buscar agente_id real desde agentesDB por email o nombre
+var agente = agentesDB.find(function(a) {
+  if (r.email && a.email && a.email.toLowerCase() === r.email.toLowerCase()) return true;
+  var fn = (a.nombre + ' ' + a.apellido).toLowerCase().trim();
+  return fn === (r.nombre || '').toLowerCase().trim();
+});
+return { id: null, agente_id: agente ? agente.id : null, fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email || (agente ? agente.email : ''), ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
@@ -2655,7 +2659,7 @@ async function marcarEstadoAgente(estado) {
   var estadoReal = estado;
   if (estado === 'continuar_turno') {
     var marcaciones = window._marcacionesHoy;
-    var ultima = marcaciones.length ? marcaciones[marcaciones.length - 1] : null;
+    var ultima = marcaciones.length ? marcaciones[0] : null;
     if (ultima && (ultima.tipo === 'descanso_corto' || ultima.tipo === 'descanso_largo')) {
       var tipoFin = ultima.tipo === 'descanso_corto' ? 'fin_descanso_corto' : 'fin_descanso_largo';
       try {
