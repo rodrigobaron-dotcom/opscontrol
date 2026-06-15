@@ -5,11 +5,16 @@
         "estado": "inicio_turno",
         "hora": "07:00",
         "ts": 1781524821844
+      },
+      {
+        "estado": "fin_turno",
+        "hora": "15:06",
+        "ts": 1781553967924
       }
     ],
-    "estado": "inicio_turno",
-    "hora": "07:00",
-    "ts": 1781524821844
+    "estado": "fin_turno",
+    "hora": "15:06",
+    "ts": 1781553967924
   },
   "Brayan Andres Bolivar Alvarez": {
     "historial": [
