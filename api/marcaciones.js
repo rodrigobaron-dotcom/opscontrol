@@ -62,7 +62,11 @@ export default async function handler(req, res) {
         headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY }
       });
       const data = await res2.json();
-      return res.status(200).json({ ok: true, marcaciones: data });
+      const marcaciones = Array.isArray(data) ? data.map(m => ({
+          ...m,
+        nombre_completo: m.agentes ? m.agentes.nombre + ' ' + m.agentes.apellido : ''
+      })) : [];
+      return res.status(200).json({ ok: true, marcaciones });
     }
 
     // POST — registrar marcación
