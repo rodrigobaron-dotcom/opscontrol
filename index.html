@@ -2061,10 +2061,19 @@ function mapHeaders(headers) {
 function normTime(val) {
   if (!val) return '';
   var s = String(val).trim();
+  // Formato Excel serial (número decimal)
   if (!isNaN(s) && s !== '' && parseFloat(s) < 1) {
     var tm = Math.round(parseFloat(s) * 24 * 60);
     return pad(Math.floor(tm / 60)) + ':' + pad(tm % 60);
   }
+  // Formato datetime completo: "2026-06-24 06:00:00" o "2026-06-24T06:00:00"
+  var mDT = s.match(/(\d{4}-\d{2}-\d{2})[T ]?(\d{2}):(\d{2})/);
+  if (mDT) {
+    var hh = mDT[2], mm = mDT[3];
+    if (hh === '00' && mm === '00') return ''; // ignorar 00:00 = sin turno
+    return hh + ':' + mm;
+  }
+  // Formato HH:MM
   var m = s.match(/^(\d{1,2}):(\d{2})/);
   if (m) return pad(parseInt(m[1])) + ':' + m[2];
   return s;
@@ -2110,7 +2119,7 @@ function parseRows(rows, hMap) {
     return { fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola,
              ingreso: turnoIni, descanso1: breakIni, descanso2: lunchIni, salida: turnoFin,
              email: email, errors: errors, rowNum: idx + 2 };
-  }).filter(function(r) { return r.nombre || r.ingreso || r.fecha; });
+  }).filter(function(r) { return r.nombre && r.fecha && r.ingreso && r.salida; });
 }
 
 function readFile(file) {
