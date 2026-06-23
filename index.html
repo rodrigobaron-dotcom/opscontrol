@@ -919,7 +919,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
             </div>
             <div class="format-hint">
               <strong>Columnas:</strong><br>
-              <code>fecha · nombre · cola · email · ingreso · descanso1 · descanso2 · salida</code><br><br>
+              <code>fecha · dia_semana · linea_atencion · agente · email · turno_inicio · turno_fin · break_inicio · break_fin · lunch_inicio · lunch_fin</code><br><br>
               <strong>Ejemplo:</strong><br>
               <code>09/05/2025 · Carlos · López · Mañana · 06:00 · 09:00 · 10:30 · 14:00</code><br>
               <code>10/05/2025 · Carlos · López · Tarde · 14:00 · 17:00 · 18:30 · 22:00</code>
@@ -2091,21 +2091,25 @@ function parseRows(rows, hMap) {
   return rows.map(function(row, idx) {
     function get(f) { return hMap[f] !== undefined ? String(row[hMap[f]] || '').trim() : ''; }
     var fecha    = normDate(get('fecha'));
-    var nombre   = get('nombre');
-    var apellido = '';
-    var turno    = calcTurno(normTime(get('ingreso')));
-    var cola     = get('cola');
+    // Aceptar 'agente' o 'nombre' como columna de nombre
+    var nombre   = get('agente') || get('nombre');
+    var turnoIni = normTime(get('turno_inicio') || get('ingreso'));
+    var turnoFin = normTime(get('turno_fin')    || get('salida'));
+    // break = descanso corto (10 min) — tomamos hora inicio
+    var breakIni = normTime(get('break_inicio') || get('descanso1'));
+    // lunch = descanso largo (30 min) — tomamos hora inicio
+    var lunchIni = normTime(get('lunch_inicio') || get('descanso2'));
     var email    = (get('email') || '').toLowerCase();
-    var ingreso  = normTime(get('ingreso'));
-    var desc1    = normTime(get('descanso1'));
-    var desc2    = normTime(get('descanso2'));
-    var salida   = normTime(get('salida'));
+    var cola     = get('linea_atencion') || get('cola') || '';
+    var turno    = calcTurno(turnoIni);
     var errors   = [];
     if (!fecha)    errors.push('falta fecha');
-    if (!nombre)   errors.push('falta nombre');
-    if (!ingreso)  errors.push('falta ingreso');
-    if (!salida)   errors.push('falta salida');
-    return { fecha: fecha, nombre: nombre, apellido: apellido, turno: turno, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida, errors: errors, rowNum: idx + 2 };
+    if (!nombre)   errors.push('falta agente');
+    if (!turnoIni) errors.push('falta turno_inicio');
+    if (!turnoFin) errors.push('falta turno_fin');
+    return { fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola,
+             ingreso: turnoIni, descanso1: breakIni, descanso2: lunchIni, salida: turnoFin,
+             email: email, errors: errors, rowNum: idx + 2 };
   }).filter(function(r) { return r.nombre || r.ingreso || r.fecha; });
 }
 
@@ -2221,19 +2225,26 @@ function resetUpload() {
 }
 
 function downloadTemplate(format) {
-  var headers  = ['fecha','nombre','cola','email','ingreso','descanso1','descanso2','salida'];
-  var names    = [['Carlos','López'],['María','García'],['Andrés','Martínez'],['Laura','Rodríguez'],['Juan','Pérez']];
-  var shifts   = [['Mañana','06:00','09:00','10:30','14:00'],['Tarde','14:00','17:00','18:30','22:00'],['Noche','22:00','01:00','02:30','06:00']];
+  var headers  = ['fecha','dia_semana','linea_atencion','agente','email','turno_inicio','turno_fin','break_inicio','break_fin','lunch_inicio','lunch_fin'];
+  var dias     = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  var names    = [['Carlos López','carlos.lopez'],['María García','maria.garcia'],['Andrés Martínez','andres.martinez'],['Laura Rodríguez','laura.rodriguez'],['Juan Pérez','juan.perez']];
+  var shifts   = [
+    ['06:00','14:00','09:00','09:10','11:30','12:00'],
+    ['14:00','22:00','17:00','17:10','19:30','20:00'],
+    ['22:00','06:00','01:00','01:10','03:30','04:00']
+  ];
+  var colas    = ['SOPORTE','SAC','Retención','Soporte N2'];
   var today    = new Date();
   var examples = [];
   for (var day = 0; day < 14; day++) {
     var dt = new Date(today); dt.setDate(today.getDate() + day);
-    var dfmt = pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1) + '/' + dt.getFullYear();
-    var colaEj = ['Soporte','Ventas','Cobranza','Retención'];
+    var dfmt   = pad(dt.getDate()) + '/' + pad(dt.getMonth() + 1) + '/' + dt.getFullYear();
+    var diaSem = dias[dt.getDay()];
     names.forEach(function(nm, i) {
-      var sh = shifts[i % shifts.length];
-      var emailEj = nm[0].toLowerCase() + '.' + nm[1].toLowerCase() + '@tuempresa.com';
-      examples.push([dfmt, nm[0] + ' ' + nm[1], colaEj[i % colaEj.length], emailEj].concat(sh.slice(1)));
+      var sh    = shifts[i % shifts.length];
+      var email = nm[1] + '@tuempresa.com';
+      var cola  = colas[i % colas.length];
+      examples.push([dfmt, diaSem, cola, nm[0], email, sh[0], sh[1], sh[2], sh[3], sh[4], sh[5]]);
     });
   }
   if (format === 'csv') {
@@ -2243,7 +2254,7 @@ function downloadTemplate(format) {
     if (typeof XLSX === 'undefined') { showToast('Librería Excel cargando... intenta en un momento.'); return; }
     var wb = XLSX.utils.book_new();
     var ws = XLSX.utils.aoa_to_sheet([headers].concat(examples));
-    ws['!cols'] = [14,12,12,10,8,8,8,8].map(function(w) { return { wch: w }; });
+    ws['!cols'] = [12,8,12,18,24,10,10,10,10,10,10].map(function(w) { return { wch: w }; });
     XLSX.utils.book_append_sheet(wb, ws, 'Malla');
     XLSX.writeFile(wb, 'malla-agentes.xlsx');
   }
