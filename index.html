@@ -2050,7 +2050,7 @@ var COL_MAP = {
 function mapHeaders(headers) {
   var map = {};
   headers.forEach(function(h, ci) {
-    var nh = String(h).toLowerCase().trim().replace(/\s+/g, ' ');
+    var nh = String(h).toLowerCase().trim().replace(/\r/g,'').replace(/\s+/g, ' ');
     Object.keys(COL_MAP).forEach(function(field) {
       if (COL_MAP[field].indexOf(nh) >= 0 && !(field in map)) map[field] = ci;
     });
@@ -2144,7 +2144,7 @@ function processCSV(text) {
   });
   if (rows.length < 2) { showToast('El CSV está vacío.'); return; }
   var hMap = mapHeaders(rows[0]);
-  if (!('nombre' in hMap)) { showToast('Columnas no reconocidas. Descarga la plantilla.'); return; }
+  if (!('nombre' in hMap) && !('agente' in hMap)) { showToast('Columnas no reconocidas. Verifica que tenga columna agente o nombre.'); return; }
   showPreview(parseRows(rows.slice(1), hMap));
 }
 
@@ -2155,7 +2155,7 @@ function processXLSX(buf) {
     var data = XLSX.utils.sheet_to_json(ws, { header: 1, raw: true, defval: '' });
     if (data.length < 2) { showToast('El Excel está vacío.'); return; }
     var hMap = mapHeaders(data[0]);
-    if (!('nombre' in hMap)) { showToast('Columnas no reconocidas. Descarga la plantilla.'); return; }
+    if (!('nombre' in hMap) && !('agente' in hMap)) { showToast('Columnas no reconocidas. Verifica que tenga columna agente o nombre.'); return; }
     showPreview(parseRows(data.slice(1), hMap));
   } catch(e) { showToast('Error leyendo Excel: ' + e.message); }
 }
