@@ -2037,14 +2037,14 @@ async function deleteShift(key) {
 // ── CARGA MASIVA ──────────────────────────────────────────
 var COL_MAP = {
   fecha:     ['fecha','date','día','dia','day'],
-  nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name'],
+  nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name','agente'],
   turno:     ['turno','shift','grupo','group'],
-  cola:      ['cola','queue','skill','habilidad','grupo de trabajo','workgroup'],
+  cola:      ['cola','queue','skill','habilidad','grupo de trabajo','workgroup','linea_atencion','linea atencion','línea atención','línea_atención'],
   email:     ['email','correo','correo electronico','mail','slack email','correo slack'],
-  ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio'],
-  descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1'],
-  descanso2: ['descanso2','descanso 2','descanso largo','almuerzo','lunch','break2','break 2','descanso_2'],
-  salida:    ['salida','hora salida','hora fin','end','end time','fin'],
+  ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio','turno_inicio','turno inicio'],
+  descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1','break_inicio','break inicio'],
+  descanso2: ['descanso2','descanso 2','descanso largo','almuerzo','lunch','break2','break 2','descanso_2','lunch_inicio','lunch inicio'],
+  salida:    ['salida','hora salida','hora fin','end','end time','fin','turno_fin','turno fin'],
 };
 
 function mapHeaders(headers) {
