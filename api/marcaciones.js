@@ -30,12 +30,12 @@ function calcAdherencia(horaMarcada, horaProgramada, toleranciaMin = 5) {
 function getHoraProgramada(turno, tipo) {
   if (!turno) return null;
   const map = {
-    'inicio_turno':       turno.ingreso,
-    'descanso_corto':     turno.descanso1,
-    'fin_descanso_corto': turno.descanso1,
-    'descanso_largo':     turno.descanso2,
-    'fin_descanso_largo': turno.descanso2,
-    'fin_turno':          turno.salida,
+    'inicio_turno':       turno.turno_inicio || turno.ingreso,
+    'descanso_corto':     turno.break_inicio || turno.descanso1,
+    'fin_descanso_corto': turno.break_inicio || turno.descanso1,
+    'descanso_largo':     turno.lunch_inicio || turno.descanso2,
+    'fin_descanso_largo': turno.lunch_inicio || turno.descanso2,
+    'fin_turno':          turno.turno_fin    || turno.salida,
     'pausa':              null,
     'fin_pausa':          null
   };
