@@ -951,7 +951,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.6)}
         <div class="table-wrap" style="max-height:320px;overflow-y:auto;margin-bottom:12px">
           <table class="data-table">
             <thead>
-              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Cola</th><th>Email</th><th>Turno (auto)</th><th>Ingreso</th><th>Desc.1</th><th>Desc.2</th><th>Salida</th><th></th></tr>
+              <tr><th>#</th><th>Fecha</th><th>Nombre</th><th>Cola</th><th>Email</th><th>Turno</th><th>T.Inicio</th><th>Break</th><th>Lunch</th><th>T.Fin</th><th></th></tr>
             </thead>
             <tbody id="prev-body"></tbody>
           </table>
@@ -1758,7 +1758,7 @@ function renderMalla() {
     if (filtroHoras && filtroHoras.size > 0 && !filtroHoras.has(s.turno_inicio)) return false;
     return true;
   });
-  dayS.sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
+  dayS.sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.turno_inicio); // placeholderMins(b.turno_inicio); });
 
   // Mapear dayS con sus índices reales en malla
   var daySWithIdx = dayS.map(function(s) {
@@ -1839,7 +1839,7 @@ function renderInforme() {
   var now      = getNow();
   var nowMins  = now.getHours() * 60 + now.getMinutes();
   var today    = todayISO();
-  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
+  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.turno_inicio); // placeholderMins(b.turno_inicio); });
 
   var enTurno    = todayS.filter(function(s) { return nowMins >= timeToMins(s.turno_inicio) && nowMins < timeToMins(s.turno_fin); });
   var proxSalida = todayS.filter(function(s) { var d = timeToMins(s.turno_fin) - nowMins; return d >= 0 && d <= 60; });
@@ -2208,7 +2208,7 @@ var agente = agentesDB.find(function(a) {
   var fn = (a.nombre + ' ' + a.apellido).toLowerCase().trim();
   return fn === (r.nombre || '').toLowerCase().trim();
 });
-return { id: null, agente_id: agente ? agente.id : null, fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email || (agente ? agente.email : ''), ingreso: r.turno_inicio, descanso1: r.break_inicio, descanso2: r.lunch_inicio, salida: r.turno_fin };
+return { id: null, agente_id: agente ? agente.id : null, fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email || (agente ? agente.email : ''), turno_inicio: r.turno_inicio, turno_fin: r.turno_fin, break_inicio: r.break_inicio, break_fin: r.break_fin || null, lunch_inicio: r.lunch_inicio, lunch_fin: r.lunch_fin || null };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
