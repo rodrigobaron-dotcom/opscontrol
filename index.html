@@ -1398,12 +1398,12 @@ function renderDashboard() {
 
   document.getElementById('s-total').textContent   = todayS.length;
   var active = todayS.filter(function(s) {
-    return nowMins >= timeToMins(s.ingreso) && nowMins < timeToMinsAdj(s.ingreso, s.salida);
+    return nowMins >= timeToMins(s.turno_inicio) && nowMins < timeToMinsAdj(s.turno_inicio, s.turno_fin);
   });
   document.getElementById('s-activos').textContent  = active.length;
   document.getElementById('s-alertas').textContent  = activeAlerts.length;
   var sinC = todayS.filter(function(s) {
-    return nowMins >= timeToMins(s.ingreso) && !attendance[s.nombre];
+    return nowMins >= timeToMins(s.turno_inicio) && !attendance[s.nombre];
   });
   document.getElementById('s-sinconf').textContent  = sinC.length;
 
@@ -1420,8 +1420,8 @@ function renderCoverage(shifts, nowMins) {
   var hourMap = {};
   for (var h = 0; h < 24; h++) hourMap[h] = [];
   shifts.forEach(function(s) {
-    var iM = timeToMins(s.ingreso);
-    var sM = timeToMins(s.salida);
+    var iM = timeToMins(s.turno_inicio);
+    var sM = timeToMins(s.turno_fin);
     if (iM < 0 || sM < 0) return;
     for (var h = 0; h < 24; h++) {
       if (iM < (h + 1) * 60 && sM > h * 60) {
@@ -1488,10 +1488,10 @@ function evRow(e, nowMins) {
 function renderEvents(shifts, nowMins) {
   var allEv = [];
   shifts.forEach(function(s) {
-    allEv.push({ time: s.ingreso, mins: timeToMins(s.ingreso), name: s.nombre, type: 'i', turno: s.turno });
-    allEv.push({ time: s.salida,  mins: timeToMins(s.salida),  name: s.nombre, type: 's', turno: s.turno });
-    if (s.descanso1) allEv.push({ time: s.descanso1, mins: timeToMins(s.descanso1), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. corto' });
-    if (s.descanso2) allEv.push({ time: s.descanso2, mins: timeToMins(s.descanso2), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. largo' });
+    allEv.push({ time: s.turno_inicio, mins: timeToMins(s.turno_inicio), name: s.nombre, type: 'i', turno: s.turno });
+    allEv.push({ time: s.turno_fin,  mins: timeToMins(s.turno_fin),  name: s.nombre, type: 's', turno: s.turno });
+    if (s.break_inicio) allEv.push({ time: s.break_inicio, mins: timeToMins(s.break_inicio), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. corto' });
+    if (s.lunch_inicio) allEv.push({ time: s.lunch_inicio, mins: timeToMins(s.lunch_inicio), name: s.nombre, type: 'd', turno: s.turno, label: 'Desc. largo' });
   });
   allEv.sort(function(a, b) { return a.mins - b.mins; });
   var upcoming = allEv.filter(function(e) { return e.mins >= nowMins; });
@@ -1593,12 +1593,12 @@ function checkAlerts() {
           sendNotif(title, msg);
         }
       }
-      var iM = timeToMins(s.ingreso), iD = iM - nowMins;
-      chkA(iM, iD, today+'-ai-'+i, 'ingreso', '🟢 Tu turno inicia en '+(iD===0?'ahora':iD+' min'), 'Tu turno comienza a las '+s.ingreso+'. ¡Prepárate!');
-      if (s.descanso1) { var d1=timeToMins(s.descanso1),d1D=d1-nowMins; chkA(d1,d1D,today+'-ad1-'+i,'ingreso','☕ Descanso corto en '+(d1D===0?'ahora':d1D+' min'),'Tu descanso corto es a las '+s.descanso1+'. Pon AUSENTE en Artemis.'); }
-      if (s.descanso2) { var d2=timeToMins(s.descanso2),d2D=d2-nowMins; chkA(d2,d2D,today+'-ad2-'+i,'ingreso','🍽 Descanso largo en '+(d2D===0?'ahora':d2D+' min'),'Tu descanso largo es a las '+s.descanso2+'. Pon AUSENTE en Artemis.'); }
-      var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
-      chkA(sM,sD,today+'-as-'+i,'salida','🔴 Tu turno termina en '+(sD===0?'ahora':sD+' min'),'Tu turno finaliza a las '+s.salida+'. ¡Prepárate para salir!');
+      var iM = timeToMins(s.turno_inicio), iD = iM - nowMins;
+      chkA(iM, iD, today+'-ai-'+i, 'ingreso', '🟢 Tu turno inicia en '+(iD===0?'ahora':iD+' min'), 'Tu turno comienza a las '+s.turno_inicio+'. ¡Prepárate!');
+      if (s.break_inicio) { var d1=timeToMins(s.break_inicio),d1D=d1-nowMins; chkA(d1,d1D,today+'-ad1-'+i,'ingreso','☕ Descanso corto en '+(d1D===0?'ahora':d1D+' min'),'Tu descanso corto es a las '+s.break_inicio+'. Pon AUSENTE en Artemis.'); }
+      if (s.lunch_inicio) { var d2=timeToMins(s.lunch_inicio),d2D=d2-nowMins; chkA(d2,d2D,today+'-ad2-'+i,'ingreso','🍽 Descanso largo en '+(d2D===0?'ahora':d2D+' min'),'Tu descanso largo es a las '+s.lunch_inicio+'. Pon AUSENTE en Artemis.'); }
+      var sM=timeToMinsAdj(s.turno_inicio,s.turno_fin),sD=sM-nowMins;
+      chkA(sM,sD,today+'-as-'+i,'salida','🔴 Tu turno termina en '+(sD===0?'ahora':sD+' min'),'Tu turno finaliza a las '+s.turno_fin+'. ¡Prepárate para salir!');
     });
     return;
   }
@@ -1623,21 +1623,21 @@ function checkAlerts() {
       grupos[gk].nombres.push(fn);
     }
 
-    var iM=timeToMins(s.ingreso), iD=iM-nowMins;
-    addGrupo(today+'-i-'+i, 'ingreso', s.ingreso, iD, 'Ingreso', s.email||'',
-      'Tu turno inicia en '+(iD===0?'ahora':iD+' min')+' ('+s.ingreso+'). ¡Prepárate!');
+    var iM=timeToMins(s.turno_inicio), iD=iM-nowMins;
+    addGrupo(today+'-i-'+i, 'ingreso', s.turno_inicio, iD, 'Ingreso', s.email||'',
+      'Tu turno inicia en '+(iD===0?'ahora':iD+' min')+' ('+s.turno_inicio+'). ¡Prepárate!');
 
-    if (s.descanso1){var d1=timeToMins(s.descanso1),d1D=d1-nowMins;
-      addGrupo(today+'-d1-'+i,'descanso',s.descanso1,d1D,'☕ Descanso corto',s.email||'',
-        'En '+(d1D===0?'ahora':d1D+' min')+' es tu descanso corto ('+s.descanso1+'). Pon AUSENTE en Artemis.');}
+    if (s.break_inicio){var d1=timeToMins(s.break_inicio),d1D=d1-nowMins;
+      addGrupo(today+'-d1-'+i,'descanso',s.break_inicio,d1D,'☕ Descanso corto',s.email||'',
+        'En '+(d1D===0?'ahora':d1D+' min')+' es tu descanso corto ('+s.break_inicio+'). Pon AUSENTE en Artemis.');}
 
-    if (s.descanso2){var d2=timeToMins(s.descanso2),d2D=d2-nowMins;
-      addGrupo(today+'-d2-'+i,'descanso',s.descanso2,d2D,'🍽 Descanso largo',s.email||'',
-        'En '+(d2D===0?'ahora':d2D+' min')+' es tu descanso largo ('+s.descanso2+'). Pon AUSENTE en Artemis.');}
+    if (s.lunch_inicio){var d2=timeToMins(s.lunch_inicio),d2D=d2-nowMins;
+      addGrupo(today+'-d2-'+i,'descanso',s.lunch_inicio,d2D,'🍽 Descanso largo',s.email||'',
+        'En '+(d2D===0?'ahora':d2D+' min')+' es tu descanso largo ('+s.lunch_inicio+'). Pon AUSENTE en Artemis.');}
 
-    var sM=timeToMinsAdj(s.ingreso,s.salida),sD=sM-nowMins;
-    addGrupo(today+'-s-'+i,'salida',s.salida,sD,'Salida',s.email||'',
-      'Tu turno finaliza en '+(sD===0?'ahora':sD+' min')+' ('+s.salida+'). ¡Prepárate para salir!');
+    var sM=timeToMinsAdj(s.turno_inicio,s.turno_fin),sD=sM-nowMins;
+    addGrupo(today+'-s-'+i,'salida',s.turno_fin,sD,'Salida',s.email||'',
+      'Tu turno finaliza en '+(sD===0?'ahora':sD+' min')+' ('+s.turno_fin+'). ¡Prepárate para salir!');
   });
 
   // Disparar UN popup por grupo con todos los nombres
@@ -1715,15 +1715,15 @@ function renderMalla() {
   var allDayShifts = shiftsForDate(iso);
   var horasUnicas = [];
   allDayShifts.forEach(function(s) {
-    if (s.ingreso && horasUnicas.indexOf(s.ingreso) < 0) horasUnicas.push(s.ingreso);
+    if (s.turno_inicio && horasUnicas.indexOf(s.turno_inicio) < 0) horasUnicas.push(s.turno_inicio);
   });
   horasUnicas.sort();
   var filtroH = window._filtroHoras;
   var listEl  = document.getElementById('horaCheckboxList');
   if (listEl && horasUnicas.length) {
     listEl.innerHTML = horasUnicas.map(function(h) {
-      var cnt     = allDayShifts.filter(function(s) { return s.ingreso === h; }).length;
-      var maxCnt  = Math.max.apply(null, horasUnicas.map(function(hh) { return allDayShifts.filter(function(s) { return s.ingreso === hh; }).length; }));
+      var cnt     = allDayShifts.filter(function(s) { return s.turno_inicio === h; }).length;
+      var maxCnt  = Math.max.apply(null, horasUnicas.map(function(hh) { return allDayShifts.filter(function(s) { return s.turno_inicio === hh; }).length; }));
       var barPct  = Math.round((cnt / maxCnt) * 100);
       var checked = !filtroH || filtroH.has(h);
       return '<div class="hora-check-item' + (checked ? ' checked' : '') + '" data-hora="' + h + '">' +
@@ -1755,10 +1755,10 @@ function renderMalla() {
 
   var dayS = shiftsForDate(iso).filter(function(s) {
     if (filtroTurno && s.turno !== filtroTurno) return false;
-    if (filtroHoras && filtroHoras.size > 0 && !filtroHoras.has(s.ingreso)) return false;
+    if (filtroHoras && filtroHoras.size > 0 && !filtroHoras.has(s.turno_inicio)) return false;
     return true;
   });
-  dayS.sort(function(a, b) { return timeToMins(a.ingreso) - timeToMins(b.ingreso); });
+  dayS.sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
 
   // Mapear dayS con sus índices reales en malla
   var daySWithIdx = dayS.map(function(s) {
@@ -1790,8 +1790,8 @@ function renderMalla() {
   tbody.innerHTML = daySWithIdx.map(function(item) {
     var s       = item.s;
     var realIdx = item.idx;
-    var iM    = timeToMins(s.ingreso), sM = timeToMinsAdj(s.ingreso, s.salida);
-    var d1M   = timeToMins(s.descanso1), d2M = timeToMins(s.descanso2);
+    var iM    = timeToMins(s.turno_inicio), sM = timeToMinsAdj(s.turno_inicio, s.turno_fin);
+    var d1M   = timeToMins(s.break_inicio), d2M = timeToMins(s.lunch_inicio);
     var active   = nowMins >= 0 && nowMins >= iM && nowMins < sM;
     var upcoming = nowMins >= 0 && nowMins < iM;
     var done     = nowMins >= 0 && nowMins >= sM;
@@ -1813,10 +1813,10 @@ function renderMalla() {
         '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, '') + '</div>' +
         '<strong>' + s.nombre + '</strong></div></td>' +
       '<td>' + (s.turno ? '<span class="badge bt">' + s.turno + '</span>' : '') + '</td>' +
-      '<td><span class="badge bi">▶ ' + s.ingreso + '</span></td>' +
-      '<td>' + (s.descanso1 ? '<span class="badge bd">☕ ' + s.descanso1 + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
-      '<td>' + (s.descanso2 ? '<span class="badge bd">🍽 ' + s.descanso2 + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
-      '<td><span class="badge bs">■ ' + s.salida + '</span></td>' +
+      '<td><span class="badge bi">▶ ' + s.turno_inicio + '</span></td>' +
+      '<td>' + (s.break_inicio ? '<span class="badge bd">☕ ' + s.break_inicio + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
+      '<td>' + (s.lunch_inicio ? '<span class="badge bd">🍽 ' + s.lunch_inicio + '</span>' : '<span style="color:var(--text3)">—</span>') + '</td>' +
+      '<td><span class="badge bs">■ ' + s.turno_fin + '</span></td>' +
       '<td>' + statusHtml + '</td>' +
       '<td><div style="display:flex;gap:4px">' +
         '<button class="btn-icon" data-action="edit" data-key="' + key + '" title="Editar">✏</button>' +
@@ -1839,12 +1839,12 @@ function renderInforme() {
   var now      = getNow();
   var nowMins  = now.getHours() * 60 + now.getMinutes();
   var today    = todayISO();
-  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.ingreso) - timeToMins(b.ingreso); });
+  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
 
-  var enTurno    = todayS.filter(function(s) { return nowMins >= timeToMins(s.ingreso) && nowMins < timeToMins(s.salida); });
-  var proxSalida = todayS.filter(function(s) { var d = timeToMins(s.salida) - nowMins; return d >= 0 && d <= 60; });
-  var proxIng    = todayS.filter(function(s) { return timeToMins(s.ingreso) > nowMins; });
-  var finalizados= todayS.filter(function(s) { return nowMins >= timeToMins(s.salida); });
+  var enTurno    = todayS.filter(function(s) { return nowMins >= timeToMins(s.turno_inicio) && nowMins < timeToMins(s.turno_fin); });
+  var proxSalida = todayS.filter(function(s) { var d = timeToMins(s.turno_fin) - nowMins; return d >= 0 && d <= 60; });
+  var proxIng    = todayS.filter(function(s) { return timeToMins(s.turno_inicio) > nowMins; });
+  var finalizados= todayS.filter(function(s) { return nowMins >= timeToMins(s.turno_fin); });
 
   var totalC  = Object.values(attendance).filter(function(v) { return v === 'present'; }).length;
   var totalA  = Object.values(attendance).filter(function(v) { return v === 'absent'; }).length;
@@ -1854,7 +1854,7 @@ function renderInforme() {
     return shifts.map(function(s) {
       var aKey = s.nombre;
       var att  = attendance[aKey];
-      var iM   = timeToMins(s.ingreso), sM = timeToMins(s.salida);
+      var iM   = timeToMins(s.turno_inicio), sM = timeToMins(s.turno_fin);
       var sD   = sM - nowMins;
       var col  = avColor(s.nombre);
       var dotCls = att === 'present' ? 'sdot-g' : att === 'absent' ? 'sdot-r' : nowMins >= iM ? 'sdot-a' : 'sdot-x';
@@ -1863,7 +1863,7 @@ function renderInforme() {
         '<div class="avatar" style="background:' + col[0] + ';color:' + col[1] + '">' + initials(s.nombre, '') + '</div>' +
         '<span class="inf-name">' + s.nombre + '</span>' +
         (s.turno ? '<span style="font-size:10px;color:var(--text3)">' + s.turno + '</span>' : '') +
-        '<span class="inf-time">' + s.ingreso + '→' + s.salida + '</span>' +
+        '<span class="inf-time">' + s.turno_inicio + '→' + s.turno_fin + '</span>' +
         (sD >= 0 && sD <= 60 ? '<span style="font-size:11px;color:var(--red)">' + (sD === 0 ? '¡ahora!' : 'sale en ' + sD + 'min') + '</span>' : '') +
         (showAtt && !att ?
           '<button class="att-btn att-ok" data-akey="' + aKey + '" data-status="present">✓ Llegó</button>' +
@@ -1915,7 +1915,7 @@ function exportInforme() {
     'AGENTE,TURNO,INGRESO,DESC1,DESC2,SALIDA,ESTADO',
   ].concat(shifts.map(function(s) {
     var att = attendance[s.nombre];
-    return [s.nombre, s.turno || '—', s.ingreso, s.descanso1 || '—', s.descanso2 || '—', s.salida,
+    return [s.nombre, s.turno || '—', s.turno_inicio, s.break_inicio || '—', s.lunch_inicio || '—', s.turno_fin,
             att === 'present' ? 'PRESENTE' : att === 'absent' ? 'AUSENTE' : 'SIN CONFIRMAR'].join(',');
   })).join('\n');
   dlBlob(new Blob([lines], { type: 'text/csv' }), 'informe-' + today + '.csv');
@@ -1961,7 +1961,7 @@ function saveShift() {
     return;
   }
   var editIdx = (editKey !== '' && editKey !== '-1') ? parseInt(editKey) : -1;
-  var rec = { id: (editIdx >= 0 && malla[editIdx]) ? (malla[editIdx].id || generateId()) : generateId(), fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola, email: email, ingreso: ingreso, descanso1: desc1, descanso2: desc2, salida: salida };
+  var rec = { id: (editIdx >= 0 && malla[editIdx]) ? (malla[editIdx].id || generateId()) : generateId(), fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola, email: email, ingreso: ingreso, break_inicio: desc1, lunch_inicio: desc2, salida: salida };
 
   if (editIdx >= 0 && editIdx < malla.length) {
     malla[editIdx] = rec;
@@ -2005,13 +2005,13 @@ function editShift(key) {
   }
   document.getElementById('f-fecha').value   = s.fecha    || '';
   document.getElementById('f-nombre').value  = s.nombre   || '';
-  document.getElementById('f-turno').value   = s.turno    || calcTurno(s.ingreso);
+  document.getElementById('f-turno').value   = s.turno    || calcTurno(s.turno_inicio);
   document.getElementById('f-cola').value    = s.cola     || '';
   document.getElementById('f-email').value   = s.email    || '';
-  document.getElementById('f-ingreso').value = s.ingreso  || '08:00';
-  document.getElementById('f-desc1').value   = s.descanso1|| '';
-  document.getElementById('f-desc2').value   = s.descanso2|| '';
-  document.getElementById('f-salida').value  = s.salida   || '17:00';
+  document.getElementById('f-ingreso').value = s.turno_inicio  || '08:00';
+  document.getElementById('f-desc1').value   = s.break_inicio|| '';
+  document.getElementById('f-desc2').value   = s.lunch_inicio|| '';
+  document.getElementById('f-salida').value  = s.turno_fin   || '17:00';
   document.getElementById('edit-key').value  = String(idx);
   document.getElementById('form-title').textContent = 'Editando: ' + s.nombre + ' · ' + s.fecha;
   showTab('agregar');
@@ -2117,9 +2117,9 @@ function parseRows(rows, hMap) {
     if (!turnoIni) errors.push('falta turno_inicio');
     if (!turnoFin) errors.push('falta turno_fin');
     return { fecha: fecha, nombre: nombre, apellido: '', turno: turno, cola: cola,
-             ingreso: turnoIni, descanso1: breakIni, descanso2: lunchIni, salida: turnoFin,
+             turno_inicio: turnoIni, break_inicio: breakIni, lunch_inicio: lunchIni, turno_fin: turnoFin,
              email: email, errors: errors, rowNum: idx + 2 };
-  }).filter(function(r) { return r.nombre && r.fecha && r.ingreso && r.salida; });
+  }).filter(function(r) { return r.nombre && r.fecha && r.turno_inicio && r.turno_fin; });
 }
 
 function readFile(file) {
@@ -2184,8 +2184,8 @@ function showPreview(rows) {
       '<td style="color:var(--text3)">' + r.rowNum + '</td>' +
       '<td>' + (r.fecha || '—') + '</td>' +
       '<td>' + r.nombre + '</td><td>' + (r.turno || '—') + '</td>' +
-      '<td>' + (r.ingreso || '—') + '</td><td>' + (r.descanso1 || '—') + '</td>' +
-      '<td>' + (r.descanso2 || '—') + '</td><td>' + (r.salida || '—') + '</td>' +
+      '<td>' + (r.turno_inicio || '—') + '</td><td>' + (r.break_inicio || '—') + '</td>' +
+      '<td>' + (r.lunch_inicio || '—') + '</td><td>' + (r.turno_fin || '—') + '</td>' +
       '<td>' + (r.errors.length ? '<span style="color:var(--red);font-size:10px">' + r.errors.join(', ') + '</span>' : '<span style="color:var(--green)">✓</span>') + '</td>' +
       '</tr>';
   }).join('');
@@ -2206,7 +2206,7 @@ var agente = agentesDB.find(function(a) {
   var fn = (a.nombre + ' ' + a.apellido).toLowerCase().trim();
   return fn === (r.nombre || '').toLowerCase().trim();
 });
-return { id: null, agente_id: agente ? agente.id : null, fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email || (agente ? agente.email : ''), ingreso: r.ingreso, descanso1: r.descanso1, descanso2: r.descanso2, salida: r.salida };
+return { id: null, agente_id: agente ? agente.id : null, fecha: r.fecha, nombre: r.nombre, apellido: '', turno: r.turno, cola: r.cola, email: r.email || (agente ? agente.email : ''), ingreso: r.turno_inicio, descanso1: r.break_inicio, descanso2: r.lunch_inicio, salida: r.turno_fin };
   });
   if (!toImport.length) { showToast('No hay filas válidas.'); return; }
   if (replace) {
@@ -2418,10 +2418,10 @@ function renderVistaAgente() {
   var estadoTxt = 'Sin turno hoy', estadoColor = 'var(--text3)';
   var iM = -1, sM = -1, d1M = -1, d2M = -1;
   if (turno) {
-    iM = timeToMins(turno.ingreso);
-    sM = timeToMinsAdj(turno.ingreso, turno.salida);
-    d1M = timeToMins(turno.descanso1);
-    d2M = timeToMins(turno.descanso2);
+    iM = timeToMins(turno.turno_inicio);
+    sM = timeToMinsAdj(turno.turno_inicio, turno.turno_fin);
+    d1M = timeToMins(turno.break_inicio);
+    d2M = timeToMins(turno.lunch_inicio);
     if (nowMins < iM) {
       estadoTxt = 'Inicia en ' + (iM - nowMins) + ' min';
       estadoColor = 'var(--blue)';
@@ -2439,10 +2439,10 @@ function renderVistaAgente() {
   // Próximos eventos
   var proximos = [];
   if (turno) {
-    if (nowMins < iM)  proximos.push({ label:'Ingreso',       time:turno.ingreso,   mins:iM,  color:'var(--green)' });
-    if (d1M > 0 && nowMins < d1M) proximos.push({ label:'☕ Desc. corto', time:turno.descanso1, mins:d1M, color:'var(--amber)' });
-    if (d2M > 0 && nowMins < d2M) proximos.push({ label:'🍽 Desc. largo', time:turno.descanso2, mins:d2M, color:'var(--amber)' });
-    if (nowMins < sM)  proximos.push({ label:'Salida',        time:turno.salida,    mins:sM,  color:'var(--red)'   });
+    if (nowMins < iM)  proximos.push({ label:'Ingreso',       time:turno.turno_inicio,   mins:iM,  color:'var(--green)' });
+    if (d1M > 0 && nowMins < d1M) proximos.push({ label:'☕ Desc. corto', time:turno.break_inicio, mins:d1M, color:'var(--amber)' });
+    if (d2M > 0 && nowMins < d2M) proximos.push({ label:'🍽 Desc. largo', time:turno.lunch_inicio, mins:d2M, color:'var(--amber)' });
+    if (nowMins < sM)  proximos.push({ label:'Salida',        time:turno.turno_fin,    mins:sM,  color:'var(--red)'   });
   }
 
   // Adherencia real — usa datos de Supabase (adherente, diferencia_min)
@@ -2488,10 +2488,10 @@ function renderVistaAgente() {
     // Horario
     (turno ?
       '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">' +
-        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Ingreso</div><div class="mono" style="font-weight:700;color:var(--green)">▶ ' + turno.ingreso + '</div></div>' +
-        (turno.descanso1 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. corto</div><div class="mono" style="font-weight:700;color:var(--amber)">☕ ' + turno.descanso1 + '</div></div>' : '') +
-        (turno.descanso2 ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. largo</div><div class="mono" style="font-weight:700;color:var(--amber)">🍽 ' + turno.descanso2 + '</div></div>' : '') +
-        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Salida</div><div class="mono" style="font-weight:700;color:var(--red)">■ ' + turno.salida + '</div></div>' +
+        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Ingreso</div><div class="mono" style="font-weight:700;color:var(--green)">▶ ' + turno.turno_inicio + '</div></div>' +
+        (turno.break_inicio ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. corto</div><div class="mono" style="font-weight:700;color:var(--amber)">☕ ' + turno.break_inicio + '</div></div>' : '') +
+        (turno.lunch_inicio ? '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Desc. largo</div><div class="mono" style="font-weight:700;color:var(--amber)">🍽 ' + turno.lunch_inicio + '</div></div>' : '') +
+        '<div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Salida</div><div class="mono" style="font-weight:700;color:var(--red)">■ ' + turno.turno_fin + '</div></div>' +
       '</div>'
     : '') +
 
@@ -2654,9 +2654,9 @@ function renderVistaAgente() {
           '<div style="min-width:54px"><div style="font-size:12px;font-weight:700;color:' + (esHoy?'var(--green)':'var(--text)') + '">' + dLabel + (esHoy?' ★':'') + '</div>' +
           '<div style="font-size:9px;color:var(--text3)">' + pad(parseInt(p[1])) + '/' + p[0] + '</div></div>' +
           '<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--bg3);color:' + tColor + ';white-space:nowrap">' + (t.turno||'—') + '</span>' +
-          '<span class="mono" style="font-size:11px;color:var(--text2);flex:1">' + t.ingreso + '→' + t.salida + '</span>' +
-          (t.descanso1 ? '<span style="font-size:10px;color:var(--amber)">☕</span>' : '') +
-          (t.descanso2 ? '<span style="font-size:10px;color:var(--amber)">🍽</span>' : '') +
+          '<span class="mono" style="font-size:11px;color:var(--text2);flex:1">' + t.turno_inicio + '→' + t.turno_fin + '</span>' +
+          (t.break_inicio ? '<span style="font-size:10px;color:var(--amber)">☕</span>' : '') +
+          (t.lunch_inicio ? '<span style="font-size:10px;color:var(--amber)">🍽</span>' : '') +
           (t.conexion ? '<span style="font-size:9px;color:var(--text3);background:var(--bg3);padding:1px 6px;border-radius:8px">' + t.conexion + '</span>' : '') +
           '</div>';
       }).join('')
