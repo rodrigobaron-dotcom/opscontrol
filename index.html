@@ -1758,7 +1758,7 @@ function renderMalla() {
     if (filtroHoras && filtroHoras.size > 0 && !filtroHoras.has(s.turno_inicio)) return false;
     return true;
   });
-  dayS.sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.turno_inicio); // placeholderMins(b.turno_inicio); });
+  dayS.sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
 
   // Mapear dayS con sus índices reales en malla
   var daySWithIdx = dayS.map(function(s) {
@@ -1839,7 +1839,7 @@ function renderInforme() {
   var now      = getNow();
   var nowMins  = now.getHours() * 60 + now.getMinutes();
   var today    = todayISO();
-  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.turno_inicio); // placeholderMins(b.turno_inicio); });
+  var todayS   = shiftsForDate(today).sort(function(a, b) { return timeToMins(a.turno_inicio) - timeToMins(b.ingreso); });
 
   var enTurno    = todayS.filter(function(s) { return nowMins >= timeToMins(s.turno_inicio) && nowMins < timeToMins(s.turno_fin); });
   var proxSalida = todayS.filter(function(s) { var d = timeToMins(s.turno_fin) - nowMins; return d >= 0 && d <= 60; });
