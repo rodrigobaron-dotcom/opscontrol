@@ -2036,15 +2036,17 @@ async function deleteShift(key) {
 
 // ── CARGA MASIVA ──────────────────────────────────────────
 var COL_MAP = {
-  fecha:     ['fecha','date','día','dia','day'],
-  nombre:    ['nombre','name','first name','firstname','nombres','nombre completo','full name','agente'],
-  turno:     ['turno','shift','grupo','group'],
-  cola:      ['cola','queue','skill','habilidad','grupo de trabajo','workgroup','linea_atencion','linea atencion','línea atención','línea_atención'],
-  email:     ['email','correo','correo electronico','mail','slack email','correo slack'],
-  ingreso:   ['ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio','turno_inicio','turno inicio'],
-  descanso1: ['descanso1','descanso 1','descanso corto','break1','break 1','break corto','descanso_1','break_inicio','break inicio'],
-  descanso2: ['descanso2','descanso 2','descanso largo','almuerzo','lunch','break2','break 2','descanso_2','lunch_inicio','lunch inicio'],
-  salida:    ['salida','hora salida','hora fin','end','end time','fin','turno_fin','turno fin'],
+  fecha:        ['fecha','date','día','dia','day'],
+  nombre:       ['nombre','name','first name','firstname','nombres','nombre completo','full name','agente'],
+  turno:        ['turno','shift','grupo','group'],
+  cola:         ['cola','queue','skill','habilidad','grupo de trabajo','workgroup','linea_atencion','linea atencion','línea atención','línea_atención'],
+  email:        ['email','correo','correo electronico','mail','slack email','correo slack'],
+  turno_inicio: ['turno_inicio','turno inicio','ingreso','entrada','hora ingreso','hora entrada','start','start time','hora inicio'],
+  turno_fin:    ['turno_fin','turno fin','salida','hora salida','hora fin','end','end time','fin'],
+  break_inicio: ['break_inicio','break inicio','descanso1','descanso 1','descanso corto','break1','break 1','break corto'],
+  break_fin:    ['break_fin','break fin'],
+  lunch_inicio: ['lunch_inicio','lunch inicio','descanso2','descanso 2','descanso largo','almuerzo','lunch','break2'],
+  lunch_fin:    ['lunch_fin','lunch fin'],
 };
 
 function mapHeaders(headers) {
@@ -2102,12 +2104,12 @@ function parseRows(rows, hMap) {
     var fecha    = normDate(get('fecha'));
     // Aceptar 'agente' o 'nombre' como columna de nombre
     var nombre   = get('agente') || get('nombre');
-    var turnoIni = normTime(get('turno_inicio') || get('ingreso'));
-    var turnoFin = normTime(get('turno_fin')    || get('salida'));
-    // break = descanso corto (10 min) — tomamos hora inicio
-    var breakIni = normTime(get('break_inicio') || get('descanso1'));
-    // lunch = descanso largo (30 min) — tomamos hora inicio
-    var lunchIni = normTime(get('lunch_inicio') || get('descanso2'));
+    var turnoIni = normTime(get('turno_inicio'));
+    var turnoFin = normTime(get('turno_fin'));
+    var breakIni = normTime(get('break_inicio'));
+    var breakFin = normTime(get('break_fin'));
+    var lunchIni = normTime(get('lunch_inicio'));
+    var lunchFin = normTime(get('lunch_fin'));
     var email    = (get('email') || '').toLowerCase();
     var cola     = get('linea_atencion') || get('cola') || '';
     var turno    = calcTurno(turnoIni);
