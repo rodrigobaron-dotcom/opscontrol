@@ -1182,7 +1182,7 @@ function startApp() {
     // Agente: ocultar sidebar, mostrar solo vista personal
     document.querySelector('.sidebar').style.display = 'none';
     document.querySelector('.main').style.flex = '1';
-    Promise.all([loadMallaFromCloud(), loadMarcacionesHoy()]).then(function() {
+    Promise.all([loadMallaFromCloud(), loadMarcacionesHoy(), loadSolicitudesCambio()]).then(function() {
       // Verificar break pendiente INMEDIATAMENTE al cargar
       checkAutoBreakEnd().then(function() {
         renderVistaAgente();
@@ -2601,8 +2601,34 @@ function renderVistaAgente() {
       }).join('') +
       '</div>'
     : '') +
-
+    
+  // Solicitudes de cambio pendientes
+    (window._solicitudesCambio && window._solicitudesCambio.length ?
+      '<div style="margin-bottom:10px">' +
+        '<div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px">Solicitudes de cambio</div>' +
+        window._solicitudesCambio.map(function(c) {
+          var esSolicitante = c.solicitante_id === currentUser.id;
+          var otroNombre = esSolicitante ? (c.receptor ? c.receptor.nombre+' '+c.receptor.apellido : '—') : (c.solicitante ? c.solicitante.nombre+' '+c.solicitante.apellido : '—');
+          var colorEstado = c.estado==='pendiente'?'var(--amber)':c.estado==='aprobado'?'var(--green)':'var(--red)';
+          var html = '<div style="padding:10px 12px;border-radius:var(--rs);background:var(--bg2);border:1px solid var(--border);margin-bottom:6px">' +
+            '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">' +
+              '<span style="font-size:11px;color:var(--text2)">' + (esSolicitante?'📤 Enviada a':'📥 De') + ' <strong>' + otroNombre + '</strong></span>' +
+              '<span style="margin-left:auto;font-size:10px;font-weight:700;color:' + colorEstado + '">' + c.estado.toUpperCase() + '</span>' +
+            '</div>';
+          if (!esSolicitante && c.estado === 'pendiente') {
+            html += '<div style="display:flex;gap:6px">' +
+              '<button data-cambio-id="' + c.id + '" data-accion="aprobado" style="flex:1;padding:6px;font-size:11px;font-weight:700;background:var(--gdim);color:var(--green);border:1px solid var(--gb);border-radius:var(--rs);cursor:pointer;font-family:inherit">✓ Aceptar</button>' +
+              '<button data-cambio-id="' + c.id + '" data-accion="rechazado" style="flex:1;padding:6px;font-size:11px;font-weight:700;background:var(--rdim);color:var(--red);border:1px solid var(--rb);border-radius:var(--rs);cursor:pointer;font-family:inherit">✕ Rechazar</button>' +
+            '</div>';
+          }
+          html += '</div>';
+          return html;
+        }).join('') +
+      '</div>'
+    : '') +
+    
     // Logout
+    '<button id="btn-solicitar-cambio" style="width:100%;padding:9px;font-size:12px;font-weight:600;background:var(--bdim);color:var(--blue);border:1px solid rgba(79,168,240,.3);border-radius:var(--rs);cursor:pointer;font-family:inherit;margin-bottom:6px">🔄 Solicitar cambio de turno</button>' +
     '<button id="btn-agente-logout" style="width:100%;padding:7px;font-size:11px;font-weight:600;background:transparent;color:var(--text3);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-family:inherit">Cerrar sesión</button>';
 
   // ── COLUMNA DERECHA: malla del mes con filtros ───────────
@@ -2686,6 +2712,9 @@ function initAgenteListeners() {
     if (btnFil) { window._agenteFiltroTurno = btnFil.getAttribute('data-turno-fil'); renderVistaAgente(); return; }
     if (e.target.id === 'btn-mes-prev') { window._agenteMesOffset = (window._agenteMesOffset||0) - 1; renderVistaAgente(); return; }
     if (e.target.id === 'btn-mes-next') { window._agenteMesOffset = (window._agenteMesOffset||0) + 1; renderVistaAgente(); return; }
+    if (e.target.id === 'btn-solicitar-cambio') { showCambioTurno(); return; }
+    var btnCambio = e.target.closest('[data-cambio-id]');
+    if (btnCambio) { responderCambioTurno(btnCambio.getAttribute('data-cambio-id'), btnCambio.getAttribute('data-accion')); return; }
     if (e.target.id === 'btn-agente-logout') { doLogout(); return; }
   });
 }
@@ -2730,17 +2759,173 @@ async function marcarEstadoAgente(estado) {
 
 
 // ── Cargar marcaciones del día desde Supabase ─────────────
-async function loadMarcacionesHoy() {
+  async function loadMarcacionesHoy() {
+    if (!currentUser) return;
+    try {
+      var res  = await fetch('/api/marcaciones?agente_id=' + currentUser.id + '&fecha=' + todayISO());
+      var data = await res.json();
+      if (data.ok) {
+        window._marcacionesHoy = data.marcaciones || [];
+      }
+    } catch(e) { console.warn('marcaciones:', e.message); }
+  }
+ async function loadSolicitudesCambio() {
   if (!currentUser) return;
   try {
-    var res  = await fetch('/api/marcaciones?agente_id=' + currentUser.id + '&fecha=' + todayISO());
+    var res  = await fetch('/api/cambios_turno?agente_id=' + currentUser.id);
+    var data = await res.json();
+    window._solicitudesCambio = data.ok ? data.cambios : [];
+    } catch(e) { window._solicitudesCambio = []; }
+  }
+  async function responderCambioTurno(cambioId, accion) {
+  var msg = accion === 'aprobado' ? '¿Aceptar este cambio de turno? Los turnos se intercambiarán automáticamente.' : '¿Rechazar esta solicitud de cambio?';
+  if (!confirm(msg)) return;
+  try {
+    var res = await fetch('/api/cambios_turno?id=' + cambioId, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ estado: accion, aprobado_por: currentUser.id })
+    });
     var data = await res.json();
     if (data.ok) {
-      window._marcacionesHoy = data.marcaciones || [];
+      showToast(accion === 'aprobado' ? '✅ Cambio aceptado — turnos intercambiados' : '❌ Solicitud rechazada');
+      await loadSolicitudesCambio();
+      renderVistaAgente();
+    } else {
+      showToast('❌ Error: ' + (data.error || 'Error desconocido'));
     }
-  } catch(e) { console.warn('marcaciones:', e.message); }
+  } catch(e) {
+    showToast('❌ Error procesando respuesta');
+  }
+}
+// ── Cambio de turno ────────────────────────────────────────
+function showCambioTurno() {
+  var detWrap = document.getElementById('adh-detalle-agente');
+  if (!detWrap) return;
+  var nombre = currentUser.nombre + ' ' + currentUser.apellido;
+  var email  = currentUser.email;
+
+  // Mis turnos disponibles para cambiar
+  var misTurnos = malla.filter(function(t) {
+    return (t.email && t.email.toLowerCase() === email.toLowerCase()) ||
+           (t.nombre && t.nombre.toLowerCase() === nombre.toLowerCase());
+  }).filter(function(t) { return t.fecha >= todayISO(); })
+    .sort(function(a,b) { return a.fecha < b.fecha ? -1 : 1; });
+
+  // Otros agentes
+  var otrosAgentes = agentesDB.filter(function(a) { return a.id !== currentUser.id && a.activo !== false; })
+    .sort(function(a,b) { return (a.nombre+a.apellido).localeCompare(b.nombre+b.apellido); });
+
+  detWrap.style.display = 'block';
+  detWrap.innerHTML =
+    '<div style="background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:16px">' +
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)">' +
+        '<span style="font-size:18px">🔄</span>' +
+        '<div style="font-size:14px;font-weight:700">Solicitar cambio de turno</div>' +
+        '<button onclick="document.getElementById(\'adh-detalle-agente\').style.display=\'none\'" ' +
+          'style="margin-left:auto;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);padding:4px 10px;color:var(--text2);cursor:pointer;font-family:inherit;font-size:11px">✕ Cerrar</button>' +
+      '</div>' +
+
+      // Mi turno a cambiar
+      '<div style="margin-bottom:14px">' +
+        '<div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:6px">Mi turno a cambiar</div>' +
+        '<select id="sel-mi-turno" style="width:100%;padding:9px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:inherit;font-size:13px">' +
+          '<option value="">Seleccionar mi turno...</option>' +
+          misTurnos.map(function(t) {
+            var dias = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+            var p = t.fecha.split('-');
+            var dt = new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
+            var label = dias[dt.getDay()] + ' ' + dt.getDate() + '/' + p[1] + ' — ' + (t.turno_inicio||t.ingreso||'') + ' a ' + (t.turno_fin||t.salida||'');
+            return '<option value="' + t.id + '">' + label + '</option>';
+          }).join('') +
+        '</select>' +
+      '</div>' +
+
+      // Agente con quien cambiar
+      '<div style="margin-bottom:14px">' +
+        '<div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:6px">Agente con quien cambiar</div>' +
+        '<select id="sel-agente-cambio" onchange="cargarTurnosAgente()" style="width:100%;padding:9px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:inherit;font-size:13px">' +
+          '<option value="">Seleccionar agente...</option>' +
+          otrosAgentes.map(function(a) {
+            return '<option value="' + a.id + '">' + a.nombre + ' ' + a.apellido + ' — ' + (a.linea_atencion||'') + '</option>';
+          }).join('') +
+        '</select>' +
+      '</div>' +
+
+      // Turno del otro agente
+      '<div style="margin-bottom:16px">' +
+        '<div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:6px">Su turno a recibir</div>' +
+        '<select id="sel-turno-receptor" style="width:100%;padding:9px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:inherit;font-size:13px">' +
+          '<option value="">Primero selecciona un agente...</option>' +
+        '</select>' +
+      '</div>' +
+
+      // Motivo
+      '<div style="margin-bottom:16px">' +
+        '<div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:6px">Motivo (opcional)</div>' +
+        '<input type="text" id="inp-motivo-cambio" placeholder="Ej: Cita médica, diligencia personal..." ' +
+          'style="width:100%;padding:9px 12px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:inherit;font-size:13px">' +
+      '</div>' +
+
+      '<button onclick="enviarSolicitudCambio()" style="width:100%;padding:12px;font-size:13px;font-weight:700;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:var(--rs);cursor:pointer;font-family:inherit">Enviar solicitud 🔄</button>' +
+    '</div>';
+
+  detWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+function cargarTurnosAgente() {
+  var agenteId = document.getElementById('sel-agente-cambio').value;
+  var sel = document.getElementById('sel-turno-receptor');
+  if (!agenteId) { sel.innerHTML = '<option value="">Primero selecciona un agente...</option>'; return; }
+
+  var turnos = malla.filter(function(t) {
+    return t.agente_id === agenteId && t.fecha >= todayISO();
+  }).sort(function(a,b) { return a.fecha < b.fecha ? -1 : 1; });
+
+  var dias = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  sel.innerHTML = '<option value="">Seleccionar turno...</option>' +
+    turnos.map(function(t) {
+      var p = t.fecha.split('-');
+      var dt = new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
+      var label = dias[dt.getDay()] + ' ' + dt.getDate() + '/' + p[1] + ' — ' + (t.turno_inicio||t.ingreso||'') + ' a ' + (t.turno_fin||t.salida||'');
+      return '<option value="' + t.id + '">' + label + '</option>';
+    }).join('');
+}
+
+async function enviarSolicitudCambio() {
+  var miTurnoId    = document.getElementById('sel-mi-turno').value;
+  var agenteId     = document.getElementById('sel-agente-cambio').value;
+  var suTurnoId    = document.getElementById('sel-turno-receptor').value;
+  var motivo       = document.getElementById('inp-motivo-cambio').value.trim();
+
+  if (!miTurnoId || !agenteId || !suTurnoId) {
+    showToast('⚠ Selecciona tu turno, el agente y su turno');
+    return;
+  }
+
+  try {
+    var res = await fetch('/api/cambios_turno', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        solicitante_id:  currentUser.id,
+        receptor_id:     agenteId,
+        turno_solicitante: miTurnoId,
+        turno_receptor:  suTurnoId,
+        motivo:          motivo || null
+      })
+    });
+    var data = await res.json();
+    if (data.ok) {
+      showToast('✅ Solicitud enviada — esperando respuesta del agente');
+      document.getElementById('adh-detalle-agente').style.display = 'none';
+    } else {
+      showToast('❌ Error: ' + data.error);
+    }
+  } catch(e) {
+    showToast('❌ Error enviando solicitud');
+  }
+}
 // ── Auto-detectar fin de break ────────────────────────────
 async function checkAutoBreakEnd() {
   if (!currentUser) return;
