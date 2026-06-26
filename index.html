@@ -1280,7 +1280,7 @@ function initials(n, a) {
 // ── Sincronización con GitHub (malla en la nube) ──────────
 async function loadMallaFromCloud() {
   try {
-    var res  = await fetch('/api/malla');
+    var res = await fetch('/api/malla?t=' + Date.now());
     var data = await res.json();
     if (data.ok && Array.isArray(data.malla) && data.malla.length > 0) {
   malla = data.malla;
