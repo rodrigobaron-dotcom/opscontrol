@@ -1188,7 +1188,8 @@ function startApp() {
         renderVistaAgente();
         initAgenteListeners();
       });
-      setInterval(function() { renderVistaAgente(); }, 30000);
+      setInterval(function() { loadMallaFromCloud().then(function() { renderVistaAgente(); }); }, 30000);
+setInterval(function() { loadSolicitudesCambio().then(function() { renderVistaAgente(); }); }, 60000);
       setInterval(function() { checkAlerts(); }, 10000);
       // Auto-detectar fin de break cada 60 segundos
       setInterval(function() { checkAutoBreakEnd(); }, 60000);
@@ -3166,6 +3167,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   setInterval(function() { checkAlerts(); }, 10000);
   setInterval(function() { if (document.getElementById('tab-control').classList.contains('active')) renderControl(); }, 30000);
+  setInterval(function() { loadMallaFromCloud().then(function() { renderMalla(); }); }, 30000);
   // Refrescar estados en tiempo real cada 20 segundos
   setInterval(function() { cargarEstados(); }, 20000);
   cargarEstados();
