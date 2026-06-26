@@ -2413,8 +2413,7 @@ function renderVistaAgente() {
   // Turno de hoy
   var turno = malla.find(function(r) {
     if (r.fecha !== today) return false;
-    return (r.email && r.email.toLowerCase() === email.toLowerCase()) ||
-           (r.nombre && r.nombre.toLowerCase() === nombre.toLowerCase());
+    return r.agente_id === currentUser.id;
   });
 
   // Estado actual
